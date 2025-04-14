@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruth Ondiere | Data Scientist & ML Engineer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Ruth Ondiere</h1>
+        <p>Data Scientist & ML Engineer | IoT | AWS | Web Developer | AI | Nairobi, Kenya</p>
+        <button id="toggleTheme">🌙 Toggle Dark Mode</button>
+    </header>
+
+    <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="files/Ruth_Ondiere_Resume.pdf" download class="resume-btn">📄 Download Resume</a>
+    </nav>
+
+    <main>
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <img src="images/smartroutes.jpg" alt="SmartRoutes Screenshot" class="project-img">
+                <h3>🚐 SmartRoutes (Matatu Optimization)</h3>
+                <p>A web-based route optimizer using Leaflet.js and ML techniques to recommend efficient matatu routes in Nairobi.</p>
+                <a href="https://github.com/BONAONDIERE/smartroutes" target="_blank">View on GitHub</a>
+            </div>
+
+            <div class="project">
+                <img src="images/iot_predictive.jpg" alt="IoT Predictive Maintenance" class="project-img">
+                <h3>🛠️ IoT Predictive Maintenance Model</h3>
+                <p>Built ML models (Logistic Regression, Random Forest) to predict failures in machines using sensor data.</p>
+            </div>
+
+            <div class="project">
+                <img src="images/tractor_demand.jpg" alt="Tractor Booking Forecasting" class="project-img">
+                <h3>📈 Tractor Booking Demand Forecasting (Coming Soon)</h3>
+                <p>Forecast tractor demand using time-series analysis to optimize fleet allocation for Hello Tractor.</p>
+            </div>
+
+            <div class="project">
+                <img src="images/chatbot_nlp.jpg" alt="Chatbot NLP" class="project-img">
+                <h3>🤖 Customer Support Chatbot (Coming Soon)</h3>
+                <p>Developed an NLP chatbot to classify customer queries and automate support responses.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Python,JavaScript,, SQL, PLC Programming</li>
+                <li>Pandas, NumPy, Scikit-learn, TensorFlow</li>
+                <li>Data Visualization: Matplotlib, Seaborn, Plotly</li>
+                <li>AWS (EC2, S3), Google Cloud, Cloud Practitioner Cert.</li>
+                <li>IoT Integration, Sensor Data, Telematics</li>
+                <li>Version Control: GitHub</li>
+                <li>AutoCAD, Excel, Google Sheets</li>
+                <li>Cybersecurity Fundamentals</li>
+                <li class="web-skill">HTML5,Responsive Design,CSS3</li>
+
+
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <a href="mailto:bonareriondiere@gmail.com"><i class="fas fa-envelope"></i> bonareriondiere@gmail.com</a>
+            <a href="tel:+254705616648"><i class="fas fa-phone"></i> +254 705 616 648</a>
+            <a href="https://www.linkedin.com/in/ruth-ondiere-254009198"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/BONAONDIERE"><i class="fab fa-github"></i> GitHub</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ruth Ondiere | Portfolio</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const toggleButton = document.getElementById('toggleTheme');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+
+</html>
