@@ -1,0 +1,181 @@
+/* Base Styles */
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header,
+nav,
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #006bb3;
+    color: white;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0.5rem 0;
+}
+
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+main {
+    padding: 2rem;
+}
+
+
+/* Projects Section */
+
+.project {
+    background: #fff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #006bb3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Skills Section */
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skills-list li {
+    background: #eef5fa;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+}
+
+
+/* Contact Section */
+
+#contact a {
+    color: #006bb3;
+    text-decoration: none;
+}
+
+
+/* Resume Button */
+
+.resume-btn {
+    display: inline-block;
+    background-color: #004d99;
+    color: white;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    margin: 1rem auto;
+    font-weight: bold;
+}
+
+.resume-btn:hover {
+    background-color: #003366;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #004d99;
+    color: #fff;
+    padding: 1rem;
+}
+
+
+/* Dark Mode */
+
+body.dark-mode {
+    background-color: #121212;
+    color: #eee;
+}
+
+body.dark-mode header,
+body.dark-mode nav {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+body.dark-mode nav a {
+    color: #ccc;
+}
+
+body.dark-mode .project,
+body.dark-mode .skills-list li {
+    background-color: #1e1e1e;
+    color: #eee;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+}
+
+
+/* Toggle Button */
+
+#toggleTheme {
+    background: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+body.dark-mode #toggleTheme {
+    background: #444;
+    color: #fff;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+    .resume-btn {
+        margin: 1rem 0;
+    }
+}
