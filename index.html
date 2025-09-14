@@ -6,64 +6,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruth Ondiere - Data Scientist</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+        /* Modern Color Scheme and Base Styles */
+        
+         :root {
+            --primary-color: #0056b3;
+            /* A professional blue */
+            --secondary-color: #6c757d;
+            /* A neutral gray */
+            --accent-color: #ff6b6b;
+            /* A subtle accent color */
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
+            background-color: #fff;
+            padding: 0;
+            margin: 0;
         }
         
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        /* Header and Navigation */
         
         header {
-            background: #333;
+            background: var(--primary-color);
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
+            padding: 2rem 0;
             text-align: center;
+            margin-bottom: 2rem;
         }
         
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+        header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
         }
         
-        .content {
-            padding: 20px;
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
-        
-        h1,
-        h2,
-        h3 {
-            color: #333;
-        }
+        /* Contact Info */
         
         .contact-info {
             text-align: center;
-            margin: 20px 0;
+            margin: -1rem 0 2rem 0;
+            padding: 1rem;
+            background-color: var(--light-color);
+            border-radius: 5px;
         }
         
-        .section {
-            margin: 20px 0;
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
         }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        /* Sections */
+        
+        .section {
+            margin: 2rem 0;
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--light-color);
+        }
+        /* Projects and Jobs */
         
         .project,
         .job {
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ccc;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--light-color);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .project h3,
+        .job h3 {
+            color: var(--dark-color);
+        }
+        
+        .project p,
+        .job p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .project strong,
+        .job strong {
+            color: var(--secondary-color);
+        }
+        /* Skills List */
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+            background: var(--light-color);
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        /* Responsive Design for Mobile */
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .skills-container {
+                flex-direction: column;
+            }
+            .container {
+                width: 95%;
+            }
         }
     </style>
 </head>
