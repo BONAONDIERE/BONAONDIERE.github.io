@@ -1,167 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ruth Ondiere | Data Science Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #000000;
-      --accent: #4f46e5;
-      --card: #f9f9f9;
-    }
-    [data-theme="dark"] {
-      --bg: #0f172a;
-      --text: #ffffff;
-      --accent: #60a5fa;
-      --card: #1e293b;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 1rem;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    header {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: flex-start;
-      justify-content: space-between;
-      padding-bottom: 1rem;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin: 0;
-    }
-
-    .btn {
-      background: var(--accent);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-      display: inline-block;
-      margin: 0.3rem 0.3rem 0.3rem 0;
-    }
-
-    .btn:hover {
-      background: #3b82f6;
-    }
-
-    section {
-      margin-top: 2rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .project {
-      background: var(--card);
-      border-radius: 1rem;
-      padding: 1.2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
-    }
-
-    .project:hover {
-      transform: scale(1.01);
-    }
-
-    .project img {
-      max-width: 100%;
-      border-radius: 0.5rem;
-      margin-top: 0.8rem;
-    }
-
-    footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-
-    @media (min-width: 600px) {
-      header {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruth Ondiere - Data Scientist</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0779e4 3px solid;
+            text-align: center;
+        }
+        
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .section {
+            margin: 20px 0;
+        }
+        
+        .project,
+        .job {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <h1>Ruth Ondiere</h1>
-    <div>
-      <a href="Ruth_resume.updated.pdf" download class="btn">Download Resume</a>
-      <button onclick="toggleTheme()" class="btn toggle-theme">Toggle Dark Mode</button>
+    <header>
+        <h1>Ruth Ondiere</h1>
+        <p>Data Scientist & ML Engineer</p>
+    </header>
+
+    <div class="container">
+        <div class="contact-info">
+            <p>Nairobi, Kenya | +254705616648 | bonareriondiere@gmail.com | <a href="https://linkedin.com/in/ruth-ondiere-254009198">LinkedIn</a></p>
+        </div>
+
+        <div class="content">
+            <section class="section">
+                <h2>Summary</h2>
+                <p>Driven Data Scientist and ML/AI Engineer with 2 years of hands-on experience in IoT and electrical engineering. Skilled in diagnosing and resolving technical issues while enhancing product features to boost customer satisfaction. Proven
+                    success in developing user training programs and supporting data reporting initiatives that drive continuous improvement. Committed to leveraging expertise in machine learning and data analytics to contribute significantly to innovative
+                    projects in technology.</p>
+            </section>
+
+            <section class="section">
+                <h2>Projects</h2>
+
+                <div class="project">
+                    <h3>Predicting Airline Fares with Machine Learning</h3>
+                    <p><strong>Date:</strong> 06/2025 – 08/2025 | <strong>Type:</strong> Personal Project</p>
+                    <p>Engineered a predictive model using Python (Pandas, Scikit-learn) to forecast airline ticket prices, utilizing historical data and market trends. Applied and compared multiple regression algorithms and time-series analysis to identify
+                        key factors influencing price volatility. Improved model performance through comprehensive feature engineering and hyperparameter tuning. Visualized results and trends with Matplotlib and Seaborn to provide actionable, data-driven
+                        insights for cost-saving decisions.</p>
+                    <p><strong>Technologies:</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn, Time-Series Analysis</p>
+                </div>
+
+                <div class="project">
+                    <h3>KUCCPS Course Advisor Chatbot (RAG)</h3>
+                    <p><strong>Date:</strong> 05/2025 | <strong>Type:</strong> Hackathon Project</p>
+                    <p>Led a winning team to design an AI-powered chatbot using Retrieval-Augmented Generation (RAG) to advise students on university course selection. Implemented NLP techniques to process user queries and retrieve relevant information,
+                        streamlining the academic advisory process.</p>
+                    <p><strong>Technologies:</strong> Python, LangChain, OpenAI API, Vector Databases, NLP</p>
+                </div>
+
+                <div class="project">
+                    <h3>EduRoutes: School Transportation Optimization Platform</h3>
+                    <p><strong>Date:</strong> 04/2025 – Present | <strong>Type:</strong> Academic Project</p>
+                    <p>Developed a data-driven platform using geospatial data and machine learning to model and optimize school transportation routes in Nairobi. Leveraged Python and mapping APIs to design safer and more efficient routes, aiming to reduce
+                        average student commute times. The project directly supported UN Sustainable Development Goals for Quality Education and Sustainable Cities.</p>
+                    <p><strong>Technologies:</strong> Python, Geospatial Analysis, Machine Learning, Mapping APIs</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Skills</h2>
+                <p><strong>Programming & Libraries:</strong> Python, SQL, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn</p>
+                <p><strong>ML & AI:</strong> Random Forest, Logistic Regression, Gradient Boosting, Time-Series Analysis, Natural Language Processing (NLP), Retrieval-Augmented Generation (RAG), Feature Engineering</p>
+                <p><strong>Tools & Platforms:</strong> Git, Jupyter Notebook, AWS (S3, EC2), Jira, AutoCAD</p>
+                <p><strong>Soft Skills:</strong> Problem-Solving, Analytical Thinking, Cross-Functional Collaboration, Clear Communication, Remote Collaboration</p>
+            </section>
+        </div>
     </div>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <p>
-      Passionate Data Science and Machine Learning professional with experience in predictive modeling, cloud (AWS), and visualization. I specialize in delivering actionable insights and AI-driven solutions.
-    </p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>1. EduRoutes – School Transportation Optimization</h3>
-      <p>Built a data-driven platform to streamline school transportation in Nairobi. Leveraged geospatial data and ML to design safer, shorter, and efficient routes aligned with SDG 4 & 11.</p>
-      <a class="btn" href="https://github.com/BONAONDIERE/eduroutes">GitHub Repo</a>
-    </div>
-
-    <div class="project">
-      <h3>2. Airline Fare Prediction</h3>
-      <p>Developed a machine learning solution to forecast airline fares using historical data and market trends. Applied ensemble models (Random Forest, XGBoost, CatBoost), time-series features, and a Streamlit app for real-time prediction.</p>
-      <a class="btn" href="https://github.com/BONAONDIERE/airfare-fare-prediction">GitHub Repo</a>
-      <a class="btn" href="#">Live Demo (Coming Soon)</a>
-    </div>
-
-    <div class="project">
-      <h3>3. KUCCPS Course Advisor Bot</h3>
-      <p>Created an AI-powered course advisor using Retrieval-Augmented Generation (RAG) to guide Kenyan students through course selection. Built during the World Bank-sponsored THiNK Botathon.</p>
-      <a class="btn" href="https://github.com/BONAONDIERE/kuccps-bot">GitHub Repo</a>
-    </div>
-  </section>
-
-  <section>
-    <h2>Connect</h2>
-    <p>
-      📧 bonareriondiere@gmail.com <br>
-      💼 <a href="https://linkedin.com/in/ruth-ondiere-254009198" target="_blank">LinkedIn</a> | 
-      💻 <a href="https://github.com/BONAONDIERE" target="_blank">GitHub</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Ruth Ondiere. All rights reserved.</p>
-  </footer>
-
-  <script>
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme');
-      document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
-    }
-  </script>
 </body>
+
 </html>
