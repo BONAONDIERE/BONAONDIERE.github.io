@@ -12,7 +12,7 @@
 *Developed a data-driven platform using geospatial data and machine learning to model and optimize school transportation routes in Nairobi. Leveraged Python and mapping APIs to design safer and more efficient routes, aiming to reduce average student commute times. The project directly supports UN Sustainable Development Goals for Quality Education and Sustainable Cities.*
 - **Tech:** Python, Geospatial Analysis, Machine Learning, Mapping APIs
 
-### [Predicting Airline Fares with Machine Learning](https://github.com/BONAONDIERE/airline-project-link)
+### [Predicting Airline Fares with Machine Learning](https://github.com/BONAONDIERE/airline-fare-prediction)
 *Engineered a predictive model to forecast airline ticket prices utilizing historical data and market trends. Applied and compared multiple regression algorithms and time-series analysis. Improved model performance through comprehensive feature engineering and hyperparameter tuning.*
 - **Tech:** Python, Pandas, Scikit-learn, Matplotlib, Seaborn, Time-Series Analysis
 
