@@ -2,7 +2,7 @@
 
 Welcome to my professional portfolio showcasing my work in Data Science, Machine Learning, and AI.
 
-🔗 **Live Site**: [bonaondiere.github.io/ruth-portfolio](https://bonaondiere.github.io/ruth-portfolio/)
+🔗 Live Site: https://BONAONDIERE.github.io
 
 ---
 
