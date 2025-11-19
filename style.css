@@ -497,9 +497,19 @@ footer {
 }
 
 .project-image {
+    height: 200px;
+    overflow: hidden;
     position: relative;
 }
 
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Add dark overlay for better text readability */
 .project-image::before {
     content: '';
     position: absolute;
@@ -507,12 +517,17 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
     z-index: 1;
 }
 
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* Make sure project content stands out */
 .project-content h3 {
-    color: #1f2937;
-    position: relative;
-    z-index: 2;
+    color: #1f2937; /* Dark gray for better contrast */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
