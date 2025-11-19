@@ -529,3 +529,12 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
 }
+.project-link.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.project-link.disabled:hover {
+    transform: none;
+    color: inherit;
+}
