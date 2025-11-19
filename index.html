@@ -1,224 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruth Ondiere - Data Scientist</title>
-    <style>
-        /* Modern Color Scheme and Base Styles */
-        
-         :root {
-            --primary-color: #0056b3;
-            /* A professional blue */
-            --secondary-color: #6c757d;
-            /* A neutral gray */
-            --accent-color: #ff6b6b;
-            /* A subtle accent color */
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-            --success-color: #28a745;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* Header and Navigation */
-        
-        header {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        header h1 {
-            margin-bottom: 0.5rem;
-            font-size: 2.5rem;
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        /* Contact Info */
-        
-        .contact-info {
-            text-align: center;
-            margin: -1rem 0 2rem 0;
-            padding: 1rem;
-            background-color: var(--light-color);
-            border-radius: 5px;
-        }
-        
-        .contact-info a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        /* Sections */
-        
-        .section {
-            margin: 2rem 0;
-        }
-        
-        .section h2 {
-            color: var(--primary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--light-color);
-        }
-        /* Projects and Jobs */
-        
-        .project,
-        .job {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: var(--light-color);
-            border-left: 4px solid var(--primary-color);
-            border-radius: 0 5px 5px 0;
-        }
-        
-        .project h3,
-        .job h3 {
-            color: var(--dark-color);
-        }
-        
-        .project p,
-        .job p {
-            margin-bottom: 0.5rem;
-        }
-        
-        .project strong,
-        .job strong {
-            color: var(--secondary-color);
-        }
-        /* Skills List */
-        
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .skill-category {
-            flex: 1;
-            min-width: 250px;
-            background: var(--light-color);
-            padding: 1rem;
-            border-radius: 5px;
-        }
-        
-        .skill-category h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        /* Responsive Design for Mobile */
-        
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            .skills-container {
-                flex-direction: column;
-            }
-            .container {
-                width: 95%;
-            }
-        }
-        
-        .project-link {
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        .project-link:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-    </style>
+    <title>Ruth Ondiere - Data Scientist & ML Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        <h1>Ruth Ondiere</h1>
-        <p>Data Scientist & ML Engineer</p>
-    </header>
-
-    <div class="container">
-        <div class="contact-info">
-            <p>Nairobi, Kenya | +254705616648 | bonareriondiere@gmail.com | <a href="https://linkedin.com/in/ruth-ondiere-254009198">LinkedIn</a></p>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Ruth Ondiere</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="content">
-            <section class="section">
-                <h2>Summary</h2>
-                <p>Driven Data Scientist and ML/AI Engineer with 2 years of hands-on experience in IoT and electrical engineering. Skilled in diagnosing and resolving technical issues while enhancing product features to boost customer satisfaction. Proven
-                    success in developing user training programs and supporting data reporting initiatives that drive continuous improvement. Committed to leveraging expertise in machine learning and data analytics to contribute significantly to innovative
-                    projects in technology.</p>
-            </section>
-
-            <section class="section">
-                <h2>Projects</h2>
-
-                <div class="project">
-                    <h3><a href="https://github.com/BONAONDIERE/airline-fare-prediction" target="_blank" class="project-link">Predicting Airline Fares with Machine Learning</a></h3>
-                    <p><strong>Date:</strong> 06/2025 – 08/2025 | <strong>Type:</strong> Personal Project</p>
-                    <p>Engineered a predictive model using Python (Pandas, Scikit-learn) to forecast airline ticket prices, utilizing historical data and market trends. Applied and compared multiple regression algorithms and time-series analysis to identify
-                        key factors influencing price volatility. Improved model performance through comprehensive feature engineering and hyperparameter tuning. Visualized results and trends with Matplotlib and Seaborn to provide actionable, data-driven
-                        insights for cost-saving decisions.</p>
-                    <p><strong>Technologies:</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn, Time-Series Analysis</p>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Ruth Ondiere</h1>
+                <h2>Data Scientist & Machine Learning Engineer</h2>
+                <p>Building intelligent data-driven solutions with Python, ML, and AI</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
-
-                <div class="project">
-                    <h3><a href="https://github.com/BONAONDIERE/kuccps-chatbot" target="_blank" style="color: inherit; text-decoration: none;">KUCCPS Course Advisor Chatbot (RAG)</a></h3>
-                    <p><strong>Date:</strong> 05/2025 | <strong>Type:</strong> Hackathon Project (Winning Team)</p>
-                    <p>Led a winning team to design an AI-powered chatbot using Retrieval-Augmented Generation (RAG) to advise students on university course selection. Implemented NLP techniques to process user queries and retrieve relevant information,
-                        streamlining the academic advisory process.</p>
-                    <p><strong>Technologies:</strong> Python, LangChain, OpenAI API, Vector Databases, NLP</p>
-                    <p><em>Code repository coming soon.</em></p>
+                <div class="hero-social">
+                    <a href="https://github.com/BONAONDIERE" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/ruth-ondiere-254009198" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:bonareriondiere@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
-
-                <div class="project">
-                    <h3>EduRoutes: School Transportation Optimization Platform</h3>
-                    <p><strong>Date:</strong> 04/2025 – Present | <strong>Type:</strong> Academic Project</p>
-                    <p>Developed a data-driven platform using geospatial data and machine learning to model and optimize school transportation routes in Nairobi. Leveraged Python and mapping APIs to design safer and more efficient routes, aiming to reduce
-                        average student commute times. The project directly supported UN Sustainable Development Goals for Quality Education and Sustainable Cities.</p>
-                    <p><strong>Technologies:</strong> Python, Geospatial Analysis, Machine Learning, Mapping APIs</p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Skills</h2>
-                <p><strong>Programming & Libraries:</strong> Python, SQL, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn</p>
-                <p><strong>ML & AI:</strong> Random Forest, Logistic Regression, Gradient Boosting, Time-Series Analysis, Natural Language Processing (NLP), Retrieval-Augmented Generation (RAG), Feature Engineering</p>
-                <p><strong>Tools & Platforms:</strong> Git, Jupyter Notebook, AWS (S3, EC2), Jira, AutoCAD</p>
-                <p><strong>Soft Skills:</strong> Problem-Solving, Analytical Thinking, Cross-Functional Collaboration, Clear Communication, Remote Collaboration</p>
-            </section>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Data Scientist and Machine Learning Engineer with 2+ years of experience specializing in building and deploying end-to-end AI solutions. Proven ability to develop predictive models and data-driven systems, demonstrated through IoT engineering experience and award-winning hackathon projects.</p>
+                    <p>Passionate about using data to solve real-world challenges, particularly those impacting African communities through sustainable technology solutions.</p>
+                </div>
+                <div class="about-skills">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Programming</h4>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Machine Learning</h4>
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Computer Vision</span>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools & Platforms</h4>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">Chatbot Interface</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI-Powered Course Advisor Chatbot</h3>
+                        <p>Retrieval-Augmented Generation system using NLP techniques and OpenAI API. Implemented vector databases and similarity search for efficient information retrieval.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Vector DB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                        <div class="project-badge">Hackathon Winner</div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">Price Prediction Dashboard</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Airline Fare Prediction Engine</h3>
+                        <p>End-to-end machine learning pipeline using regression algorithms and time-series analysis to forecast ticket prices. Improved prediction accuracy by 22% through feature engineering.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Time Series</span>
+                            <span class="tech-tag">Data Visualization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">Route Optimization Map</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>EduRoutes: Transportation Optimization</h3>
+                        <p>Data-driven platform using geospatial data and machine learning to optimize school transportation routes in Nairobi. Supports UN Sustainable Development Goals.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Geospatial</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Optimization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>IoT Engineer Intern & Technical Customer Associate</h3>
+                    <span class="experience-date">Sep 2023 - Present</span>
+                </div>
+                <div class="experience-company">Hello Tractor, Nairobi, Kenya</div>
+                <ul class="experience-details">
+                    <li>Developed and analyzed IoT data systems, processing sensor data to generate actionable insights</li>
+                    <li>Built automated monitoring and reporting tools that reduced issue identification time by 30%</li>
+                    <li>Collaborated with cross-functional teams to implement data-driven product enhancements</li>
+                    <li>Created training programs for 100+ clients, improving product adoption and customer satisfaction</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm currently looking for new remote opportunities in data science and machine learning. Feel free to reach out!</p>
+                    <div class="contact-links">
+                        <a href="mailto:bonareriondiere@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            bonareriondiere@gmail.com
+                        </a>
+                        <a href="tel:+254705616648" class="contact-link">
+                            <i class="fas fa-phone"></i>
+                            +254 705 616 648
+                        </a>
+                        <a href="https://linkedin.com/in/ruth-ondiere-254009198" class="contact-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ruth Ondiere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
