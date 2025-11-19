@@ -495,3 +495,24 @@ footer {
 .project-card:hover .project-image img {
     transform: scale(1.05);
 }
+
+.project-image {
+    position: relative;
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+    z-index: 1;
+}
+
+.project-content h3 {
+    color: #1f2937;
+    position: relative;
+    z-index: 2;
+}
