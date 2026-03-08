@@ -5,94 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruth Ondiere - Data Scientist & ML Engineer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
-    <style>
-        /* ===== FULL CSS ===== */
-
-        /* RESET */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333; background: #f5f7fb; }
-
-        /* NAVBAR */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 8%; background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        nav .nav-logo { font-weight: 700; font-size: 1.3rem; }
-        nav ul { display: flex; list-style: none; gap: 2rem; justify-content: flex-end; }
-        nav a { text-decoration: none; color: #4f46e5; font-weight: 600; }
-        nav a:hover { opacity: 0.8; }
-
-        /* HERO SECTION */
-        #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: #e8f0fe; padding: 2rem; }
-        .hero-container { max-width: 900px; margin: auto; }
-        .hero-photo { display: flex; justify-content: center; margin-bottom: 1.5rem; }
-        .hero-photo img { width: 190px; height: 190px; border-radius: 50%; object-fit: cover; border: 6px solid white; background: #f0f2f5; padding: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
-        .hero-content h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
-        .hero-content h2 { font-size: 1.4rem; font-weight: 500; color: #555; margin-bottom: 1rem; }
-        .hero-content p { font-size: 1.1rem; color: #666; margin-bottom: 2rem; }
-        .hero-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-        .btn { padding: 0.7rem 1.4rem; border-radius: 6px; text-decoration: none; font-weight: 600; border: 2px solid #4f46e5; transition: 0.3s; }
-        .btn-primary { background: #4f46e5; color: white; }
-        .btn-primary:hover { background: #4338ca; }
-        .btn-secondary { color: #4f46e5; background: transparent; }
-        .btn-secondary:hover { background: #4f46e5; color: white; }
-
-        /* GENERAL SECTIONS */
-        section { padding: 4rem 10%; }
-        section h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #4f46e5; }
-
-        /* ABOUT */
-        #about { background: white; text-align: center; }
-        .about-text p { max-width: 700px; margin: auto; color: #555; margin-bottom: 1rem; }
-
-        /* SKILLS GRID */
-        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; justify-items: center; }
-        .skill-category { background: #f7f8fc; padding: 1.2rem 1rem; border-radius: 12px; width: 100%; min-height: 180px; text-align: center; box-shadow: 0 6px 14px rgba(0,0,0,0.05); }
-        .skill-category h4 { margin-bottom: 0.8rem; color: #4f46e5; }
-        .skill-tag { display: inline-block; background: #4f46e5; color: white; padding: 0.3rem 0.6rem; border-radius: 6px; margin: 0.3rem 0.2rem; font-size: 0.85rem; }
-
-        /* PROJECTS */
-        #projects { background: white; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.5rem; align-items: stretch; }
-        .project-card { background: #f7f8fc; border-radius: 12px; box-shadow: 0 6px 14px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; min-height: 420px; transition: transform 0.3s; }
-        .project-card:hover { transform: translateY(-6px); }
-        .project-image img { width: 100%; height: 180px; object-fit: cover; }
-        .project-content { padding: 1rem 1.2rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .project-content h3 { margin: 0.5rem 0; }
-        .project-content p { flex-grow: 1; font-size: 0.95rem; color: #555; margin-bottom: 1rem; }
-        .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-        .tech-tag { background: #4f46e5; color: white; padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.8rem; }
-        .project-links { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .project-links a { text-decoration: none; font-size: 0.9rem; font-weight: 600; color: #4f46e5; }
-        .project-card .disabled { pointer-events: none; opacity: 0.5; }
-
-        /* EXPERIENCE */
-        #experience { background: #f0f2f5; }
-        .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .experience-card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 6px 14px rgba(0,0,0,0.05); }
-        .experience-card h3 { color: #4f46e5; margin-bottom: 0.3rem; }
-        .experience-card p { font-weight: 500; font-size: 0.9rem; color: #555; margin-bottom: 0.8rem; }
-        .experience-card ul { list-style: disc; padding-left: 1.2rem; color: #555; }
-
-        /* CONTACT */
-        #contact { background: #e8f0fe; text-align: center; }
-        .contact-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .contact-card { background: white; border-radius: 12px; padding: 2rem 1rem; text-decoration: none; color: #333; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 6px 14px rgba(0,0,0,0.08); transition: 0.3s; }
-        .contact-card:hover { transform: translateY(-6px); box-shadow: 0 12px 22px rgba(0,0,0,0.15); color: #4f46e5; }
-        .contact-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-        .contact-card p { font-weight: 600; }
-
-        /* FOOTER */
-        footer { text-align: center; padding: 1.5rem; background: #222; color: white; font-size: 0.9rem; }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .hero-content h2 { font-size: 1.2rem; }
-            .hero-buttons { flex-direction: column; align-items: center; }
-            nav ul { display: none; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .projects-grid, .experience-grid, .contact-links { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -100,7 +13,7 @@
     <nav id="navbar">
         <div class="nav-logo">Ruth Ondiere</div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
+            <li><a href="#about">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -124,12 +37,14 @@
 
     <!-- ABOUT -->
     <section id="about">
+        <h2>About Me</h2>
         <div class="about-text">
             <p>Data Scientist and Machine Learning Engineer with 2+ years of experience specializing in building and deploying end-to-end AI solutions. Proven ability to develop predictive models and data-driven systems, demonstrated through IoT engineering experience and award-winning hackathon projects.</p>
             <p>Passionate about using data to solve real-world challenges, particularly those impacting African communities through sustainable technology solutions.</p>
         </div>
 
         <!-- TECHNICAL SKILLS -->
+        <h2>Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-category">
                 <h4>Programming</h4>
@@ -247,7 +162,7 @@
                 </div>
             </div>
 
-                        <!-- Phones Dashboard -->
+            <!-- Phones Dashboard -->
             <div class="project-card">
                 <div class="project-image"><img src="https://images.unsplash.com/photo-1512499617640-c2f999a46e7a?w=600&h=400&fit=crop" alt="Phones Dashboard"></div>
                 <div class="project-content">
@@ -310,29 +225,12 @@
         <h2>Experience</h2>
         <div class="experience-grid">
             <div class="experience-card">
-                <h3>Data Scientist Intern - XYZ Analytics</h3>
-                <p>June 2022 – Dec 2022</p>
+                <h3>Data Scientist Intern - Hello Tractor</h3>
+                <p>Jan 2023 – Present</p>
                 <ul>
-                    <li>Built predictive models using Python and Scikit-learn to optimize customer churn analysis.</li>
-                    <li>Created dashboards in Tableau to visualize key metrics for internal stakeholders.</li>
-                    <li>Worked with SQL and ETL pipelines to extract and clean large datasets.</li>
-                </ul>
-            </div>
-            <div class="experience-card">
-                <h3>IoT Engineer - ABC Innovations</h3>
-                <p>Jan 2021 – May 2022</p>
-                <ul>
-                    <li>Developed IoT solutions to monitor and collect sensor data from remote devices.</li>
-                    <li>Implemented data pipelines and predictive models to identify maintenance needs.</li>
-                    <li>Collaborated with cross-functional teams to deliver end-to-end solutions.</li>
-                </ul>
-            </div>
-            <div class="experience-card">
-                <h3>Hackathon Winner - Nairobi AI Challenge</h3>
-                <p>Nov 2021</p>
-                <ul>
-                    <li>Led a team to build an AI-powered traffic prediction system.</li>
-                    <li>Won first place among 20 teams for innovation and technical excellence.</li>
+                    <li>Worked on predictive maintenance and fleet optimization using IoT data.</li>
+                    <li>Built ML pipelines and dashboards to improve farm machinery efficiency.</li>
+                    <li>Collaborated with cross-functional teams on AI-powered agricultural solutions.</li>
                 </ul>
             </div>
         </div>
