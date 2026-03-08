@@ -210,7 +210,7 @@ section {
 /* About Section */
 .about-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1.5fr; /* balanced columns */
     gap: 3rem;
     align-items: start;
 }
@@ -227,8 +227,8 @@ section {
 }
 
 .skills-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* split skills into 2 columns on desktop */
     gap: 2rem;
 }
 
@@ -309,10 +309,31 @@ section {
     opacity: 1;
 }
 
+.project-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 1.5rem 0; /* consistent spacing */
+}
+
+.project-badge {
+    padding: 0.35rem 0.85rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+.project-badge.blue { background: #2563eb; }
+.project-badge.green { background: #10b981; }
+.project-badge.orange { background: #f59e0b; }
+
+/* Project Content */
 .project-content {
     padding: 1.5rem;
     background: white;
-    min-height: 220px; /* ensures badges fit */
+    min-height: 220px;
 }
 
 .project-content h3 {
@@ -363,26 +384,6 @@ section {
 .project-link:hover {
     color: var(--secondary-color);
 }
-
-.project-badges {
-    display: flex;
-    flex-wrap: wrap; /* allow badges to wrap */
-    gap: 0.5rem;
-    margin-bottom: 1rem; /* space between badges and title */
-}
-
-.project-badge {
-    padding: 0.35rem 0.85rem;
-    border-radius: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: white;
-    white-space: nowrap; /* keep badge text in one line */
-}
-
-.project-badge.blue { background: #2563eb; }
-.project-badge.green { background: #10b981; }
-.project-badge.orange { background: #f59e0b; }
 
 .project-link.disabled {
     opacity: 0.6;
@@ -507,6 +508,10 @@ footer {
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
     .projects-grid {
