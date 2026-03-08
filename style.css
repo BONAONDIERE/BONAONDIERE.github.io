@@ -314,37 +314,39 @@ body {
 }
 
 /* =========================
-   CONTACT / GET IN TOUCH SECTION
+   GET IN TOUCH / CONTACT SECTION
 ========================= */
-#contact {
+#get-in-touch {
     padding: 4rem 2rem;
     background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
     text-align: center;
+    border-radius: 1rem;
+    margin-top: 4rem;
 }
 
-#contact h2 {
+#get-in-touch h2 {
     font-size: 2rem;
     color: #1e40af;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
-#contact p {
-    margin-bottom: 2rem;
+#get-in-touch p {
     color: #374151;
+    font-size: 1.05rem;
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
     line-height: 1.6;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.contact-links {
+#get-in-touch .contact-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.contact-links a {
+#get-in-touch .contact-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -356,32 +358,26 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    flex: 1 1 200px;
-}
-
-.contact-links a.btn-primary {
+    flex: 1 1 180px;
     background-color: #2563eb;
     color: #ffffff;
 }
 
-.contact-links a.btn-primary:hover {
+#get-in-touch .contact-links a:hover {
     background-color: #1e40af;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-.contact-links a.btn-secondary {
+#get-in-touch .contact-links a.secondary {
     background-color: #10b981;
-    color: #ffffff;
 }
 
-.contact-links a.btn-secondary:hover {
+#get-in-touch .contact-links a.secondary:hover {
     background-color: #059669;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-.contact-links a i {
+#get-in-touch .contact-links a i {
     font-size: 1.1rem;
 }
 
@@ -389,28 +385,14 @@ body {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-    }
-
-    .projects-grid, .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .contact-links {
+    #get-in-touch .contact-links {
         flex-direction: column;
         align-items: center;
     }
 
-    .contact-links a {
+    #get-in-touch .contact-links a {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
         justify-content: center;
     }
 }
