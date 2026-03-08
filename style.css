@@ -109,4 +109,17 @@ footer { text-align: center; padding: 1.5rem; background: #222; color: white; fo
 
 /* SCROLL ANIMATIONS */
 @keyframes fadeUp { 0% { opacity: 0; transform: translateY(20px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
-.project-card, .skill-category, .contact-card { opacity:
+.project-card, .skill-category, .contact-card { opacity: 0; transform: translateY(20px) scale(0.98); animation: fadeUp 0.8s ease forwards; }
+.project-card:nth-child(1){animation-delay:0.1s;} .project-card:nth-child(2){animation-delay:0.2s;} .project-card:nth-child(3){animation-delay:0.3s;}
+.skill-category:nth-child(1){animation-delay:0.1s;} .skill-category:nth-child(2){animation-delay:0.2s;} .skill-category:nth-child(3){animation-delay:0.3s;}
+.contact-card:nth-child(1){animation-delay:0.1s;} .contact-card:nth-child(2){animation-delay:0.2s;} .contact-card:nth-child(3){animation-delay:0.3s;} .contact-card:nth-child(4){animation-delay:0.4s;}
+
+/* MOBILE */
+@media (max-width:768px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content h2 { font-size: 1.2rem; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+    nav ul { display: none; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+}
