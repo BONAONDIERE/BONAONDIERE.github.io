@@ -212,7 +212,7 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    align-items: stretch;
+    align-items: stretch; /* ensures all cards stretch to same height */
 }
 
 .project-card {
@@ -222,8 +222,8 @@ section h2 {
     box-shadow: 0 6px 14px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 500px; /* make all cards same height */
+    justify-content: space-between; /* spreads content evenly */
+    min-height: 500px; /* makes all cards same height */
 }
 
 .project-card h3 {
@@ -234,8 +234,8 @@ section h2 {
     font-size: 0.95rem;
     color: #555;
     margin-bottom: 1rem;
-    flex-grow: 1; /* make descriptions grow equally */
-    overflow: hidden; /* hide overflow if necessary */
+    flex-grow: 1; /* makes description area flexible */
+    overflow-wrap: break-word;
 }
 
 .project-image img {
