@@ -194,8 +194,9 @@ background: white;
 
 .projects-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 gap: 1.5rem;
+align-items: stretch;
 }
 
 .project-card {
@@ -203,11 +204,10 @@ background: #f7f8fc;
 padding: 1.5rem;
 border-radius: 10px;
 box-shadow: 0 6px 14px rgba(0,0,0,0.05);
-transition: 0.3s;
-}
-
-.project-card:hover {
-transform: translateY(-5px);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+min-height: 220px;
 }
 
 .project-card h3 {
@@ -218,11 +218,13 @@ margin-bottom: 0.5rem;
 font-size: 0.95rem;
 color: #555;
 margin-bottom: 1rem;
+flex-grow: 1;
 }
 
 .project-links {
 display: flex;
 gap: 1rem;
+margin-top: auto;
 }
 
 .project-links a {
@@ -235,7 +237,7 @@ color: #4f46e5;
 /* CONTACT SECTION */
 
 #contact {
-background: #ADD8E6;
+background: #e8f0fe;
 text-align: center;
 }
 
@@ -308,4 +310,11 @@ nav ul {
 display: none;
 }
 
+}
+
+section h2 {
+text-align: center;
+font-size: 2rem;
+margin-bottom: 2rem;
+color: #4f46e5;
 }
