@@ -210,7 +210,7 @@ section {
 /* About Section */
 .about-content {
     display: grid;
-    grid-template-columns: 1.5fr 1.5fr; /* balanced columns */
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: start;
 }
@@ -227,8 +227,8 @@ section {
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* split skills into 2 columns on desktop */
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
@@ -255,21 +255,22 @@ section {
     gap: 2rem;
 }
 
+/* Unified Project Card Styles */
 .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: white;
     border-radius: 1rem;
-    overflow: visible; /* allow badges to show */
+    overflow: visible;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border);
     position: relative;
+    min-height: 100%; /* ensures equal height if grid auto-stretch is used */
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
-}
-
+/* Project Image */
 .project-image {
     height: 200px;
     overflow: hidden;
@@ -288,7 +289,6 @@ section {
     filter: brightness(1.05);
 }
 
-/* Dashboard Overlay */
 .project-image::after {
     content: "View Dashboard";
     position: absolute;
@@ -309,35 +309,18 @@ section {
     opacity: 1;
 }
 
-.project-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 1.5rem 0; /* consistent spacing */
-}
-
-.project-badge {
-    padding: 0.35rem 0.85rem;
-    border-radius: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: white;
-    white-space: nowrap;
-}
-
-.project-badge.blue { background: #2563eb; }
-.project-badge.green { background: #10b981; }
-.project-badge.orange { background: #f59e0b; }
-
 /* Project Content */
 .project-content {
     padding: 1.5rem;
     background: white;
-    min-height: 220px;
+    flex: 1; /* stretch to equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-content h3 {
-    color: #1f2937;
+    color: var(--text-color);
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 700;
@@ -346,7 +329,7 @@ section {
 
 .project-content p {
     color: #4b5563;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.6;
 }
 
@@ -385,6 +368,27 @@ section {
     color: var(--secondary-color);
 }
 
+.project-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-badge {
+    padding: 0.35rem 0.85rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+.project-badge.blue { background: #2563eb; }
+.project-badge.green { background: #10b981; }
+.project-badge.orange { background: #f59e0b; }
+
+/* Disabled Links */
 .project-link.disabled {
     opacity: 0.6;
     cursor: not-allowed;
@@ -487,40 +491,20 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1.25rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
+@media (max-width: 1024px) {
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .about-skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
-    }
-
-    .experience-header {
-        flex-direction: column;
-        gap: 0.5rem;
     }
 
     .hero-photo img {
@@ -528,9 +512,13 @@ footer {
         height: 150px;
     }
 
-    .about-skills {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
