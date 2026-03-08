@@ -314,13 +314,27 @@ body {
 }
 
 /* =========================
-   CONTACT SECTION
+   CONTACT / GET IN TOUCH SECTION
 ========================= */
-#contact p {
+#contact {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    color: #1e40af;
     margin-bottom: 1rem;
+}
+
+#contact p {
+    margin-bottom: 2rem;
     color: #374151;
     line-height: 1.6;
-    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-links {
@@ -333,12 +347,16 @@ body {
 .contact-links a {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    font-size: 1rem;
     text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex: 1 1 200px;
 }
 
 .contact-links a.btn-primary {
@@ -348,6 +366,8 @@ body {
 
 .contact-links a.btn-primary:hover {
     background-color: #1e40af;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .contact-links a.btn-secondary {
@@ -357,6 +377,12 @@ body {
 
 .contact-links a.btn-secondary:hover {
     background-color: #059669;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.contact-links a i {
+    font-size: 1.1rem;
 }
 
 /* =========================
@@ -375,5 +401,16 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-links a {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
     }
 }
