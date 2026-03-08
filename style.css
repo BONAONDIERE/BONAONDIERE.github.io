@@ -519,3 +519,22 @@ footer {
         gap: 1rem;
     }
 }
+
+.project-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem; /* space between badges and title */
+}
+
+.project-badge {
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+
+.project-badge.blue { background: #2563eb; }
+.project-badge.green { background: #10b981; }
+.project-badge.orange { background: #f59e0b; }
