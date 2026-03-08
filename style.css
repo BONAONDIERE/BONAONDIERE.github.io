@@ -258,7 +258,7 @@ section {
 .project-card {
     background: white;
     border-radius: 1rem;
-    overflow: hidden;
+    overflow: visible; /* allow badges to show */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border);
@@ -312,6 +312,7 @@ section {
 .project-content {
     padding: 1.5rem;
     background: white;
+    min-height: 220px; /* ensures badges fit */
 }
 
 .project-content h3 {
@@ -346,6 +347,7 @@ section {
 .project-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .project-link {
@@ -362,17 +364,25 @@ section {
     color: var(--secondary-color);
 }
 
+.project-badges {
+    display: flex;
+    flex-wrap: wrap; /* allow badges to wrap */
+    gap: 0.5rem;
+    margin-bottom: 1rem; /* space between badges and title */
+}
+
 .project-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: #10b981;
-    color: white;
     padding: 0.35rem 0.85rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     font-size: 0.75rem;
     font-weight: 600;
+    color: white;
+    white-space: nowrap; /* keep badge text in one line */
 }
+
+.project-badge.blue { background: #2563eb; }
+.project-badge.green { background: #10b981; }
+.project-badge.orange { background: #f59e0b; }
 
 .project-link.disabled {
     opacity: 0.6;
@@ -519,22 +529,3 @@ footer {
         gap: 1rem;
     }
 }
-
-.project-badges {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem; /* space between badges and title */
-}
-
-.project-badge {
-    padding: 0.3rem 0.7rem;
-    border-radius: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: white;
-}
-
-.project-badge.blue { background: #2563eb; }
-.project-badge.green { background: #10b981; }
-.project-badge.orange { background: #f59e0b; }
