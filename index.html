@@ -1,304 +1,396 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ruth Ondiere - Data Scientist & ML Engineer</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<!-- Navigation -->
-<nav id="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">Ruth Ondiere</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f7fb;
+}
 
-<!-- Hero Section -->
-<section id="hero">
-    <div class="hero-container">
-        <div class="hero-photo">
-            <img src="ruth_photo.jpg" alt="Ruth Ondiere - Data Scientist & ML Engineer">
-        </div>
-        <div class="hero-content">
-            <h1>Ruth Ondiere</h1>
-            <h2>Data Scientist & Machine Learning Engineer</h2>
-            <p>Building intelligent data-driven solutions with Python, ML, and AI</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                <a href="RUTH ONDIERE_resume.latest update (1).pdf" class="btn btn-secondary" download>Download Resume</a>
-            </div>
-            <div class="hero-social">
-                <a href="https://github.com/BONAONDIERE" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/ruth-ondiere-254009198" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:bonareriondiere@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-<!-- About Section -->
-<section id="about">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-text">
-            <p>Data Scientist and Machine Learning Engineer with 2+ years of experience specializing in building and deploying end-to-end AI solutions. Proven ability to develop predictive models and data-driven systems, demonstrated through IoT engineering experience and award-winning hackathon projects.</p>
-            <p>Passionate about using data to solve real-world challenges, particularly those impacting African communities through sustainable technology solutions.</p>
-        </div>
+nav .nav-logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
 
-        <!-- Technical Skills -->
-        <h3 class="section-title">Technical Skills</h3>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h4>Programming</h4>
-                <span class="skill-tag">Python (NumPy, Pandas)</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">ETL</span>
-                <span class="skill-tag">Statistical Analysis</span>
-                <span class="skill-tag">Data Mining</span>
-            </div>
-            <div class="skill-category">
-                <h4>Machine Learning</h4>
-                <span class="skill-tag">Scikit-learn</span>
-                <span class="skill-tag">TensorFlow</span>
-                <span class="skill-tag">PyTorch</span>
-                <span class="skill-tag">NLP</span>
-                <span class="skill-tag">Predictive Modeling</span>
-                <span class="skill-tag">Random Forest</span>
-                <span class="skill-tag">XGBoost</span>
-                <span class="skill-tag">Feature Engineering</span>
-            </div>
-            <div class="skill-category">
-                <h4>Tools & Platforms</h4>
-                <span class="skill-tag">Matplotlib</span>
-                <span class="skill-tag">Seaborn</span>
-                <span class="skill-tag">Plotly</span>
-                <span class="skill-tag">Tableau</span>
-                <span class="skill-tag">Power BI</span>
-                <span class="skill-tag">Jupyter Notebooks</span>
-                <span class="skill-tag">REST APIs</span>
-                <span class="skill-tag">AWS (S3, EC2)</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">A/B Testing Frameworks</span>
-                <span class="skill-tag">PySpark</span>
-            </div>
-        </div>
-    </div>
-</section>
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: flex-end;
+}
 
-<!-- Projects Section -->
-<section id="projects">
-    <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
+nav a {
+    text-decoration: none;
+    color: #4f46e5;
+    font-weight: 600;
+}
 
-            <!-- Project 1 -->
-            <div class="project-card" data-badge="Hackathon Winner">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop" alt="AI Chatbot Interface">
-                </div>
-                <div class="project-content">
-                    <h3>AI-Powered Course Advisor Chatbot</h3>
-                    <p>Led development of Retrieval-Augmented Generation system using NLP techniques and OpenAI API. Contributed to vector database architecture and similarity search implementation.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">OpenAI API</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Vector DB</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/BONAONDIERE/kuccps-chatbot" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        <a href="https://bonaondiere.github.io/kuccps-chatbot/demo.html" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    </div>
-                </div>
-            </div>
+nav a:hover {
+    opacity: 0.8;
+}
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Airline Fare Prediction">
-                </div>
-                <div class="project-content">
-                    <h3>Airline Fare Prediction Engine</h3>
-                    <p>End-to-end machine learning pipeline using regression algorithms and time-series analysis to forecast airline ticket prices. Improved prediction accuracy by 22% through feature engineering.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Time Series</span>
-                        <span class="tech-tag">Data Visualization</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/BONAONDIERE/airline-fare-prediction" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        <a href="https://colab.research.google.com/github/BONAONDIERE/airline-fare-prediction/blob/main/airline-fare-prediction-model.ipynb" target="_blank"><i class="fas fa-external-link-alt"></i> Notebook</a>
-                    </div>
-                </div>
-            </div>
+/* HERO SECTION */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #e8f0fe;
+    padding: 2rem;
+}
 
-            <!-- Project 3 -->
-            <div class="project-card" data-badge="In Progress">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=400&fit=crop" alt="EduRoutes">
-                </div>
-                <div class="project-content">
-                    <h3>EduRoutes: Transportation Optimization</h3>
-                    <p>Data-driven platform using geospatial data and machine learning to optimize school transportation routes in Nairobi. <strong>Active group project - supporting UN Sustainable Development Goals.</strong></p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Geospatial</span>
-                        <span class="tech-tag">Machine Learning</span>
-                        <span class="tech-tag">Optimization</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="eduroutes-overview.html"><i class="fas fa-info-circle"></i> Project Details</a>
-                        <a href="#" class="disabled"><i class="fab fa-github"></i> Code Coming Soon</a>
-                    </div>
-                </div>
-            </div>
+.hero-container {
+    max-width: 900px;
+    margin: auto;
+}
 
-            <!-- Project 4 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://public.tableau.com/static/images/SA/SalesPerformanceOverview/1_rss.png" alt="Sales Dashboard">
-                </div>
-                <div class="project-content">
-                    <h3>Sales Dashboard</h3>
-                    <p>Interactive Tableau dashboard analyzing regional sales performance, profitability trends, and key business metrics.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Tableau</span>
-                        <span class="tech-tag">Data Visualization</span>
-                        <span class="tech-tag">Business Intelligence</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://public.tableau.com/app/profile/ruth.ondiere/viz/SalesPerformanceOverview_17720984791300/SalesPerformanceOverview?publish=yes" target="_blank"><i class="fas fa-external-link-alt"></i> View Dashboard</a>
-                    </div>
-                </div>
-            </div>
+.hero-photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
 
-            <!-- Project 5 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://public.tableau.com/static/images/Ph/PhonesPerformanceDashboard/1_rss.png" alt="Phones Dashboard">
-                </div>
-                <div class="project-content">
-                    <h3>Phones Dashboard</h3>
-                    <p>Tableau dashboard analyzing phone sales performance, revenue trends, and customer purchasing behavior.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Tableau</span>
-                        <span class="tech-tag">Analytics</span>
-                        <span class="tech-tag">Dashboard Design</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://public.tableau.com/app/profile/ruth.ondiere/viz/PhonesPerformanceDashboard/PhonesPerformance" target="_blank"><i class="fas fa-external-link-alt"></i> View Dashboard</a>
-                    </div>
-                </div>
-            </div>
+.hero-photo img {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+    background: #f0f2f5;
+    padding: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
-            <!-- Project 6 -->
-            <div class="project-card" data-badge="In Progress">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Credit Risk ML">
-                </div>
-                <div class="project-content">
-                    <h3>Credit Risk ML</h3>
-                    <p>Machine learning model predicting credit risk using classification algorithms and financial data analysis.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python (NumPy, Pandas)</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Classification</span>
-                        <span class="tech-tag">Data Analysis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/BONAONDIERE/credit-risk-scoring" target="_blank"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
 
-            <!-- Project 7 -->
-            <div class="project-card" data-badge="In Progress">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1580166463495-ab4d21922c22?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Titanic ML">
-                </div>
-                <div class="project-content">
-                    <h3>Titanic ML</h3>
-                    <p>Machine learning classification model predicting passenger survival using feature engineering and exploratory data analysis.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python (NumPy, Pandas)</span>
-                        <span class="tech-tag">Machine Learning</span>
-                        <span class="tech-tag">EDA</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/BONAONDIERE/titanic-survival-prediction" target="_blank"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
+.hero-content h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 1rem;
+}
 
-        </div>
-    </div>
-</section>
+.hero-content p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
 
-<!-- Experience Section -->
-<section id="experience">
-    <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-grid">
-            <div class="experience-card">
-                <h3>Data Scientist | IoT Solutions</h3>
-                <p>Company ABC | Nairobi, Kenya | 2023 - Present</p>
-                <ul>
-                    <li>Built predictive maintenance models for IoT devices.</li>
-                    <li>Developed dashboards to monitor device performance.</li>
-                    <li>Collaborated with cross-functional teams to deploy AI models.</li>
-                </ul>
-            </div>
-            <div class="experience-card">
-                <h3>Machine Learning Engineer Intern</h3>
-                <p>Company XYZ | Nairobi, Kenya | 2022</p>
-                <ul>
-                    <li>Implemented ML pipelines for forecasting and classification.</li>
-                    <li>Optimized data preprocessing and feature engineering workflows.</li>
-                    <li>Contributed to internal hackathons with award-winning projects.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+/* HERO BUTTONS */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
 
-<!-- Contact Section -->
-<section id="contact">
-    <h2 class="section-title">Get In Touch</h2>
-    <div class="contact-links">
-        <a href="mailto:bonareriondiere@gmail.com" class="contact-card">
-            <div class="contact-icon">📧</div>
-            <p>Email</p>
-        </a>
-        <a href="https://github.com/BONAONDIERE" target="_blank" class="contact-card">
-            <div class="contact-icon">💻</div>
-            <p>GitHub</p>
-        </a>
-        <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" target="_blank" class="contact-card">
-            <div class="contact-icon">🔗</div>
-            <p>LinkedIn</p>
-        </a>
-        <a href="Ruth_resume.updated.pdf" target="_blank" class="contact-card">
-            <div class="contact-icon">📄</div>
-            <p>Download Resume</p>
-        </a>
-    </div>
-</section>
+.btn {
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #4f46e5;
+    transition: 0.3s;
+}
 
-<footer>
-    <p>© 2026 Bona Ondiere</p>
-</footer>
+.btn-primary {
+    background: #4f46e5;
+    color: white;
+}
 
-</body>
-</html>
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+.btn-secondary {
+    color: #4f46e5;
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+/* GENERAL SECTIONS */
+section {
+    padding: 4rem 10%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #4f46e5;
+}
+
+/* ABOUT */
+#about {
+    background: white;
+    text-align: center;
+}
+
+.about-text p {
+    max-width: 700px;
+    margin: auto;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* SKILLS GRID */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-items: center;
+}
+
+.skill-category {
+    background: #f7f8fc;
+    padding: 1.2rem 1rem;
+    border-radius: 12px;
+    width: 100%;
+    min-height: 180px;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+
+.skill-category h4 {
+    margin-bottom: 0.8rem;
+    color: #4f46e5;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: #4f46e5;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    margin: 0.3rem 0.2rem;
+    font-size: 0.85rem;
+}
+
+/* PROJECTS */
+#projects {
+    background: white;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.project-card {
+    background: #f7f8fc;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 420px;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-content h3 {
+    margin: 0.5rem 0;
+}
+
+.project-content p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    background: #4f46e5;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+.project-card .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* EXPERIENCE */
+#experience {
+    background: #f0f2f5;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.experience-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+
+.experience-card h3 {
+    color: #4f46e5;
+    margin-bottom: 0.3rem;
+}
+
+.experience-card p {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.experience-card ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+    color: #555;
+}
+
+/* CONTACT */
+#contact {
+    background: #e8f0fe;
+    text-align: center;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 22px rgba(0,0,0,0.15);
+    color: #4f46e5;
+}
+
+.contact-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+    font-weight: 600;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #222;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    hero-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid, .experience-grid, .contact-links {
+        grid-template-columns: 1fr;
+    }
+}
