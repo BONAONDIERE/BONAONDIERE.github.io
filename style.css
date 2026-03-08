@@ -165,7 +165,7 @@ section h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem; /* spacing between about text and skills */
+    gap: 2rem;
     margin-top: 1rem;
 }
 
@@ -224,13 +224,15 @@ section h2 {
     background: white;
 }
 
+/* PROJECT GRID with equal row heights */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    align-items: stretch; /* ensures all cards stretch to same height */
+    grid-auto-rows: 1fr; /* equal row heights */
 }
 
+/* PROJECT CARD */
 .project-card {
     background: #f7f8fc;
     padding: 1rem 1.5rem;
@@ -238,12 +240,13 @@ section h2 {
     box-shadow: 0 6px 14px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* align content to top */
-    min-height: 500px; /* ensures equal height */
+    justify-content: flex-start;
+    height: 100%; /* fill the grid row */
 }
 
+/* PROJECT IMAGE */
 .project-image {
-    margin-bottom: 0.5rem; /* small space before title */
+    margin-bottom: 0.5rem;
 }
 
 .project-image img {
@@ -253,18 +256,21 @@ section h2 {
     border-radius: 8px;
 }
 
+/* PROJECT TITLE */
 .project-card h3 {
-    margin: 0.3rem 0 0.5rem 0; /* tight to image */
+    margin: 0.3rem 0 0.5rem 0; /* close to image */
 }
 
+/* PROJECT DESCRIPTION */
 .project-card p {
     font-size: 0.95rem;
     color: #555;
-    flex-grow: 1; /* description fills remaining space */
+    flex-grow: 1; /* stretch to fill remaining space */
     margin-bottom: 1rem;
     overflow-wrap: break-word;
 }
 
+/* PROJECT LINKS */
 .project-links {
     display: flex;
     gap: 1rem;
@@ -329,7 +335,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* MOBILE */
+/* MOBILE / RESPONSIVE */
 @media (max-width:1024px) {
     .about-content {
         flex-direction: column;
