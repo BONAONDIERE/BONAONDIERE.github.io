@@ -1,347 +1,952 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruth Ondiere | Data Analyst & ML Engineer</title>
-    <meta name="description" content="Data Analyst skilled in Python, SQL, PySpark, and Tableau. Open to Data Scientist and ML Engineer roles. 2+ years experience with IoT analytics and financial data.">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Ruth Ondiere — Data Analyst. 2+ years building pipelines, dashboards & ML models that cut reporting time 70% and boosted retention 15%. Python · PySpark · SQL · Tableau. Open to remote roles."/>
+<title>Ruth Ondiere · Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#06080F;
+  --bg2:#0C1020;
+  --s1:#101525;
+  --s2:#141B2E;
+  --s3:#1A2238;
+  --b1:rgba(255,255,255,.06);
+  --b2:rgba(255,255,255,.11);
+  --b3:rgba(255,255,255,.18);
+  --t1:#ECEEF6;
+  --t2:#9AA3BC;
+  --t3:#5C6480;
+  --p:#A78BFA;
+  --p2:#7C3AED;
+  --p3:rgba(167,139,250,.15);
+  --g:#10B981;
+  --g2:rgba(16,185,129,.12);
+  --a:#F59E0B;
+  --a2:rgba(245,158,11,.12);
+  --c:#F97316;
+  --bl:#3B82F6;
+  --r:14px;
+  --r2:10px;
+  --r3:8px;
+  --fd:'Bricolage Grotesque',sans-serif;
+  --fb:'Inter',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--t1);
+  font-family:var(--fb);font-size:15px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:rgba(167,139,250,.3);color:#fff}
+
+/* ── NOISE OVERLAY ── */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:.4;
+}
+
+/* ── GRADIENT ORBS ── */
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px)}
+.orb-1{width:600px;height:600px;top:-15%;left:-10%;background:radial-gradient(circle,rgba(124,58,237,.18) 0%,transparent 65%);animation:drift1 20s ease-in-out infinite alternate}
+.orb-2{width:500px;height:500px;bottom:-10%;right:-10%;background:radial-gradient(circle,rgba(16,185,129,.14) 0%,transparent 65%);animation:drift2 25s ease-in-out infinite alternate}
+.orb-3{width:400px;height:400px;top:40%;left:50%;background:radial-gradient(circle,rgba(167,139,250,.08) 0%,transparent 65%);animation:drift3 30s ease-in-out infinite alternate}
+@keyframes drift1{from{transform:translate(0,0)}to{transform:translate(60px,80px)}}
+@keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-80px,-60px)}}
+@keyframes drift3{from{transform:translate(-50%,-50%)}to{transform:translate(calc(-50% + 40px),calc(-50% - 40px))}}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:16px;left:50%;transform:translateX(-50%);
+  z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  width:calc(100% - 48px);max-width:1060px;
+  background:rgba(6,8,15,.75);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:1px solid var(--b2);
+  border-radius:99px;
+  padding:10px 10px 10px 24px;
+}
+.nav-logo{font-family:var(--fd);font-size:16px;font-weight:800;letter-spacing:-.03em;color:var(--t1)}
+.nav-logo em{color:var(--p);font-style:normal}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{
+  font-size:13px;font-weight:500;color:var(--t2);
+  padding:6px 14px;border-radius:99px;
+  transition:all .2s;
+}
+.nav-links a:hover{color:var(--t1);background:var(--b1)}
+.nav-btn{
+  font-size:13px;font-weight:600;
+  padding:9px 22px;border-radius:99px;
+  background:var(--p);color:#fff;
+  border:none;cursor:pointer;transition:all .2s;
+  box-shadow:0 0 20px rgba(167,139,250,.3);
+}
+.nav-btn:hover{background:var(--p2);box-shadow:0 0 28px rgba(167,139,250,.45)}
+
+/* ── HERO ── */
+.hero{
+  position:relative;z-index:1;
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:120px 24px 80px;
+  max-width:1060px;margin:0 auto;
+}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;width:100%}
+.hero-left{}
+
+.available-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--g);
+  background:rgba(16,185,129,.08);
+  border:1px solid rgba(16,185,129,.25);
+  padding:7px 16px;border-radius:99px;
+  margin-bottom:28px;
+}
+.available-tag .dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--g);
+  box-shadow:0 0 10px var(--g);
+  animation:blink 2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero-h1{
+  font-family:var(--fd);
+  font-size:clamp(42px,5.5vw,68px);
+  font-weight:800;line-height:1.04;
+  letter-spacing:-.045em;
+  color:var(--t1);
+  margin-bottom:24px;
+}
+.hero-h1 .grad{
+  background:linear-gradient(135deg,var(--p) 0%,#60A5FA 50%,var(--g) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  background-size:200% 200%;
+  animation:gradShift 6s ease infinite;
+}
+@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+.hero-desc{
+  font-size:17px;color:var(--t2);
+  line-height:1.8;max-width:500px;
+  margin-bottom:36px;
+}
+.hero-desc strong{color:var(--t1);font-weight:600}
+.hero-desc .hi{color:var(--g);font-weight:600}
+
+.hero-stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.stack-pill{
+  font-size:12px;font-weight:500;
+  padding:5px 14px;border-radius:99px;
+  background:var(--s2);border:1px solid var(--b2);
+  color:var(--t2);transition:all .2s;cursor:default;
+}
+.stack-pill:hover{border-color:var(--p);color:var(--p);background:var(--p3)}
+
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px}
+.cta-main{
+  font-size:15px;font-weight:600;
+  padding:14px 32px;border-radius:99px;
+  background:linear-gradient(135deg,var(--p) 0%,var(--p2) 100%);
+  color:#fff;border:none;cursor:pointer;
+  transition:all .25s;display:inline-flex;align-items:center;gap:9px;
+  box-shadow:0 4px 24px rgba(167,139,250,.3);
+}
+.cta-main:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(167,139,250,.45)}
+.cta-sec{
+  font-size:15px;font-weight:500;
+  padding:14px 32px;border-radius:99px;
+  background:transparent;
+  border:1px solid var(--b3);color:var(--t1);
+  cursor:pointer;transition:all .25s;
+  display:inline-flex;align-items:center;gap:9px;
+}
+.cta-sec:hover{border-color:var(--p);color:var(--p);background:var(--p3)}
+
+.hero-metrics{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--b1);
+  border:1px solid var(--b2);
+  border-radius:var(--r);overflow:hidden;
+}
+.metric{
+  background:var(--s1);
+  padding:20px 16px;text-align:center;
+  transition:background .2s;
+}
+.metric:hover{background:var(--s2)}
+.metric-n{
+  font-family:var(--fd);font-size:30px;font-weight:800;
+  line-height:1;margin-bottom:5px;
+  background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,.7) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.metric-n em{
+  font-style:normal;font-size:22px;
+  background:linear-gradient(135deg,var(--p) 0%,var(--g) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.metric-l{font-size:11px;color:var(--t3);line-height:1.4;letter-spacing:.01em}
+
+/* Hero right — photo + floating cards */
+.hero-right{position:relative;display:flex;justify-content:center;align-items:center}
+.photo-ring{
+  position:relative;width:300px;height:300px;flex-shrink:0;
+}
+.photo-ring::before{
+  content:'';position:absolute;inset:-3px;border-radius:50%;
+  background:conic-gradient(var(--p),#60A5FA,var(--g),var(--p));
+  animation:spin 8s linear infinite;
+}
+.photo-ring::after{
+  content:'';position:absolute;inset:0;border-radius:50%;
+  background:var(--bg);margin:3px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo-ring img{
+  position:relative;z-index:1;
+  width:294px;height:294px;border-radius:50%;object-fit:cover;
+  margin:3px;
+}
+
+/* floating accent cards */
+.fc{
+  position:absolute;
+  background:rgba(12,16,32,.9);
+  border:1px solid var(--b2);
+  border-radius:var(--r2);
+  padding:10px 14px;
+  backdrop-filter:blur(12px);
+  font-size:12px;
+  white-space:nowrap;
+}
+.fc-1{top:10px;left:-60px;animation:float1 4s ease-in-out infinite}
+.fc-2{bottom:30px;left:-70px;animation:float2 5s ease-in-out infinite}
+.fc-3{top:30px;right:-40px;animation:float1 4.5s ease-in-out infinite .5s}
+@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.fc-icon{font-size:16px;margin-bottom:3px}
+.fc-val{font-weight:700;color:var(--t1);font-size:14px}
+.fc-lbl{color:var(--t3);font-size:10.5px}
+
+/* ── SECTION BASE ── */
+.section{position:relative;z-index:1;max-width:1060px;margin:0 auto;padding:100px 24px}
+.eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--p);margin-bottom:14px;display:flex;align-items:center;gap:8px;
+}
+.eyebrow::before{content:'';width:28px;height:1.5px;background:var(--p);border-radius:2px}
+.sh{
+  font-family:var(--fd);
+  font-size:clamp(28px,3.5vw,42px);
+  font-weight:800;letter-spacing:-.04em;
+  color:var(--t1);line-height:1.1;margin-bottom:12px;
+}
+.ss{font-size:16px;color:var(--t2);max-width:520px;line-height:1.75;margin-bottom:56px}
+
+/* ── WIN BANNER ── */
+.win-banner{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(167,139,250,.1) 0%,rgba(16,185,129,.07) 100%);
+  border:1px solid rgba(167,139,250,.2);
+  border-radius:20px;
+  padding:28px 36px;
+  display:flex;align-items:center;gap:24px;
+  margin-bottom:72px;
+}
+.win-banner::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(167,139,250,.2) 0%,transparent 70%);
+  pointer-events:none;
+}
+.win-trophy{font-size:44px;flex-shrink:0;filter:drop-shadow(0 0 16px rgba(245,158,11,.5))}
+.win-title{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--t1);margin-bottom:5px;letter-spacing:-.02em}
+.win-sub{font-size:13.5px;color:var(--t2);line-height:1.6;max-width:600px}
+.win-badge{
+  margin-left:auto;flex-shrink:0;
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:8px 18px;border-radius:99px;
+  background:linear-gradient(135deg,var(--a) 0%,var(--c) 100%);
+  color:#fff;white-space:nowrap;
+}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about-text p{color:var(--t2);line-height:1.85;margin-bottom:18px;font-size:15px}
+.about-text p strong{color:var(--t1);font-weight:600}
+.remote-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-top:10px;
+  font-size:13px;font-weight:500;
+  padding:10px 20px;border-radius:99px;
+  background:rgba(16,185,129,.08);
+  border:1px solid rgba(16,185,129,.22);
+  color:var(--g);
+}
+.remote-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 8px var(--g);animation:blink 2s infinite}
+
+.skills-wrap{display:flex;flex-direction:column;gap:12px}
+.sk-group{
+  background:var(--s1);border:1px solid var(--b1);
+  border-radius:var(--r);padding:18px 20px;
+  transition:border-color .2s;
+}
+.sk-group:hover{border-color:var(--b2)}
+.sk-title{
+  font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--p);margin-bottom:12px;
+}
+.sk-tags{display:flex;flex-wrap:wrap;gap:7px}
+.sk-tag{
+  font-size:12px;padding:4px 11px;border-radius:99px;
+  background:var(--s2);border:1px solid var(--b1);color:var(--t2);
+}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.proj-card{
+  background:var(--s1);border:1px solid var(--b1);
+  border-radius:20px;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s;
+  position:relative;
+}
+.proj-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(167,139,250,.25);
+  box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(167,139,250,.06);
+}
+.proj-card.big{grid-column:span 2}
+
+.proj-img{position:relative;height:200px;overflow:hidden}
+.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.proj-card:hover .proj-img img{transform:scale(1.06)}
+.proj-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,8,15,.7) 0%,transparent 60%);
+}
+.proj-tags-over{
+  position:absolute;top:14px;left:14px;
+  display:flex;gap:6px;flex-wrap:wrap;
+}
+.ptag{
+  font-size:10px;font-weight:700;letter-spacing:.05em;
+  padding:4px 11px;border-radius:99px;
+}
+.pt-p{background:rgba(167,139,250,.85);color:#fff}
+.pt-g{background:rgba(16,185,129,.85);color:#052612}
+.pt-a{background:rgba(245,158,11,.85);color:#1C0A00}
+.pt-c{background:rgba(249,115,22,.85);color:#1C0600}
+.pt-b{background:rgba(59,130,246,.85);color:#00102D}
+
+.proj-body{padding:22px 24px;flex:1;display:flex;flex-direction:column;gap:11px}
+.proj-q{font-size:11.5px;color:var(--p);font-style:italic;line-height:1.55}
+.proj-title{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--t1);line-height:1.25;letter-spacing:-.02em}
+.proj-desc{font-size:13px;color:var(--t2);line-height:1.7}
+.proj-impact{
+  font-size:12.5px;font-weight:500;color:var(--g);
+  background:rgba(16,185,129,.07);
+  border-left:2.5px solid var(--g);
+  padding:9px 13px;border-radius:0 var(--r3) var(--r3) 0;
+  line-height:1.5;
+}
+.proj-stack{display:flex;flex-wrap:wrap;gap:6px}
+.ps{
+  font-size:11px;padding:3px 10px;border-radius:99px;
+  background:var(--s2);border:1px solid var(--b1);color:var(--t3);
+}
+.proj-links{
+  display:flex;gap:9px;margin-top:auto;
+  padding-top:14px;border-top:1px solid var(--b1);
+}
+.pl{
+  font-size:12px;font-weight:600;
+  padding:7px 16px;border-radius:99px;
+  border:1px solid var(--b2);color:var(--t2);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:all .2s;
+}
+.pl:hover{border-color:var(--p);color:var(--p)}
+.pl.main{background:var(--p);border-color:var(--p);color:#fff}
+.pl.main:hover{background:var(--p2)}
+
+/* ── EXPERIENCE ── */
+.exp-wrap{display:grid;grid-template-columns:200px 1fr;gap:0}
+.exp-sidebar{padding-right:48px;padding-top:6px;border-right:1px solid var(--b2)}
+.exp-nav{display:flex;flex-direction:column;gap:4px}
+.exp-nav-item{
+  font-size:13px;font-weight:500;color:var(--t3);
+  padding:10px 16px;border-radius:var(--r3);
+  cursor:pointer;transition:all .2s;border:1px solid transparent;
+  text-align:left;background:none;line-height:1.4;
+}
+.exp-nav-item.active,.exp-nav-item:hover{
+  color:var(--p);background:var(--p3);border-color:rgba(167,139,250,.15);
+}
+.exp-content{padding-left:48px}
+.exp-panel{display:none}
+.exp-panel.active{display:block}
+.exp-period{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--p);margin-bottom:12px;
+}
+.exp-role{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--t1);margin-bottom:4px;letter-spacing:-.03em}
+.exp-org{font-size:14px;color:var(--t2);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.exp-org .loc{color:var(--t3);font-size:13px}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:12px}
+.exp-bullets li{
+  font-size:14px;color:var(--t2);line-height:1.7;
+  padding-left:22px;position:relative;
+}
+.exp-bullets li::before{
+  content:'';position:absolute;left:0;top:9px;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--p);box-shadow:0 0 8px rgba(167,139,250,.4);
+  flex-shrink:0;
+}
+.exp-bullets li strong{color:var(--t1);font-weight:600}
+.exp-metrics{
+  display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;
+}
+.exp-metric{
+  padding:10px 18px;border-radius:var(--r3);
+  background:var(--s2);border:1px solid var(--b1);
+  font-size:12px;color:var(--t2);
+  display:flex;align-items:center;gap:8px;
+}
+.exp-metric strong{color:var(--t1);font-size:15px;font-weight:700}
+
+/* ── CONTACT ── */
+.contact-section{
+  position:relative;z-index:1;
+  background:linear-gradient(135deg,var(--s1) 0%,rgba(16,22,44,.8) 100%);
+  border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);
+  padding:100px 24px;
+}
+.contact-inner{
+  max-width:1060px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;
+}
+.contact-left .ss{margin-bottom:28px}
+.contact-avail{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--g);
+  background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);
+  padding:7px 16px;border-radius:99px;margin-bottom:24px;
+}
+.contact-avail .dot{width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 8px var(--g);animation:blink 2s infinite}
+.contact-note{font-size:14px;color:var(--t2);line-height:1.8;margin-bottom:32px}
+.contact-note strong{color:var(--t1)}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.clink{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 20px;
+  background:var(--s1);border:1px solid var(--b1);
+  border-radius:var(--r);transition:all .22s;
+}
+.clink:hover{border-color:rgba(167,139,250,.25);transform:translateX(6px);background:var(--s2)}
+.clink-ico{
+  width:40px;height:40px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;font-weight:700;
+}
+.clink-lbl{font-size:14px;font-weight:600;color:var(--t1)}
+.clink-sub{font-size:12px;color:var(--t3);margin-top:1px}
+.clink-arr{margin-left:auto;color:var(--t3);font-size:16px;transition:transform .2s}
+.clink:hover .clink-arr{transform:translateX(4px);color:var(--p)}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  max-width:1060px;margin:0 auto;
+  padding:32px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--b1);flex-wrap:wrap;gap:12px;
+}
+.foot-l{font-size:13px;color:var(--t3)}
+.foot-r{display:flex;gap:20px}
+.foot-r a{font-size:13px;color:var(--t3);transition:color .2s}
+.foot-r a:hover{color:var(--p)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{width:calc(100% - 32px);top:12px}
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-right{justify-content:flex-start}
+  .photo-ring{width:220px;height:220px}
+  .photo-ring img{width:214px;height:214px}
+  .hero-metrics{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .proj-card.big{grid-column:span 1}
+  .exp-wrap{grid-template-columns:1fr;gap:32px}
+  .exp-sidebar{border-right:none;padding-right:0;border-bottom:1px solid var(--b2);padding-bottom:20px}
+  .exp-nav{flex-direction:row;flex-wrap:wrap}
+  .exp-content{padding-left:0}
+  .contact-inner{grid-template-columns:1fr;gap:40px}
+  .nav-links{display:none}
+  .win-badge{display:none}
+  .fc{display:none}
+}
+@media(max-width:500px){
+  .hero-metrics{grid-template-columns:repeat(2,1fr)}
+  .hero-ctas{flex-direction:column}
+  .cta-main,.cta-sec{justify-content:center}
+}
+
+/* ── SCROLL ANIMATIONS ── */
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav id="navbar">
-        <div class="nav-logo">Ruth Ondiere</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Ruth<em>.</em></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="nav-btn" target="_blank" rel="noopener">Download CV</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-left fade-up">
+      <div class="available-tag"><div class="dot"></div>Available · Remote · UTC+3</div>
+      <h1 class="hero-h1">Data that <span class="grad">drives decisions</span>,<br>not just reports</h1>
+      <p class="hero-desc">
+        <strong>2+ years</strong> building pipelines, dashboards, and ML models —
+        cutting reporting time by <span class="hi">70%</span>, boosting retention by <span class="hi">15%</span>,
+        and delivering real-time insights to operations teams.
+      </p>
+      <div class="hero-stack">
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">PySpark</span>
+        <span class="stack-pill">SQL</span>
+        <span class="stack-pill">Tableau</span>
+        <span class="stack-pill">Power BI</span>
+        <span class="stack-pill">Scikit-learn</span>
+        <span class="stack-pill">XGBoost</span>
+        <span class="stack-pill">AWS</span>
+        <span class="stack-pill">Docker</span>
+        <span class="stack-pill">🏆 Botathon Winner</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#projects" class="cta-main">View my work <span>→</span></a>
+        <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="cta-sec" target="_blank" rel="noopener">Download CV</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric"><div class="metric-n">70<em>%</em></div><div class="metric-l">Reporting<br>time cut</div></div>
+        <div class="metric"><div class="metric-n">2<em>+</em></div><div class="metric-l">Years of<br>experience</div></div>
+        <div class="metric"><div class="metric-n">8<em>+</em></div><div class="metric-l">Projects<br>shipped</div></div>
+        <div class="metric"><div class="metric-n">88<em>%</em></div><div class="metric-l">Best model<br>AUC-ROC</div></div>
+      </div>
+    </div>
+    <div class="hero-right fade-up" style="transition-delay:.15s">
+      <div class="photo-ring">
+        <img src="https://bonaondiere.github.io/ruth_photo.jpg" alt="Ruth Ondiere — Data Analyst"/>
+        <!-- floating accent cards -->
+        <div class="fc fc-1">
+          <div class="fc-icon">📊</div>
+          <div class="fc-val">99,438</div>
+          <div class="fc-lbl">Orders analysed</div>
+        </div>
+        <div class="fc fc-2">
+          <div class="fc-icon">⚡</div>
+          <div class="fc-val">6h → 15m</div>
+          <div class="fc-lbl">Reporting time</div>
+        </div>
+        <div class="fc fc-3">
+          <div class="fc-icon">🏆</div>
+          <div class="fc-val">1st Place</div>
+          <div class="fc-lbl">Botathon 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+
+  <div class="win-banner fade-up">
+    <div class="win-trophy">🏆</div>
+    <div>
+      <div class="win-title">Botathon Hackathon — 1st Place Winner</div>
+      <div class="win-sub">Built an AI-powered RAG course advisor using NLP + OpenAI API that achieved 85% user satisfaction in a live pilot with 200+ students — competing against teams nationally.</div>
+    </div>
+    <div class="win-badge">National Winner</div>
+  </div>
+
+  <div class="eyebrow fade-up">About</div>
+  <h2 class="sh fade-up">The analyst behind the numbers</h2>
+  <p class="ss fade-up">Nairobi-based, globally available. I own the full stack — pipelines, models, dashboards, and the storytelling that makes leaders act.</p>
+
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p>
+        I'm a Data Analyst who works <strong>end-to-end</strong> — from raw ingestion and ETL in PySpark, through SQL analysis and ML modelling, to Tableau dashboards and executive presentations. I've built pipelines processing <strong>millions of records</strong>, shipped real-time monitoring dashboards that cut issue identification by <strong>30%</strong>, and deployed ML models that go into production — not just notebooks left on a drive.
+      </p>
+      <p>
+        My project portfolio spans e-commerce intelligence (99k+ real orders), financial risk modelling (<strong>88% AUC-ROC</strong>), customer churn prediction (<strong>84% recall</strong> with SHAP explainability), geospatial route optimisation, and a national <strong>hackathon-winning AI chatbot</strong>. I move fast, communicate clearly, and thrive on ambiguous, high-stakes problems.
+      </p>
+      <p>
+        I'm actively seeking a <strong>fully remote Data Analyst or Data Scientist role</strong> on a global team where data genuinely drives decisions. I'm async-first, self-directed, and available immediately.
+      </p>
+      <div class="remote-pill"><div class="dot"></div>Open to remote · EAT (UTC+3) · Available immediately</div>
+    </div>
+    <div class="skills-wrap fade-up" style="transition-delay:.1s">
+      <div class="sk-group">
+        <div class="sk-title">Analysis & Engineering</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Python</span><span class="sk-tag">Pandas</span><span class="sk-tag">NumPy</span>
+          <span class="sk-tag">SQL</span><span class="sk-tag">PostgreSQL</span><span class="sk-tag">PySpark</span>
+          <span class="sk-tag">ETL Pipelines</span><span class="sk-tag">A/B Testing</span>
+        </div>
+      </div>
+      <div class="sk-group">
+        <div class="sk-title">Machine Learning & AI</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Scikit-learn</span><span class="sk-tag">XGBoost</span>
+          <span class="sk-tag">Random Forest</span><span class="sk-tag">SHAP</span>
+          <span class="sk-tag">TensorFlow</span><span class="sk-tag">NLP / RAG</span>
+          <span class="sk-tag">SMOTE</span><span class="sk-tag">Time Series</span>
+        </div>
+      </div>
+      <div class="sk-group">
+        <div class="sk-title">Visualisation & BI</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Tableau</span><span class="sk-tag">Power BI</span>
+          <span class="sk-tag">Plotly</span><span class="sk-tag">Seaborn</span><span class="sk-tag">Matplotlib</span>
+        </div>
+      </div>
+      <div class="sk-group">
+        <div class="sk-title">Tools & Cloud</div>
+        <div class="sk-tags">
+          <span class="sk-tag">AWS S3/EC2/EMR</span><span class="sk-tag">Docker</span>
+          <span class="sk-tag">Git / GitHub</span><span class="sk-tag">Jupyter</span>
+          <span class="sk-tag">REST APIs</span><span class="sk-tag">Google Colab</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects" style="padding-top:0">
+  <div class="eyebrow fade-up">Projects</div>
+  <h2 class="sh fade-up">Work that speaks for itself</h2>
+  <p class="ss fade-up">Real datasets. Real business questions. Every project answers something a stakeholder would actually care about.</p>
+
+  <div class="proj-grid">
+
+    <!-- FEATURED: Olist -->
+    <div class="proj-card big fade-up">
+      <div class="proj-img" style="height:240px">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=500&fit=crop" alt="Olist E-Commerce Dashboard"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tags-over"><span class="ptag pt-p">Featured</span><span class="ptag pt-g">Tableau</span><span class="ptag pt-b">99k Orders</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-q">"Which categories, states, and sellers drive revenue — and where is slow delivery killing satisfaction?"</div>
+        <div class="proj-title">Brazilian E-Commerce Performance Dashboard · Olist</div>
+        <div class="proj-desc">4-page interactive Tableau dashboard on 99,438 real orders from Brazil's largest marketplace. Pages: Executive KPIs, Logistics & Delivery, Product & Seller Analysis, Payments & Customer Behaviour. 9 calculated fields including delivery colour bands, AOV by payment method, and on-time rate.</div>
+        <div class="proj-impact">📊 Found deliveries over 20 days reduce review scores by 2.2 points — a direct carrier renegotiation case. SP state = 37.5% of all revenue (R$6M of R$16M).</div>
+        <div class="proj-stack"><span class="ps">Tableau</span><span class="ps">Python</span><span class="ps">Pandas</span><span class="ps">KPI Design</span><span class="ps">Data Storytelling</span><span class="ps">E-Commerce Analytics</span></div>
+        <div class="proj-links">
+          <a href="https://public.tableau.com/app/profile/ruth.ondiere" class="pl main" target="_blank" rel="noopener">View on Tableau Public →</a>
+          <a href="https://github.com/BONAONDIERE" class="pl" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loan Analytics -->
+    <div class="proj-card fade-up" style="transition-delay:.05s">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" alt="Loan Repayment Analytics"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tags-over"><span class="ptag pt-a">Data Engineering</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-q">"How do we identify at-risk loans before they default — without waiting 6 hours for a report?"</div>
+        <div class="proj-title">Loan Repayment Analytics · PySpark + Tableau</div>
+        <div class="proj-desc">PySpark ETL pipeline joining 4 financial tables — loans, transactions, KYC, accounts — to compute daily expected vs actual collections, outstanding balances, and days in default. Tableau dashboard with Healthy / Due / Doubtful loan categorisation.</div>
+        <div class="proj-impact">⚡ Reporting time: 6 hours → 15 minutes. Real-time risk monitoring enabled for the collections team.</div>
+        <div class="proj-stack"><span class="ps">PySpark</span><span class="ps">Tableau</span><span class="ps">SQL</span><span class="ps">Data Warehousing</span></div>
+        <div class="proj-links"><a href="https://github.com/BONAONDIERE/loan-repayment-analytics" class="pl main" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+    </div>
+
+    <!-- Churn -->
+    <div class="proj-card fade-up" style="transition-delay:.1s">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&h=400&fit=crop" alt="Customer Churn Prediction"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tags-over"><span class="ptag pt-b">ML · Classification</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-q">"Which customers are about to churn — and what's the most cost-effective way to retain them?"</div>
+        <div class="proj-title">Telecom Customer Churn Prediction · XGBoost + SHAP</div>
+        <div class="proj-desc">End-to-end churn prediction pipeline on 7,000 telecom customers. Applied SMOTE for class imbalance, engineered 15 behavioural features, and used SHAP to explain model decisions — making it boardroom-ready, not just technically accurate.</div>
+        <div class="proj-impact">📉 84% recall on churners. SHAP revealed contract type and tenure as top 2 churn drivers — directly actionable for retention campaigns.</div>
+        <div class="proj-stack"><span class="ps">Python</span><span class="ps">XGBoost</span><span class="ps">SHAP</span><span class="ps">SMOTE</span><span class="ps">Feature Engineering</span></div>
+        <div class="proj-links"><a href="https://github.com/BONAONDIERE" class="pl main" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+    </div>
+
+    <!-- Credit Risk -->
+    <div class="proj-card fade-up" style="transition-delay:.05s">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop" alt="Credit Risk Scoring"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tags-over"><span class="ptag pt-c">ML · Fintech</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-q">"Which borrowers will default — and how early can we flag them to protect the loan portfolio?"</div>
+        <div class="proj-title">Credit Risk Scoring Model</div>
+        <div class="proj-desc">Binary classification pipeline predicting loan default using borrower history and transaction patterns. Compared Logistic Regression, Random Forest, and XGBoost with full cross-validation and ROC/PR curve analysis.</div>
+        <div class="proj-impact">🎯 88% AUC-ROC on holdout. 12 features engineered from raw borrower data — model ready for production scoring.</div>
+        <div class="proj-stack"><span class="ps">Python</span><span class="ps">Scikit-learn</span><span class="ps">XGBoost</span><span class="ps">Feature Engineering</span></div>
+        <div class="proj-links"><a href="https://github.com/BONAONDIERE/credit-risk-scoring" class="pl main" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+    </div>
+
+    <!-- AI Chatbot -->
+    <div class="proj-card fade-up" style="transition-delay:.1s">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=400&fit=crop" alt="AI Course Advisor Chatbot"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tags-over"><span class="ptag pt-g">🏆 Hackathon Winner</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-q">"Can AI help 10,000+ students find the right course without needing a human advisor?"</div>
+        <div class="proj-title">AI Course Advisor · RAG Chatbot</div>
+        <div class="proj-desc">Led development of a Retrieval-Augmented Generation system using NLP and OpenAI API. Built a vector database for semantic search over course catalogues. Won 1st place in the Botathon hackathon competing nationally.</div>
+        <div class="proj-impact">🤖 85% user satisfaction. 200+ students onboarded in pilot. Zero human advisor involvement.</div>
+        <div class="proj-stack"><span class="ps">Python</span><span class="ps">OpenAI API</span><span class="ps">NLP</span><span class="ps">Vector DB</span><span class="ps">RAG</span></div>
+        <div class="proj-links">
+          <a href="https://bonaondiere.github.io/kuccps-chatbot/demo.html" class="pl main" target="_blank" rel="noopener">Live Demo →</a>
+          <a href="https://github.com/BONAONDIERE/kuccps-chatbot" class="pl" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Airline Fare -->
+    <div class="proj-card fade-up" style="transition-delay:.05s">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop" alt="Airline Fare Prediction"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tags-over"><span class="ptag pt-p">ML · Regression</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-q">"Can we predict airline prices accurately enough to help travellers book at the optimal time?"</div>
+        <div class="proj-title">Airline Fare Prediction Engine</div>
+        <div class="proj-desc">Time-series regression forecasting ticket prices using departure timing, route, and seasonality features. Random Forest vs XGBoost comparison with GridSearchCV hyperparameter tuning and feature importance analysis.</div>
+        <div class="proj-impact">✈️ 22% accuracy improvement vs baseline. MAE reduced $34 → $26 per prediction.</div>
+        <div class="proj-stack"><span class="ps">Python</span><span class="ps">Scikit-learn</span><span class="ps">XGBoost</span><span class="ps">Time Series</span></div>
+        <div class="proj-links">
+          <a href="https://colab.research.google.com/github/BONAONDIERE/airline-fare-prediction/blob/main/airline-fare-prediction-model.ipynb" class="pl main" target="_blank" rel="noopener">Notebook →</a>
+          <a href="https://github.com/BONAONDIERE/airline-fare-prediction" class="pl" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EduRoutes -->
+    <div class="proj-card fade-up" style="transition-delay:.1s">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1551836022-8b2858c9c69b?w=600&h=400&fit=crop" alt="EduRoutes Nairobi"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tags-over"><span class="ptag pt-g">Geospatial</span><span class="ptag pt-b">Social Impact</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-q">"Can ML cut school commute times in Nairobi and make education more physically accessible?"</div>
+        <div class="proj-title">EduRoutes · School Transport Optimisation</div>
+        <div class="proj-desc">Geospatial ML platform optimising school bus routes across Nairobi using clustering and route-efficiency algorithms on real school location data. Aligned with UN SDGs 4 and 11.</div>
+        <div class="proj-impact">🗺️ 18% reduction in avg student commute time in pilot simulation. SDG-aligned impact.</div>
+        <div class="proj-stack"><span class="ps">Python</span><span class="ps">Geospatial</span><span class="ps">Clustering</span><span class="ps">Optimisation</span></div>
+        <div class="proj-links"><a href="https://bonaondiere.github.io/eduroutes-overview.html" class="pl main" target="_blank" rel="noopener">Project Details →</a></div>
+      </div>
+    </div>
+
+    <!-- Sales Dashboard -->
+    <div class="proj-card fade-up" style="transition-delay:.05s">
+      <div class="proj-img">
+        <img src="https://public.tableau.com/static/images/SA/SalesPerformanceOverview/1_rss.png" alt="Sales Performance Dashboard"/>
+        <div class="proj-img-overlay"></div>
+        <div class="proj-tags-over"><span class="ptag pt-p">Tableau</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-q">"Which regions and product lines are underperforming — and is the trend recoverable?"</div>
+        <div class="proj-title">Sales Performance Dashboard</div>
+        <div class="proj-desc">Interactive Tableau dashboard with parameter controls, action filters, calculated fields, and trend lines. Designed for self-service — any stakeholder can drill into regional performance without analyst involvement.</div>
+        <div class="proj-impact">📈 Parameter-driven top/bottom analysis eliminates ad-hoc reporting requests.</div>
+        <div class="proj-stack"><span class="ps">Tableau</span><span class="ps">KPI Design</span><span class="ps">Data Storytelling</span></div>
+        <div class="proj-links"><a href="https://public.tableau.com/app/profile/ruth.ondiere/viz/SalesPerformanceOverview_17720984791300/SalesPerformanceOverview?publish=yes" class="pl main" target="_blank" rel="noopener">Live Dashboard →</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience" style="padding-top:0">
+  <div class="eyebrow fade-up">Experience</div>
+  <h2 class="sh fade-up">Where the skills were forged</h2>
+  <p class="ss fade-up">Real production work at scale — not just coursework and tutorials.</p>
+
+  <div class="exp-wrap fade-up">
+    <div class="exp-sidebar">
+      <div class="exp-nav">
+        <button class="exp-nav-item active" onclick="showExp('e1',this)">AgriTech Startup<br><span style="font-size:11px;opacity:.6">2023 – 2025</span></button>
+        <button class="exp-nav-item" onclick="showExp('e2',this)">Independent Projects<br><span style="font-size:11px;opacity:.6">2025 – Present</span></button>
+      </div>
+    </div>
+    <div class="exp-content">
+
+      <div class="exp-panel active" id="e1">
+        <div class="exp-period">Sep 2023 – Jan 2025 · 1 yr 5 mo</div>
+        <div class="exp-role">Data Analyst — IoT & Operations Intelligence</div>
+        <div class="exp-org">AgriTech Startup · Nairobi, Kenya <span class="loc">· IoT equipment-sharing platform</span></div>
+        <ul class="exp-bullets">
+          <li>Built and maintained <strong>PySpark ETL pipelines</strong> processing millions of IoT sensor records daily — reducing data preparation time by <strong>40%</strong> and enabling near-real-time operational visibility across field operations.</li>
+          <li>Designed and shipped <strong>automated Tableau monitoring dashboards</strong> adopted as the primary ops intelligence tool — cutting issue identification time by <strong>30%</strong> across engineering and operations teams.</li>
+          <li>Analysed customer usage patterns and surfaced data-driven product recommendations that contributed to a <strong>15% improvement in client retention</strong> over 6 months.</li>
+          <li>Translated complex pipeline outputs into clear, non-technical reports and training materials for <strong>100+ clients</strong> — bridging engineering data and business decision-making.</li>
+          <li>Owned data work end-to-end: raw IoT ingestion → SQL analysis → ML feature exploration → executive dashboard presentation.</li>
         </ul>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section id="hero">
-        <div class="hero-container">
-            <div class="hero-photo">
-                <img src="ruth_photo.jpg" alt="Ruth Ondiere">
-            </div>
-            <div class="hero-content">
-                <h1>Ruth Ondiere</h1>
-                <h2>Data Analyst | Data Scientist & ML Engineer</h2>
-                <p>Python • PySpark • Tableau • Power BI • Scikit-learn • TensorFlow — from analytics to production ML</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    <a href="Ruth_resume_latest.pdf" class="btn btn-secondary" download>Download Resume</a>
-                </div>
-            </div>
+        <div class="exp-metrics">
+          <div class="exp-metric"><strong>40%</strong> faster data prep</div>
+          <div class="exp-metric"><strong>30%</strong> faster issue ID</div>
+          <div class="exp-metric"><strong>15%</strong> retention lift</div>
+          <div class="exp-metric"><strong>100+</strong> clients trained</div>
         </div>
-    </section>
+      </div>
 
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-text">
-                <p>Data Analyst with 2+ years of experience in IoT data analytics, financial reporting, and BI dashboarding. I bridge the gap between raw data and business decisions – using Python, PySpark, SQL, and Tableau. Proven track record of reducing reporting time by 70% and improving collection insights. Open to Data Scientist and ML Engineer roles where I can build predictive models and end-to-end ML pipelines.</p>
-                <p>Passionate about using data to solve real-world challenges in Africa – from school transport optimization to loan collection analytics. Winner of the Botathon hackathon (AI course advisor).</p>
-            </div>
-
-            <!-- TECHNICAL SKILLS -->
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Data Analysis & Engineering</h4>
-                    <span class="skill-tag">Python (Pandas, NumPy)</span>
-                    <span class="skill-tag">SQL (PostgreSQL, MySQL)</span>
-                    <span class="skill-tag">PySpark (ETL, Big Data)</span>
-                    <span class="skill-tag">Statistical Analysis</span>
-                    <span class="skill-tag">A/B Testing</span>
-                </div>
-                <div class="skill-category">
-                    <h4>Machine Learning & AI</h4>
-                    <span class="skill-tag">Scikit-learn</span>
-                    <span class="skill-tag">TensorFlow / PyTorch</span>
-                    <span class="skill-tag">NLP & RAG</span>
-                    <span class="skill-tag">Random Forest / XGBoost</span>
-                    <span class="skill-tag">Time Series Forecasting</span>
-                </div>
-                <div class="skill-category">
-                    <h4>Visualization & BI</h4>
-                    <span class="skill-tag">Tableau (Public & Desktop)</span>
-                    <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">Matplotlib / Seaborn / Plotly</span>
-                </div>
-                <div class="skill-category">
-                    <h4>Tools & Platforms</h4>
-                    <span class="skill-tag">Git & GitHub</span>
-                    <span class="skill-tag">AWS (S3, EC2, EMR)</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Jupyter / Colab</span>
-                    <span class="skill-tag">REST APIs</span>
-                </div>
-            </div>
+      <div class="exp-panel" id="e2">
+        <div class="exp-period">2025 – Present</div>
+        <div class="exp-role">Independent Data Analyst</div>
+        <div class="exp-org">Self-directed · Remote</div>
+        <ul class="exp-bullets">
+          <li>Built a <strong>4-page Tableau e-commerce dashboard</strong> on 99,438 real Olist orders — calculated fields, delivery performance analysis, seller matrix, and payment behaviour breakdown.</li>
+          <li>Developed a <strong>telecom churn model</strong> with SHAP explainability and 84% recall — production-ready with full documentation.</li>
+          <li>Built a <strong>credit risk classifier</strong> achieving 88% AUC-ROC with 12 engineered features — outperforming baseline by a significant margin.</li>
+          <li>Deepening expertise in MLOps, model explainability (SHAP, LIME), and cloud deployment (AWS EC2/S3) while actively pursuing a remote data role.</li>
+        </ul>
+        <div class="exp-metrics">
+          <div class="exp-metric"><strong>88%</strong> AUC-ROC</div>
+          <div class="exp-metric"><strong>84%</strong> churn recall</div>
+          <div class="exp-metric"><strong>99k+</strong> orders analysed</div>
         </div>
-    </section>
+      </div>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
+    </div>
+  </div>
+</section>
 
-                <!-- NEW: Loan Repayment Analytics (PySpark + Tableau) -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Loan Analytics Dashboard">
-                    </div>
-                    <div class="project-content">
-                        <h3>Loan Repayment Analytics (PySpark + Tableau)</h3>
-                        <p>Built an ETL pipeline in PySpark to join 4 financial tables (loan, transactions, KYC, accounts) and compute daily expected vs actual collections, outstanding balance, and days in default. Designed an interactive Tableau dashboard with KPIs, collection trends, and loan categorisation (Healthy / Due / Doubtful).</p>
-                        <p><strong>Impact:</strong> Reduced reporting time from 6 hours to 15 minutes. Enabled real-time risk monitoring.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">PySpark</span>
-                            <span class="tech-tag">Tableau</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Data Warehousing</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/BONAONDIERE/loan-repayment-analytics" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> Code (Coming soon)
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-chart-line"></i> Demo (synthetic data)
-                            </a>
-                        </div>
-                        <div class="project-badge" style="background: #10b981;">Data Engineering</div>
-                    </div>
-                </div>
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left fade-up">
+      <div class="eyebrow">Contact</div>
+      <h2 class="sh">Let's work<br>together</h2>
+      <div class="contact-avail"><div class="dot"></div>Available for remote roles · Now</div>
+      <p class="contact-note">
+        I'm actively looking for a <strong>fully remote Data Analyst or Data Scientist role</strong> on a global team.
+        I bring real production experience, a strong project portfolio, and the ability to work independently across time zones.<br><br>
+        <strong>Nairobi, Kenya · UTC+3 · Async-first · Immediately available</strong>
+      </p>
+      <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="cta-main" target="_blank" rel="noopener" style="display:inline-flex">Download CV →</a>
+    </div>
+    <div class="contact-links fade-up" style="transition-delay:.1s">
+      <a href="mailto:bonareriondiere@gmail.com" class="clink">
+        <div class="clink-ico" style="background:rgba(249,115,22,.12);color:#F97316">✉</div>
+        <div><div class="clink-lbl">Email</div><div class="clink-sub">bonareriondiere@gmail.com</div></div>
+        <div class="clink-arr">→</div>
+      </a>
+      <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" class="clink" target="_blank" rel="noopener">
+        <div class="clink-ico" style="background:rgba(59,130,246,.12);color:#3B82F6;font-size:15px">in</div>
+        <div><div class="clink-lbl">LinkedIn</div><div class="clink-sub">ruth-ondiere-254009198</div></div>
+        <div class="clink-arr">→</div>
+      </a>
+      <a href="https://github.com/BONAONDIERE" class="clink" target="_blank" rel="noopener">
+        <div class="clink-ico" style="background:rgba(167,139,250,.12);color:var(--p);font-size:15px">⌥</div>
+        <div><div class="clink-lbl">GitHub</div><div class="clink-sub">BONAONDIERE</div></div>
+        <div class="clink-arr">→</div>
+      </a>
+      <a href="https://public.tableau.com/app/profile/ruth.ondiere" class="clink" target="_blank" rel="noopener">
+        <div class="clink-ico" style="background:rgba(16,185,129,.12);color:var(--g);font-size:15px">◈</div>
+        <div><div class="clink-lbl">Tableau Public</div><div class="clink-sub">ruth.ondiere — live dashboards</div></div>
+        <div class="clink-arr">→</div>
+      </a>
+    </div>
+  </div>
+</div>
 
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop" alt="AI Chatbot Interface">
-                    </div>
-                    <div class="project-content">
-                        <h3>AI-Powered Course Advisor Chatbot</h3>
-                        <p>Led development of Retrieval-Augmented Generation system using NLP and OpenAI API. Built vector database for semantic search. Won 1st place in Botathon hackathon.</p>
-                        <p><strong>Impact:</strong> Achieved 85% user satisfaction in pilot with 200+ students.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">OpenAI API</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Vector DB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/BONAONDIERE/kuccps-chatbot" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="https://bonaondiere.github.io/kuccps-chatbot/demo.html" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                        <div class="project-badge">Hackathon Winner</div>
-                    </div>
-                </div>
+<footer>
+  <div class="foot-l">© 2026 Ruth Ondiere · Data Analyst · Nairobi, Kenya</div>
+  <div class="foot-r">
+    <a href="mailto:bonareriondiere@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/BONAONDIERE" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://public.tableau.com/app/profile/ruth.ondiere" target="_blank" rel="noopener">Tableau</a>
+  </div>
+</footer>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Data Prediction Dashboard">
-                    </div>
-                    <div class="project-content">
-                        <h3>Airline Fare Prediction Engine</h3>
-                        <p>Built regression models (Random Forest, XGBoost) to forecast airline ticket prices using time-series features.</p>
-                        <p><strong>Impact:</strong> Improved prediction accuracy by 22% vs baseline; reduced MAE from $34 to $26.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">Time Series</span>
-                            <span class="tech-tag">Feature Engineering</span>
-                        </div>
-                        <div class="project-links">
-                           <a href="https://github.com/BONAONDIERE/airline-fare-prediction" class="project-link" target="_blank">
-                               <i class="fab fa-github"></i> Code
-                           </a>
-                           <a href="https://colab.research.google.com/github/BONAONDIERE/airline-fare-prediction/blob/main/airline-fare-prediction-model.ipynb" class="project-link" target="_blank">
-                              <i class="fas fa-external-link-alt"></i> View Notebook
-                           </a>
-                       </div>
-                    </div>
-                </div>
+<script>
+// Experience tab switcher
+function showExp(id,btn){
+  document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.exp-nav-item').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
 
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=400&fit=crop" alt="Route Optimization Map">
-                    </div>
-                    <div class="project-content">
-                        <h3>EduRoutes: Transportation Optimization</h3>
-                        <p>Geospatial ML platform to optimize school bus routes in Nairobi, reducing commute time.</p>
-                        <p><strong>Impact:</strong> Pilot simulation showed 18% reduction in average travel time. Aligned with UN SDG 4 & 11.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Geospatial</span>
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Optimization</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="eduroutes-overview.html" class="project-link">
-                               <i class="fas fa-info-circle"></i> Project Details
-                            </a>
-                            <a href="#" class="project-link disabled">
-                                <i class="fab fa-github"></i> Code (Coming Soon)
-                            </a>
-                        </div>
-                        <div class="project-badge" style="background: #f59e0b;">In Progress</div>
-                    </div>
-                </div>
+// Scroll fade-up animations
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}
+  });
+},{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
-                <!-- Project 4: Sales Dashboard (safe, no real data) -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://public.tableau.com/static/images/SA/SalesPerformanceOverview/1_rss.png" alt="Sales Dashboard">
-                    </div>
-                    <div class="project-content">
-                        <h3>Sales Performance Dashboard</h3>
-                        <p>Interactive Tableau dashboard analyzing regional sales, profitability, and product performance. Built with synthetic sales data to demonstrate data storytelling and KPI design.</p>
-                        <p><strong>Skills:</strong> Calculated fields, parameter controls, action filters, and trend lines.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Tableau</span>
-                            <span class="tech-tag">Data Visualization</span>
-                            <span class="tech-tag">KPI Design</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://public.tableau.com/app/profile/ruth.ondiere/viz/SalesPerformanceOverview_17720984791300/SalesPerformanceOverview?publish=yes" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Dashboard
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: Phones Dashboard -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://public.tableau.com/static/images/Ph/PhonesPerformanceDashboard/1_rss.png" alt="Phones Dashboard">
-                    </div>
-                    <div class="project-content">
-                        <h3>Phone Sales Analytics</h3>
-                        <p>Tableau dashboard tracking revenue trends, top-selling models, and customer segments. Used to identify underperforming regions.</p>
-                        <p><strong>Impact:</strong> Highlighted 23% revenue drop in one category, leading to stock reallocation.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Tableau</span>
-                            <span class="tech-tag">Analytics</span>
-                            <span class="tech-tag">Dashboard Design</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://public.tableau.com/app/profile/ruth.ondiere/viz/PhonesPerformanceDashboard/PhonesPerformance" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Dashboard
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Credit Risk ML -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop" alt="Credit Risk ML">
-                    </div>
-                    <div class="project-content">
-                        <h3>Credit Risk Classification</h3>
-                        <p>Built a logistic regression + random forest model to predict loan default risk using borrower history.</p>
-                        <p><strong>Impact:</strong> Achieved 88% AUC-ROC on test set. Engineered 12 features from raw data.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">Classification</span>
-                            <span class="tech-tag">Feature Engineering</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/BONAONDIERE/credit-risk-scoring" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7: Titanic ML -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1580166463495-ab4d21922c22?w=600&h=400&fit=crop" alt="Titanic ML">
-                    </div>
-                    <div class="project-content">
-                        <h3>Titanic Survival Prediction</h3>
-                        <p>Classic ML project using EDA, feature engineering, and ensemble methods (Random Forest, Gradient Boosting).</p>
-                        <p><strong>Result:</strong> 79% accuracy on Kaggle test set, top 15% of submissions.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">EDA</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/BONAONDIERE/titanic-survival-prediction" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <h3>IoT Engineer Intern & Technical Customer Associate</h3>
-                    <span class="experience-date">Sep 2023 – Jan 2025</span>
-                </div>
-                <div class="experience-company">Hello Tractor, Nairobi, Kenya</div>
-                <ul class="experience-details">
-                    <li>Developed PySpark ETL pipelines to process IoT sensor data (millions of records), reducing data prep time by 40%.</li>
-                    <li>Built automated monitoring dashboards in Tableau that cut issue identification time by 30%.</li>
-                    <li>Collaborated with product team to implement data-driven features, increasing client retention by 15%.</li>
-                    <li>Created training materials for 100+ clients, improving product adoption and customer satisfaction.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-links-cards">
-                <a href="mailto:bonareriondiere@gmail.com" class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email Me</span>
-                </a>
-                <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" target="_blank" class="contact-card">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://github.com/BONAONDIERE" target="_blank" class="contact-card">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="Ruth_resume_latest.pdf" download class="contact-card">
-                    <i class="fas fa-download"></i>
-                    <span>Download Resume</span>
-                </a>
-            </div>
-            <p class="contact-text">Open to full-time Data Analyst, Data Scientist, and ML Engineer roles. Let's connect!</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 Ruth Ondiere | Data Analyst & ML Engineer</p>
-    </footer>
-
+// Active nav link on scroll
+const sections=document.querySelectorAll('section[id],div[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
+  navLinks.forEach(a=>{
+    a.style.color=a.getAttribute('href')==='#'+cur?'var(--t1)':'';
+    a.style.background=a.getAttribute('href')==='#'+cur?'var(--b1)':'';
+  });
+},{passive:true});
+</script>
 </body>
 </html>
