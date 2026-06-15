@@ -1,950 +1,1177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Ruth Ondiere — Data Analyst. 2+ years building pipelines, dashboards & ML models that cut reporting time 70% and boosted retention 15%. Python · PySpark · SQL · Tableau. Open to remote roles."/>
+<meta name="description" content="Ruth Ondiere — Data Analyst specialising in Python, PySpark, SQL and Tableau. 2+ years building pipelines, dashboards and ML models. Open to remote roles globally."/>
 <title>Ruth Ondiere · Data Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Satoshi:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
+/* ══════════════════════════════════════
+   THEME TOKENS — LIGHT & DARK
+══════════════════════════════════════ */
 :root{
-  --bg:#06080F;
-  --bg2:#0C1020;
-  --s1:#101525;
-  --s2:#141B2E;
-  --s3:#1A2238;
-  --b1:rgba(255,255,255,.06);
-  --b2:rgba(255,255,255,.11);
-  --b3:rgba(255,255,255,.18);
-  --t1:#ECEEF6;
-  --t2:#9AA3BC;
-  --t3:#5C6480;
-  --p:#A78BFA;
-  --p2:#7C3AED;
-  --p3:rgba(167,139,250,.15);
-  --g:#10B981;
-  --g2:rgba(16,185,129,.12);
-  --a:#F59E0B;
-  --a2:rgba(245,158,11,.12);
-  --c:#F97316;
-  --bl:#3B82F6;
-  --r:14px;
-  --r2:10px;
-  --r3:8px;
-  --fd:'Bricolage Grotesque',sans-serif;
-  --fb:'Inter',sans-serif;
+  /* Light */
+  --bg:#F8F9FC;
+  --bg2:#FFFFFF;
+  --card:#FFFFFF;
+  --card2:#F3F4F8;
+  --border:#E4E7F0;
+  --border-hi:#CDD1E0;
+  --text:#0F1220;
+  --text2:#4A5272;
+  --text3:#8E96B0;
+  --shadow:rgba(15,18,32,.07);
+  --shadow-hi:rgba(15,18,32,.14);
+
+  /* Brand */
+  --purple:#6D5FFA;
+  --purple-lt:#EEF0FF;
+  --purple-d:#5046D3;
+  --teal:#0DA790;
+  --teal-lt:#E6F7F5;
+  --amber:#D97706;
+  --amber-lt:#FEF3C7;
+  --coral:#E11D48;
+  --coral-lt:#FFF1F2;
+  --blue:#1D6FDB;
+  --blue-lt:#EFF6FF;
+  --green:#059669;
+  --green-lt:#ECFDF5;
+
+  --r:14px;--r2:10px;--r3:8px;
+  --sans:'Satoshi',system-ui,sans-serif;
+  --display:'Clash Display','Satoshi',sans-serif;
+  --mono:'JetBrains Mono',monospace;
 }
+[data-theme="dark"]{
+  --bg:#06080F;
+  --bg2:#0C0F1C;
+  --card:#0F1220;
+  --card2:#161B2E;
+  --border:rgba(255,255,255,.07);
+  --border-hi:rgba(255,255,255,.13);
+  --text:#E8EBF6;
+  --text2:#8890AB;
+  --text3:#4A5270;
+  --shadow:rgba(0,0,0,.3);
+  --shadow-hi:rgba(0,0,0,.5);
+  --purple:#8B7FF8;
+  --purple-lt:rgba(139,127,248,.1);
+  --purple-d:#6D5FFA;
+  --teal:#2DD4BF;
+  --teal-lt:rgba(45,212,191,.1);
+  --amber:#FCD34D;
+  --amber-lt:rgba(252,211,77,.08);
+  --coral:#FB7185;
+  --coral-lt:rgba(251,113,133,.08);
+  --blue:#60A5FA;
+  --blue-lt:rgba(96,165,250,.08);
+  --green:#34D399;
+  --green-lt:rgba(52,211,153,.08);
+}
+
+/* ══════════════════════════════════════
+   RESET
+══════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  background:var(--bg);color:var(--t1);
-  font-family:var(--fb);font-size:15px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  transition:background .3s,color .3s;
 }
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-::selection{background:rgba(167,139,250,.3);color:#fff}
 
-/* ── NOISE OVERLAY ── */
-body::before{
-  content:'';position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:0;opacity:.4;
-}
-
-/* ── GRADIENT ORBS ── */
-.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px)}
-.orb-1{width:600px;height:600px;top:-15%;left:-10%;background:radial-gradient(circle,rgba(124,58,237,.18) 0%,transparent 65%);animation:drift1 20s ease-in-out infinite alternate}
-.orb-2{width:500px;height:500px;bottom:-10%;right:-10%;background:radial-gradient(circle,rgba(16,185,129,.14) 0%,transparent 65%);animation:drift2 25s ease-in-out infinite alternate}
-.orb-3{width:400px;height:400px;top:40%;left:50%;background:radial-gradient(circle,rgba(167,139,250,.08) 0%,transparent 65%);animation:drift3 30s ease-in-out infinite alternate}
-@keyframes drift1{from{transform:translate(0,0)}to{transform:translate(60px,80px)}}
-@keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-80px,-60px)}}
-@keyframes drift3{from{transform:translate(-50%,-50%)}to{transform:translate(calc(-50% + 40px),calc(-50% - 40px))}}
-
-/* ── NAV ── */
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
 nav{
-  position:fixed;top:16px;left:50%;transform:translateX(-50%);
-  z-index:1000;
+  position:sticky;top:0;z-index:200;
+  height:66px;
   display:flex;align-items:center;justify-content:space-between;
-  width:calc(100% - 48px);max-width:1060px;
-  background:rgba(6,8,15,.75);
-  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-  border:1px solid var(--b2);
-  border-radius:99px;
-  padding:10px 10px 10px 24px;
+  padding:0 max(20px,5%);
+  background:rgba(248,249,252,.88);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:background .3s,border-color .3s;
 }
-.nav-logo{font-family:var(--fd);font-size:16px;font-weight:800;letter-spacing:-.03em;color:var(--t1)}
-.nav-logo em{color:var(--p);font-style:normal}
-.nav-links{display:flex;gap:4px;list-style:none}
-.nav-links a{
-  font-size:13px;font-weight:500;color:var(--t2);
-  padding:6px 14px;border-radius:99px;
-  transition:all .2s;
+[data-theme="dark"] nav{background:rgba(6,8,15,.88)}
+.nav-logo{
+  font-family:var(--display);
+  font-size:18px;font-weight:700;
+  letter-spacing:-.02em;color:var(--text);
+  display:flex;align-items:center;gap:8px;
 }
-.nav-links a:hover{color:var(--t1);background:var(--b1)}
-.nav-btn{
+.logo-mark{
+  width:30px;height:30px;border-radius:8px;
+  background:var(--purple);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:14px;font-weight:700;
+  font-family:var(--display);
+}
+.nav-center{display:flex;gap:2px;list-style:none}
+.nav-center a{
+  font-size:13.5px;font-weight:500;color:var(--text2);
+  padding:6px 14px;border-radius:var(--r3);
+  transition:all .18s;
+}
+.nav-center a:hover{color:var(--text);background:var(--card2)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.availability-dot{
+  display:flex;align-items:center;gap:7px;
+  font-size:12px;font-weight:600;
+  color:var(--green);
+  background:var(--green-lt);
+  border:1px solid rgba(5,150,105,.2);
+  padding:5px 12px;border-radius:99px;
+}
+.availability-dot::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--green);
+  animation:pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.btn-cv{
   font-size:13px;font-weight:600;
-  padding:9px 22px;border-radius:99px;
-  background:var(--p);color:#fff;
-  border:none;cursor:pointer;transition:all .2s;
-  box-shadow:0 0 20px rgba(167,139,250,.3);
+  padding:8px 20px;border-radius:var(--r3);
+  background:var(--purple);color:#fff;
+  border:none;cursor:pointer;
+  transition:all .2s;
+  box-shadow:0 2px 12px rgba(109,95,250,.25);
 }
-.nav-btn:hover{background:var(--p2);box-shadow:0 0 28px rgba(167,139,250,.45)}
+.btn-cv:hover{background:var(--purple-d);box-shadow:0 4px 20px rgba(109,95,250,.4);transform:translateY(-1px)}
+.theme-toggle{
+  width:36px;height:36px;border-radius:var(--r3);
+  border:1px solid var(--border);
+  background:var(--card);
+  cursor:pointer;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;color:var(--text2);
+}
+.theme-toggle:hover{border-color:var(--purple);color:var(--purple)}
 
-/* ── HERO ── */
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero-wrap{
+  max-width:1140px;margin:0 auto;
+  padding:80px max(20px,5%) 60px;
+}
 .hero{
-  position:relative;z-index:1;
-  min-height:100vh;
-  display:flex;align-items:center;
-  padding:120px 24px 80px;
-  max-width:1060px;margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:72px;align-items:center;
 }
-.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;width:100%}
-.hero-left{}
-
-.available-tag{
+.hero-kicker{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--g);
-  background:rgba(16,185,129,.08);
-  border:1px solid rgba(16,185,129,.25);
-  padding:7px 16px;border-radius:99px;
-  margin-bottom:28px;
-}
-.available-tag .dot{
-  width:7px;height:7px;border-radius:50%;
-  background:var(--g);
-  box-shadow:0 0 10px var(--g);
-  animation:blink 2s ease-in-out infinite;
-}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-
-.hero-h1{
-  font-family:var(--fd);
-  font-size:clamp(42px,5.5vw,68px);
-  font-weight:800;line-height:1.04;
-  letter-spacing:-.045em;
-  color:var(--t1);
+  font-family:var(--mono);
+  font-size:11.5px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--purple);
+  background:var(--purple-lt);
+  border:1px solid rgba(109,95,250,.2);
+  padding:6px 14px;border-radius:6px;
   margin-bottom:24px;
 }
-.hero-h1 .grad{
-  background:linear-gradient(135deg,var(--p) 0%,#60A5FA 50%,var(--g) 100%);
+.hero h1{
+  font-family:var(--display);
+  font-size:clamp(40px,5.8vw,68px);
+  font-weight:700;line-height:1.04;
+  letter-spacing:-.04em;
+  color:var(--text);
+  margin-bottom:6px;
+}
+.hero h1 .grad{
+  background:linear-gradient(135deg,var(--purple) 0%,var(--teal) 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
-  background-size:200% 200%;
-  animation:gradShift 6s ease infinite;
 }
-@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-
+.hero-tagline{
+  font-size:16px;font-weight:500;
+  color:var(--text3);
+  font-family:var(--mono);
+  margin-bottom:28px;letter-spacing:.01em;
+}
 .hero-desc{
-  font-size:17px;color:var(--t2);
-  line-height:1.8;max-width:500px;
-  margin-bottom:36px;
+  font-size:17px;color:var(--text2);
+  line-height:1.8;max-width:540px;
+  margin-bottom:32px;
 }
-.hero-desc strong{color:var(--t1);font-weight:600}
-.hero-desc .hi{color:var(--g);font-weight:600}
-
-.hero-stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
-.stack-pill{
-  font-size:12px;font-weight:500;
-  padding:5px 14px;border-radius:99px;
-  background:var(--s2);border:1px solid var(--b2);
-  color:var(--t2);transition:all .2s;cursor:default;
+.hero-desc strong{color:var(--text);font-weight:600}
+.hero-win{
+  display:flex;align-items:center;gap:10px;
+  font-size:13.5px;font-weight:600;
+  color:var(--amber);
+  background:var(--amber-lt);
+  border:1px solid rgba(217,119,6,.2);
+  padding:10px 16px;border-radius:var(--r2);
+  margin-bottom:32px;
 }
-.stack-pill:hover{border-color:var(--p);color:var(--p);background:var(--p3)}
-
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px}
-.cta-main{
-  font-size:15px;font-weight:600;
-  padding:14px 32px;border-radius:99px;
-  background:linear-gradient(135deg,var(--p) 0%,var(--p2) 100%);
-  color:#fff;border:none;cursor:pointer;
-  transition:all .25s;display:inline-flex;align-items:center;gap:9px;
-  box-shadow:0 4px 24px rgba(167,139,250,.3);
+.hero-stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:36px}
+.stack-tag{
+  font-family:var(--mono);font-size:11.5px;font-weight:500;
+  padding:5px 12px;border-radius:var(--r3);
+  background:var(--card2);border:1px solid var(--border);
+  color:var(--text2);transition:all .18s;cursor:default;
 }
-.cta-main:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(167,139,250,.45)}
-.cta-sec{
-  font-size:15px;font-weight:500;
-  padding:14px 32px;border-radius:99px;
+.stack-tag:hover{border-color:var(--purple);color:var(--purple);background:var(--purple-lt)}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary{
+  font-size:14px;font-weight:700;
+  padding:14px 30px;border-radius:var(--r2);
+  background:var(--purple);color:#fff;
+  border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .22s;
+  box-shadow:0 4px 20px rgba(109,95,250,.25);
+}
+.btn-primary:hover{background:var(--purple-d);transform:translateY(-2px);box-shadow:0 8px 32px rgba(109,95,250,.35)}
+.btn-outline{
+  font-size:14px;font-weight:600;
+  padding:14px 30px;border-radius:var(--r2);
   background:transparent;
-  border:1px solid var(--b3);color:var(--t1);
-  cursor:pointer;transition:all .25s;
-  display:inline-flex;align-items:center;gap:9px;
+  border:1.5px solid var(--border-hi);color:var(--text);
+  cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+  transition:all .22s;
 }
-.cta-sec:hover{border-color:var(--p);color:var(--p);background:var(--p3)}
+.btn-outline:hover{border-color:var(--purple);color:var(--purple)}
 
-.hero-metrics{
+/* stats */
+.hero-stats{
   display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1px;
-  background:var(--b1);
-  border:1px solid var(--b2);
-  border-radius:var(--r);overflow:hidden;
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  overflow:hidden;margin-top:48px;
 }
-.metric{
-  background:var(--s1);
-  padding:20px 16px;text-align:center;
+.stat{
+  background:var(--card);padding:20px 14px;text-align:center;
   transition:background .2s;
 }
-.metric:hover{background:var(--s2)}
-.metric-n{
-  font-family:var(--fd);font-size:30px;font-weight:800;
+.stat:hover{background:var(--card2)}
+.stat-n{
+  font-family:var(--display);
+  font-size:30px;font-weight:700;
+  letter-spacing:-.04em;color:var(--text);
   line-height:1;margin-bottom:5px;
-  background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,.7) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
 }
-.metric-n em{
-  font-style:normal;font-size:22px;
-  background:linear-gradient(135deg,var(--p) 0%,var(--g) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
+.stat-n em{
+  font-style:normal;color:var(--purple);font-size:22px;
 }
-.metric-l{font-size:11px;color:var(--t3);line-height:1.4;letter-spacing:.01em}
+.stat-l{font-size:11px;color:var(--text3);font-weight:500;letter-spacing:.02em}
 
-/* Hero right — photo + floating cards */
-.hero-right{position:relative;display:flex;justify-content:center;align-items:center}
-.photo-ring{
-  position:relative;width:300px;height:300px;flex-shrink:0;
-}
-.photo-ring::before{
-  content:'';position:absolute;inset:-3px;border-radius:50%;
-  background:conic-gradient(var(--p),#60A5FA,var(--g),var(--p));
-  animation:spin 8s linear infinite;
-}
-.photo-ring::after{
-  content:'';position:absolute;inset:0;border-radius:50%;
-  background:var(--bg);margin:3px;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-.photo-ring img{
-  position:relative;z-index:1;
-  width:294px;height:294px;border-radius:50%;object-fit:cover;
-  margin:3px;
-}
-
-/* floating accent cards */
-.fc{
-  position:absolute;
-  background:rgba(12,16,32,.9);
-  border:1px solid var(--b2);
-  border-radius:var(--r2);
-  padding:10px 14px;
-  backdrop-filter:blur(12px);
-  font-size:12px;
-  white-space:nowrap;
-}
-.fc-1{top:10px;left:-60px;animation:float1 4s ease-in-out infinite}
-.fc-2{bottom:30px;left:-70px;animation:float2 5s ease-in-out infinite}
-.fc-3{top:30px;right:-40px;animation:float1 4.5s ease-in-out infinite .5s}
-@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-.fc-icon{font-size:16px;margin-bottom:3px}
-.fc-val{font-weight:700;color:var(--t1);font-size:14px}
-.fc-lbl{color:var(--t3);font-size:10.5px}
-
-/* ── SECTION BASE ── */
-.section{position:relative;z-index:1;max-width:1060px;margin:0 auto;padding:100px 24px}
-.eyebrow{
-  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--p);margin-bottom:14px;display:flex;align-items:center;gap:8px;
-}
-.eyebrow::before{content:'';width:28px;height:1.5px;background:var(--p);border-radius:2px}
-.sh{
-  font-family:var(--fd);
-  font-size:clamp(28px,3.5vw,42px);
-  font-weight:800;letter-spacing:-.04em;
-  color:var(--t1);line-height:1.1;margin-bottom:12px;
-}
-.ss{font-size:16px;color:var(--t2);max-width:520px;line-height:1.75;margin-bottom:56px}
-
-/* ── WIN BANNER ── */
-.win-banner{
-  position:relative;overflow:hidden;
-  background:linear-gradient(135deg,rgba(167,139,250,.1) 0%,rgba(16,185,129,.07) 100%);
-  border:1px solid rgba(167,139,250,.2);
+/* hero profile card */
+.profile-card{
+  background:var(--card);
+  border:1px solid var(--border);
   border-radius:20px;
-  padding:28px 36px;
-  display:flex;align-items:center;gap:24px;
-  margin-bottom:72px;
-}
-.win-banner::before{
-  content:'';position:absolute;top:-60px;right:-60px;
-  width:200px;height:200px;border-radius:50%;
-  background:radial-gradient(circle,rgba(167,139,250,.2) 0%,transparent 70%);
-  pointer-events:none;
-}
-.win-trophy{font-size:44px;flex-shrink:0;filter:drop-shadow(0 0 16px rgba(245,158,11,.5))}
-.win-title{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--t1);margin-bottom:5px;letter-spacing:-.02em}
-.win-sub{font-size:13.5px;color:var(--t2);line-height:1.6;max-width:600px}
-.win-badge{
-  margin-left:auto;flex-shrink:0;
-  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  padding:8px 18px;border-radius:99px;
-  background:linear-gradient(135deg,var(--a) 0%,var(--c) 100%);
-  color:#fff;white-space:nowrap;
-}
-
-/* ── ABOUT ── */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.about-text p{color:var(--t2);line-height:1.85;margin-bottom:18px;font-size:15px}
-.about-text p strong{color:var(--t1);font-weight:600}
-.remote-pill{
-  display:inline-flex;align-items:center;gap:10px;
-  margin-top:10px;
-  font-size:13px;font-weight:500;
-  padding:10px 20px;border-radius:99px;
-  background:rgba(16,185,129,.08);
-  border:1px solid rgba(16,185,129,.22);
-  color:var(--g);
-}
-.remote-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 8px var(--g);animation:blink 2s infinite}
-
-.skills-wrap{display:flex;flex-direction:column;gap:12px}
-.sk-group{
-  background:var(--s1);border:1px solid var(--b1);
-  border-radius:var(--r);padding:18px 20px;
-  transition:border-color .2s;
-}
-.sk-group:hover{border-color:var(--b2)}
-.sk-title{
-  font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--p);margin-bottom:12px;
-}
-.sk-tags{display:flex;flex-wrap:wrap;gap:7px}
-.sk-tag{
-  font-size:12px;padding:4px 11px;border-radius:99px;
-  background:var(--s2);border:1px solid var(--b1);color:var(--t2);
-}
-
-/* ── PROJECTS ── */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.proj-card{
-  background:var(--s1);border:1px solid var(--b1);
-  border-radius:20px;overflow:hidden;
-  display:flex;flex-direction:column;
-  transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s;
+  overflow:hidden;
+  box-shadow:0 8px 40px var(--shadow),0 2px 8px var(--shadow);
   position:relative;
 }
-.proj-card:hover{
-  transform:translateY(-8px);
-  border-color:rgba(167,139,250,.25);
-  box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(167,139,250,.06);
+.card-top-bar{
+  height:4px;
+  background:linear-gradient(90deg,var(--purple),var(--teal));
 }
-.proj-card.big{grid-column:span 2}
+.card-photo-area{
+  padding:28px 28px 0;
+  display:flex;flex-direction:column;align-items:center;
+}
+.photo-frame{
+  position:relative;width:140px;height:140px;
+  margin-bottom:16px;
+}
+.photo-ring-outer{
+  position:absolute;inset:-3px;border-radius:50%;
+  background:linear-gradient(135deg,var(--purple),var(--teal));
+  animation:spin-slow 10s linear infinite;
+}
+@keyframes spin-slow{to{transform:rotate(360deg)}}
+.photo-ring-inner{
+  position:absolute;inset:2px;border-radius:50%;
+  background:var(--card);
+}
+.card-photo{
+  position:absolute;inset:5px;
+  border-radius:50%;object-fit:cover;z-index:1;
+  width:calc(100% - 10px);height:calc(100% - 10px);
+}
+.card-name{
+  font-family:var(--display);
+  font-size:19px;font-weight:700;
+  letter-spacing:-.03em;text-align:center;
+  color:var(--text);margin-bottom:4px;
+}
+.card-role{
+  font-family:var(--mono);font-size:11px;
+  color:var(--text3);text-align:center;
+  letter-spacing:.05em;margin-bottom:20px;
+}
+.card-divider{height:1px;background:var(--border);margin:0 -4px 16px}
+.card-body{padding:0 24px 24px}
+.card-row{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:9px 0;border-bottom:1px solid var(--border);
+  font-size:12.5px;
+}
+.card-row:last-child{border-bottom:none}
+.card-icon{
+  width:28px;height:28px;border-radius:7px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;flex-shrink:0;margin-top:1px;
+}
+.card-lbl{font-size:11px;color:var(--text3);font-weight:500;margin-bottom:2px}
+.card-val{color:var(--text);font-weight:600;font-size:12.5px}
+.remote-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;
+  background:var(--green-lt);
+  border:1px solid rgba(5,150,105,.2);
+  color:var(--green);
+  padding:3px 9px;border-radius:99px;
+}
+.remote-badge::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--green);animation:pulse-dot 1.8s ease-in-out infinite;
+}
 
-.proj-img{position:relative;height:200px;overflow:hidden}
-.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.proj-card:hover .proj-img img{transform:scale(1.06)}
-.proj-img-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(6,8,15,.7) 0%,transparent 60%);
+/* ══════════════════════════════════════
+   SECTIONS
+══════════════════════════════════════ */
+.section{
+  max-width:1140px;margin:0 auto;
+  padding:96px max(20px,5%);
 }
-.proj-tags-over{
-  position:absolute;top:14px;left:14px;
+.divider-line{
+  height:1px;
+  background:var(--border);
+  margin:0 max(20px,5%);
+}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:11px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--purple);margin-bottom:12px;
+  display:flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:'';width:20px;height:1.5px;background:var(--purple)}
+.section-h{
+  font-family:var(--display);
+  font-size:clamp(28px,3.8vw,42px);
+  font-weight:700;letter-spacing:-.04em;
+  color:var(--text);margin-bottom:12px;line-height:1.1;
+}
+.section-p{
+  font-size:15.5px;color:var(--text2);
+  max-width:480px;margin-bottom:56px;line-height:1.75;
+}
+
+/* ══════════════════════════════════════
+   WIN BANNER
+══════════════════════════════════════ */
+.win-banner{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--amber-lt) 0%,var(--purple-lt) 100%);
+  border:1px solid rgba(217,119,6,.2);
+  border-radius:var(--r);
+  padding:28px 32px;
+  display:flex;align-items:center;gap:20px;
+  margin-bottom:72px;
+  box-shadow:0 2px 16px rgba(217,119,6,.08);
+}
+.win-emoji{font-size:36px;flex-shrink:0;filter:drop-shadow(0 2px 8px rgba(217,119,6,.3))}
+.win-t{font-family:var(--display);font-size:18px;font-weight:700;color:var(--text);margin-bottom:5px}
+.win-s{font-size:13.5px;color:var(--text2);line-height:1.6;max-width:600px}
+.win-chip{
+  margin-left:auto;flex-shrink:0;
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.07em;
+  padding:5px 12px;border-radius:6px;
+  background:var(--amber-lt);
+  border:1px solid rgba(217,119,6,.25);
+  color:var(--amber);white-space:nowrap;
+}
+
+/* ══════════════════════════════════════
+   ABOUT
+══════════════════════════════════════ */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.about-copy p{font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:18px}
+.about-copy p strong{color:var(--text);font-weight:600}
+.remote-note{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:600;color:var(--teal);
+  background:var(--teal-lt);
+  border:1px solid rgba(13,167,144,.2);
+  padding:10px 18px;border-radius:var(--r2);
+  margin-top:6px;
+}
+.skills-col{display:flex;flex-direction:column;gap:10px}
+.skill-block{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r2);
+  padding:16px 18px;
+  box-shadow:0 1px 4px var(--shadow);
+  transition:border-color .2s,box-shadow .2s;
+}
+.skill-block:hover{border-color:var(--border-hi);box-shadow:0 4px 16px var(--shadow)}
+.skill-block-title{
+  font-family:var(--mono);font-size:10.5px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--purple);margin-bottom:10px;
+}
+.skill-chips{display:flex;flex-wrap:wrap;gap:6px}
+.sc{
+  font-size:12px;font-weight:500;
+  padding:4px 10px;border-radius:6px;
+  background:var(--card2);
+  border:1px solid var(--border);
+  color:var(--text2);transition:all .15s;cursor:default;
+}
+.sc:hover{border-color:var(--purple);color:var(--purple);background:var(--purple-lt)}
+
+/* ══════════════════════════════════════
+   PROJECTS
+══════════════════════════════════════ */
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:18px;
+}
+.proj{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:0 2px 8px var(--shadow);
+  transition:transform .28s cubic-bezier(.22,1,.36,1),
+             box-shadow .28s,border-color .28s;
+}
+.proj:hover{
+  transform:translateY(-6px);
+  border-color:rgba(109,95,250,.25);
+  box-shadow:0 20px 56px var(--shadow-hi);
+}
+.proj.featured{grid-column:span 2;flex-direction:row}
+.proj.featured .proj-img{width:380px;flex-shrink:0;height:auto}
+.proj-img{height:196px;overflow:hidden;position:relative;background:var(--card2)}
+.proj-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .45s cubic-bezier(.22,1,.36,1);
+}
+.proj:hover .proj-img img{transform:scale(1.05)}
+.proj-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(15,18,32,.55) 0%,transparent 55%);
+}
+[data-theme="dark"] .proj-overlay{background:linear-gradient(to top,rgba(6,8,15,.75) 0%,transparent 55%)}
+.proj-chips{
+  position:absolute;top:12px;left:12px;
   display:flex;gap:6px;flex-wrap:wrap;
 }
-.ptag{
-  font-size:10px;font-weight:700;letter-spacing:.05em;
-  padding:4px 11px;border-radius:99px;
+.chip{
+  font-size:10px;font-weight:700;letter-spacing:.04em;
+  padding:3px 9px;border-radius:5px;
+  backdrop-filter:blur(8px);
 }
-.pt-p{background:rgba(167,139,250,.85);color:#fff}
-.pt-g{background:rgba(16,185,129,.85);color:#052612}
-.pt-a{background:rgba(245,158,11,.85);color:#1C0A00}
-.pt-c{background:rgba(249,115,22,.85);color:#1C0600}
-.pt-b{background:rgba(59,130,246,.85);color:#00102D}
+.c-purple{background:rgba(109,95,250,.85);color:#fff}
+.c-teal{background:rgba(13,167,144,.85);color:#fff}
+.c-amber{background:rgba(180,83,9,.85);color:#FDE68A}
+.c-coral{background:rgba(190,18,60,.85);color:#FFE4E6}
+.c-blue{background:rgba(29,111,219,.85);color:#DBEAFE}
+.c-green{background:rgba(5,101,79,.85);color:#D1FAE5}
 
-.proj-body{padding:22px 24px;flex:1;display:flex;flex-direction:column;gap:11px}
-.proj-q{font-size:11.5px;color:var(--p);font-style:italic;line-height:1.55}
-.proj-title{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--t1);line-height:1.25;letter-spacing:-.02em}
-.proj-desc{font-size:13px;color:var(--t2);line-height:1.7}
-.proj-impact{
-  font-size:12.5px;font-weight:500;color:var(--g);
-  background:rgba(16,185,129,.07);
-  border-left:2.5px solid var(--g);
-  padding:9px 13px;border-radius:0 var(--r3) var(--r3) 0;
-  line-height:1.5;
+.proj-body{
+  padding:22px 22px 20px;
+  flex:1;display:flex;flex-direction:column;gap:10px;
 }
-.proj-stack{display:flex;flex-wrap:wrap;gap:6px}
-.ps{
-  font-size:11px;padding:3px 10px;border-radius:99px;
-  background:var(--s2);border:1px solid var(--b1);color:var(--t3);
+.proj-q{
+  font-family:var(--mono);font-size:11px;
+  color:var(--purple);line-height:1.6;font-style:italic;
+}
+.proj-title{
+  font-family:var(--display);
+  font-size:17px;font-weight:700;
+  letter-spacing:-.03em;color:var(--text);line-height:1.25;
+}
+.proj-desc{font-size:13.5px;color:var(--text2);line-height:1.7}
+.proj-impact{
+  font-size:12.5px;font-weight:600;color:var(--green);
+  background:var(--green-lt);
+  border-left:2.5px solid var(--green);
+  padding:9px 12px;border-radius:0 var(--r3) var(--r3) 0;
+}
+.proj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
+.ptag{
+  font-family:var(--mono);font-size:10.5px;
+  padding:3px 8px;border-radius:5px;
+  background:var(--card2);
+  border:1px solid var(--border);color:var(--text3);
 }
 .proj-links{
-  display:flex;gap:9px;margin-top:auto;
-  padding-top:14px;border-top:1px solid var(--b1);
+  display:flex;gap:8px;margin-top:auto;
+  padding-top:14px;border-top:1px solid var(--border);
 }
 .pl{
   font-size:12px;font-weight:600;
-  padding:7px 16px;border-radius:99px;
-  border:1px solid var(--b2);color:var(--t2);
+  padding:7px 16px;border-radius:var(--r3);
+  border:1.5px solid var(--border-hi);color:var(--text2);
   display:inline-flex;align-items:center;gap:6px;
-  transition:all .2s;
+  transition:all .18s;
 }
-.pl:hover{border-color:var(--p);color:var(--p)}
-.pl.main{background:var(--p);border-color:var(--p);color:#fff}
-.pl.main:hover{background:var(--p2)}
+.pl:hover{border-color:var(--purple);color:var(--purple)}
+.pl.main{
+  background:var(--purple);border-color:var(--purple);color:#fff;
+  box-shadow:0 2px 10px rgba(109,95,250,.2);
+}
+.pl.main:hover{background:var(--purple-d);box-shadow:0 4px 18px rgba(109,95,250,.35)}
 
-/* ── EXPERIENCE ── */
-.exp-wrap{display:grid;grid-template-columns:200px 1fr;gap:0}
-.exp-sidebar{padding-right:48px;padding-top:6px;border-right:1px solid var(--b2)}
-.exp-nav{display:flex;flex-direction:column;gap:4px}
-.exp-nav-item{
-  font-size:13px;font-weight:500;color:var(--t3);
-  padding:10px 16px;border-radius:var(--r3);
-  cursor:pointer;transition:all .2s;border:1px solid transparent;
-  text-align:left;background:none;line-height:1.4;
+/* ══════════════════════════════════════
+   EXPERIENCE
+══════════════════════════════════════ */
+.exp-list{display:flex;flex-direction:column}
+.exp-row{
+  display:grid;grid-template-columns:200px 1fr;
+  gap:40px;padding:44px 0;
+  border-bottom:1px solid var(--border);
 }
-.exp-nav-item.active,.exp-nav-item:hover{
-  color:var(--p);background:var(--p3);border-color:rgba(167,139,250,.15);
-}
-.exp-content{padding-left:48px}
-.exp-panel{display:none}
-.exp-panel.active{display:block}
+.exp-row:last-child{border-bottom:none}
+.exp-meta{}
 .exp-period{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--p);margin-bottom:12px;
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  color:var(--purple);letter-spacing:.06em;
+  text-transform:uppercase;margin-bottom:10px;
 }
-.exp-role{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--t1);margin-bottom:4px;letter-spacing:-.03em}
-.exp-org{font-size:14px;color:var(--t2);margin-bottom:24px;display:flex;align-items:center;gap:8px}
-.exp-org .loc{color:var(--t3);font-size:13px}
-.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:12px}
+.exp-org-tag{
+  display:inline-block;
+  font-size:11.5px;font-weight:600;
+  padding:4px 12px;border-radius:6px;
+  background:var(--purple-lt);
+  border:1px solid rgba(109,95,250,.2);
+  color:var(--purple);margin-bottom:10px;
+}
+.exp-sector{font-size:12px;color:var(--text3);line-height:1.6}
+.exp-content{}
+.exp-title{
+  font-family:var(--display);
+  font-size:21px;font-weight:700;
+  letter-spacing:-.03em;color:var(--text);
+  margin-bottom:4px;
+}
+.exp-sub{font-size:13px;color:var(--text3);margin-bottom:20px}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:10px}
 .exp-bullets li{
-  font-size:14px;color:var(--t2);line-height:1.7;
-  padding-left:22px;position:relative;
+  font-size:14px;color:var(--text2);
+  line-height:1.7;padding-left:20px;position:relative;
 }
 .exp-bullets li::before{
   content:'';position:absolute;left:0;top:9px;
-  width:6px;height:6px;border-radius:50%;
-  background:var(--p);box-shadow:0 0 8px rgba(167,139,250,.4);
-  flex-shrink:0;
+  width:7px;height:7px;border-radius:50%;
+  background:var(--purple);opacity:.5;
 }
-.exp-bullets li strong{color:var(--t1);font-weight:600}
-.exp-metrics{
-  display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;
+.exp-bullets li strong{color:var(--text);font-weight:600}
+.exp-kpis{
+  display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;
 }
-.exp-metric{
-  padding:10px 18px;border-radius:var(--r3);
-  background:var(--s2);border:1px solid var(--b1);
-  font-size:12px;color:var(--t2);
-  display:flex;align-items:center;gap:8px;
+.kpi{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:600;
+  padding:6px 14px;border-radius:var(--r3);
+  background:var(--card2);border:1px solid var(--border);
+  color:var(--text);
+  box-shadow:0 1px 3px var(--shadow);
 }
-.exp-metric strong{color:var(--t1);font-size:15px;font-weight:700}
+.kpi-val{
+  font-family:var(--display);font-size:16px;font-weight:700;
+  color:var(--purple);
+}
 
-/* ── CONTACT ── */
-.contact-section{
-  position:relative;z-index:1;
-  background:linear-gradient(135deg,var(--s1) 0%,rgba(16,22,44,.8) 100%);
-  border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);
-  padding:100px 24px;
+/* ══════════════════════════════════════
+   CONTACT
+══════════════════════════════════════ */
+.contact-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;
+  box-shadow:0 4px 24px var(--shadow);
 }
-.contact-inner{
-  max-width:1060px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;
+.contact-l{
+  padding:52px 48px;
+  background:linear-gradient(135deg,var(--purple-lt) 0%,transparent 70%);
+  border-right:1px solid var(--border);
 }
-.contact-left .ss{margin-bottom:28px}
-.contact-avail{
+.contact-l .section-h{margin-bottom:14px}
+.contact-l p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:20px}
+.open-badge{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--g);
-  background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);
-  padding:7px 16px;border-radius:99px;margin-bottom:24px;
+  font-size:13px;font-weight:600;color:var(--teal);
+  background:var(--teal-lt);
+  border:1px solid rgba(13,167,144,.2);
+  padding:8px 16px;border-radius:99px;
+  margin-bottom:28px;
 }
-.contact-avail .dot{width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 8px var(--g);animation:blink 2s infinite}
-.contact-note{font-size:14px;color:var(--t2);line-height:1.8;margin-bottom:32px}
-.contact-note strong{color:var(--t1)}
-.contact-links{display:flex;flex-direction:column;gap:12px}
+.open-badge::before{
+  content:'';width:7px;height:7px;border-radius:50%;
+  background:var(--teal);animation:pulse-dot 1.8s ease-in-out infinite;
+}
+.contact-r{padding:52px 48px}
+.clinks{display:flex;flex-direction:column;gap:10px}
 .clink{
-  display:flex;align-items:center;gap:16px;
-  padding:16px 20px;
-  background:var(--s1);border:1px solid var(--b1);
-  border-radius:var(--r);transition:all .22s;
+  display:flex;align-items:center;gap:14px;
+  padding:15px 18px;
+  background:var(--card2);border:1px solid var(--border);
+  border-radius:var(--r2);cursor:pointer;
+  transition:all .2s;
 }
-.clink:hover{border-color:rgba(167,139,250,.25);transform:translateX(6px);background:var(--s2)}
-.clink-ico{
-  width:40px;height:40px;border-radius:10px;
+.clink:hover{
+  border-color:rgba(109,95,250,.3);
+  background:var(--purple-lt);
+  transform:translateX(4px);
+}
+.clink-icon{
+  width:38px;height:38px;border-radius:10px;
   display:flex;align-items:center;justify-content:center;
-  font-size:18px;flex-shrink:0;font-weight:700;
+  font-size:15px;font-weight:700;flex-shrink:0;
 }
-.clink-lbl{font-size:14px;font-weight:600;color:var(--t1)}
-.clink-sub{font-size:12px;color:var(--t3);margin-top:1px}
-.clink-arr{margin-left:auto;color:var(--t3);font-size:16px;transition:transform .2s}
-.clink:hover .clink-arr{transform:translateX(4px);color:var(--p)}
+.clink-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px}
+.clink-val{font-size:11.5px;color:var(--text3)}
+.clink-arr{margin-left:auto;color:var(--text3);font-size:15px;transition:all .2s}
+.clink:hover .clink-arr{color:var(--purple);transform:translateX(3px)}
 
-/* ── FOOTER ── */
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
 footer{
-  position:relative;z-index:1;
-  max-width:1060px;margin:0 auto;
-  padding:32px 24px;
-  display:flex;align-items:center;justify-content:space-between;
-  border-top:1px solid var(--b1);flex-wrap:wrap;gap:12px;
+  border-top:1px solid var(--border);
+  padding:28px max(20px,5%);
+  display:flex;align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
 }
-.foot-l{font-size:13px;color:var(--t3)}
-.foot-r{display:flex;gap:20px}
-.foot-r a{font-size:13px;color:var(--t3);transition:color .2s}
-.foot-r a:hover{color:var(--p)}
+.footer-copy{font-size:12px;color:var(--text3)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:var(--text3);transition:color .18s}
+.footer-links a:hover{color:var(--purple)}
 
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  nav{width:calc(100% - 32px);top:12px}
-  .hero-inner{grid-template-columns:1fr;gap:48px}
-  .hero-right{justify-content:flex-start}
-  .photo-ring{width:220px;height:220px}
-  .photo-ring img{width:214px;height:214px}
-  .hero-metrics{grid-template-columns:repeat(2,1fr)}
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.in{opacity:1;transform:none}
+.fade-up:nth-child(2){transition-delay:.1s}
+.fade-up:nth-child(3){transition-delay:.2s}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;gap:48px}
+  .profile-card{max-width:380px}
   .about-grid{grid-template-columns:1fr}
+  .proj.featured{grid-column:span 1;flex-direction:column}
+  .proj.featured .proj-img{width:100%;height:200px}
+  .contact-card{grid-template-columns:1fr}
+  .contact-l{border-right:none;border-bottom:1px solid var(--border)}
+  .exp-row{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .nav-center{display:none}
+  .availability-dot{display:none}
   .proj-grid{grid-template-columns:1fr}
-  .proj-card.big{grid-column:span 1}
-  .exp-wrap{grid-template-columns:1fr;gap:32px}
-  .exp-sidebar{border-right:none;padding-right:0;border-bottom:1px solid var(--b2);padding-bottom:20px}
-  .exp-nav{flex-direction:row;flex-wrap:wrap}
-  .exp-content{padding-left:0}
-  .contact-inner{grid-template-columns:1fr;gap:40px}
-  .nav-links{display:none}
-  .win-badge{display:none}
-  .fc{display:none}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .contact-l,.contact-r{padding:36px 28px}
 }
-@media(max-width:500px){
-  .hero-metrics{grid-template-columns:repeat(2,1fr)}
-  .hero-ctas{flex-direction:column}
-  .cta-main,.cta-sec{justify-content:center}
-}
-
-/* ── SCROLL ANIMATIONS ── */
-.fade-up{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
-.fade-up.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
 
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-<div class="orb orb-3"></div>
-
 <!-- NAV -->
-<nav>
-  <div class="nav-logo">Ruth<em>.</em></div>
-  <ul class="nav-links">
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-logo">
+    <div class="logo-mark" aria-hidden="true">R</div>
+    Ruth Ondiere
+  </div>
+  <ul class="nav-center" role="list">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="nav-btn" target="_blank" rel="noopener">Download CV</a>
+  <div class="nav-right">
+    <div class="availability-dot" aria-label="Open to new opportunities">Open to opportunities</div>
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark/light mode">☀</button>
+    <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="btn-cv" target="_blank" rel="noopener">Download CV</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
+<div class="hero-wrap">
+  <div class="hero">
     <div class="hero-left fade-up">
-      <div class="available-tag"><div class="dot"></div>Available · Remote · UTC+3</div>
-      <h1 class="hero-h1">Data that <span class="grad">drives decisions</span>,<br>not just reports</h1>
+      <div class="hero-kicker">Data Analyst · Python · SQL · Tableau</div>
+      <h1>I find the insight.<br><span class="grad">You make the call.</span></h1>
+      <p class="hero-tagline">// pipelines → dashboards → decisions</p>
       <p class="hero-desc">
-        <strong>2+ years</strong> building pipelines, dashboards, and ML models —
-        cutting reporting time by <span class="hi">70%</span>, boosting retention by <span class="hi">15%</span>,
-        and delivering real-time insights to operations teams.
+        2+ years building data pipelines, dashboards, and ML models —
+        cutting reporting time by <strong>70%</strong>, boosting client retention by <strong>15%</strong>,
+        and delivering real-time intelligence to operations teams across East Africa.
       </p>
+      <div class="hero-win">
+        🏆 &nbsp;Botathon Hackathon — 1st Place · National competition · Kenya
+      </div>
       <div class="hero-stack">
-        <span class="stack-pill">Python</span>
-        <span class="stack-pill">PySpark</span>
-        <span class="stack-pill">SQL</span>
-        <span class="stack-pill">Tableau</span>
-        <span class="stack-pill">Power BI</span>
-        <span class="stack-pill">Scikit-learn</span>
-        <span class="stack-pill">XGBoost</span>
-        <span class="stack-pill">AWS</span>
-        <span class="stack-pill">Docker</span>
-        <span class="stack-pill">🏆 Botathon Winner</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">PySpark</span>
+        <span class="stack-tag">SQL</span>
+        <span class="stack-tag">Tableau</span>
+        <span class="stack-tag">Power BI</span>
+        <span class="stack-tag">XGBoost</span>
+        <span class="stack-tag">Scikit-learn</span>
+        <span class="stack-tag">SHAP</span>
+        <span class="stack-tag">AWS</span>
+        <span class="stack-tag">Docker</span>
       </div>
-      <div class="hero-ctas">
-        <a href="#projects" class="cta-main">View my work <span>→</span></a>
-        <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="cta-sec" target="_blank" rel="noopener">Download CV</a>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View my work →</a>
+        <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="btn-outline" target="_blank" rel="noopener">Download CV</a>
       </div>
-      <div class="hero-metrics">
-        <div class="metric"><div class="metric-n">70<em>%</em></div><div class="metric-l">Reporting<br>time cut</div></div>
-        <div class="metric"><div class="metric-n">2<em>+</em></div><div class="metric-l">Years of<br>experience</div></div>
-        <div class="metric"><div class="metric-n">8<em>+</em></div><div class="metric-l">Projects<br>shipped</div></div>
-        <div class="metric"><div class="metric-n">88<em>%</em></div><div class="metric-l">Best model<br>AUC-ROC</div></div>
+      <div class="hero-stats" role="region" aria-label="Key metrics">
+        <div class="stat">
+          <div class="stat-n">70<em>%</em></div>
+          <div class="stat-l">Reporting time cut</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">2<em>+</em></div>
+          <div class="stat-l">Years experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">88<em>%</em></div>
+          <div class="stat-l">AUC-ROC achieved</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">8<em>+</em></div>
+          <div class="stat-l">Projects shipped</div>
+        </div>
       </div>
     </div>
-    <div class="hero-right fade-up" style="transition-delay:.15s">
-      <div class="photo-ring">
-        <img src="https://bonaondiere.github.io/ruth_photo.jpg" alt="Ruth Ondiere — Data Analyst"/>
-        <!-- floating accent cards -->
-        <div class="fc fc-1">
-          <div class="fc-icon">📊</div>
-          <div class="fc-val">99,438</div>
-          <div class="fc-lbl">Orders analysed</div>
+
+    <div class="hero-right fade-up" style="transition-delay:.18s">
+      <div class="profile-card">
+        <div class="card-top-bar"></div>
+        <div class="card-photo-area">
+          <div class="photo-frame" role="img" aria-label="Photo of Ruth Ondiere">
+            <div class="photo-ring-outer" aria-hidden="true"></div>
+            <div class="photo-ring-inner" aria-hidden="true"></div>
+            <img src="https://bonaondiere.github.io/ruth_photo.jpg" alt="Ruth Ondiere, Data Analyst" class="card-photo"/>
+          </div>
+          <div class="card-name">Ruth Ondiere</div>
+          <div class="card-role">data-analyst · ml-engineer</div>
         </div>
-        <div class="fc fc-2">
-          <div class="fc-icon">⚡</div>
-          <div class="fc-val">6h → 15m</div>
-          <div class="fc-lbl">Reporting time</div>
-        </div>
-        <div class="fc fc-3">
-          <div class="fc-icon">🏆</div>
-          <div class="fc-val">1st Place</div>
-          <div class="fc-lbl">Botathon 2024</div>
+        <div class="card-body">
+          <div class="card-divider"></div>
+          <div class="card-row">
+            <div class="card-icon" style="background:var(--purple-lt);color:var(--purple)">📍</div>
+            <div><div class="card-lbl">Location</div><div class="card-val">Nairobi, Kenya</div></div>
+          </div>
+          <div class="card-row">
+            <div class="card-icon" style="background:var(--teal-lt);color:var(--teal)">🕐</div>
+            <div><div class="card-lbl">Time zone</div><div class="card-val">East Africa · overlaps EU mornings</div></div>
+          </div>
+          <div class="card-row">
+            <div class="card-icon" style="background:var(--green-lt);color:var(--green)">🌐</div>
+            <div><div class="card-lbl">Work mode</div><div class="card-val"><span class="remote-badge">Open to remote</span></div></div>
+          </div>
+          <div class="card-row">
+            <div class="card-icon" style="background:var(--blue-lt);color:var(--blue)">📅</div>
+            <div><div class="card-lbl">Availability</div><div class="card-val">Open to new opportunities</div></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="section" id="about">
+<div class="divider-line"></div>
 
-  <div class="win-banner fade-up">
-    <div class="win-trophy">🏆</div>
+<!-- ABOUT -->
+<section class="section fade-up" id="about" aria-label="About Ruth Ondiere">
+  <div class="win-banner" role="note">
+    <div class="win-emoji" aria-hidden="true">🏆</div>
     <div>
-      <div class="win-title">Botathon Hackathon — 1st Place Winner</div>
-      <div class="win-sub">Built an AI-powered RAG course advisor using NLP + OpenAI API that achieved 85% user satisfaction in a live pilot with 200+ students — competing against teams nationally.</div>
+      <div class="win-t">Botathon Hackathon — 1st Place, National</div>
+      <div class="win-s">Built a RAG-powered course advisor (NLP + OpenAI API + vector database) that achieved 85% user satisfaction in a 200-student pilot. Competed and won against teams across Kenya.</div>
     </div>
-    <div class="win-badge">National Winner</div>
+    <div class="win-chip">1st Place · Kenya</div>
   </div>
 
-  <div class="eyebrow fade-up">About</div>
-  <h2 class="sh fade-up">The analyst behind the numbers</h2>
-  <p class="ss fade-up">Nairobi-based, globally available. I own the full stack — pipelines, models, dashboards, and the storytelling that makes leaders act.</p>
+  <div class="eyebrow">About</div>
+  <h2 class="section-h">The analyst behind<br>the numbers</h2>
+  <p class="section-p">Nairobi-based, globally minded. I build the pipelines, dashboards, and models that turn raw data into answers leadership actually uses.</p>
 
   <div class="about-grid">
-    <div class="about-text fade-up">
-      <p>
-        I'm a Data Analyst who works <strong>end-to-end</strong> — from raw ingestion and ETL in PySpark, through SQL analysis and ML modelling, to Tableau dashboards and executive presentations. I've built pipelines processing <strong>millions of records</strong>, shipped real-time monitoring dashboards that cut issue identification by <strong>30%</strong>, and deployed ML models that go into production — not just notebooks left on a drive.
-      </p>
-      <p>
-        My project portfolio spans e-commerce intelligence (99k+ real orders), financial risk modelling (<strong>88% AUC-ROC</strong>), customer churn prediction (<strong>84% recall</strong> with SHAP explainability), geospatial route optimisation, and a national <strong>hackathon-winning AI chatbot</strong>. I move fast, communicate clearly, and thrive on ambiguous, high-stakes problems.
-      </p>
-      <p>
-        I'm actively seeking a <strong>fully remote Data Analyst or Data Scientist role</strong> on a global team where data genuinely drives decisions. I'm async-first, self-directed, and available immediately.
-      </p>
-      <div class="remote-pill"><div class="dot"></div>Open to remote · EAT (UTC+3) · Available immediately</div>
+    <div class="about-copy">
+      <p>I operate end-to-end: from ingesting messy raw data and engineering ETL pipelines, through statistical analysis and ML modelling, to dashboards and presentations that <strong>non-technical stakeholders understand and act on</strong>. I've built PySpark pipelines processing millions of records, designed real-time Tableau dashboards reducing issue resolution time by <strong>30%</strong>, and shipped ML models into production — not just notebooks.</p>
+      <p>My project portfolio spans e-commerce intelligence (99k+ real orders), financial risk modelling (<strong>88% AUC-ROC credit classifier</strong>), customer retention analytics (84% recall churn model with SHAP explainability), geospatial route optimisation, and a nationally <strong>award-winning AI chatbot</strong>. I solve ambiguous problems quickly and communicate findings in plain English.</p>
+      <p>I'm looking for a <strong>fully remote Data Analyst or Data Scientist role</strong> on a global team where data is genuinely used to make decisions. Async-first, self-directed, and comfortable working across time zones.</p>
+      <div class="remote-note">🌍 &nbsp;Remote-first · East Africa Time · overlaps EU mornings &amp; US evenings</div>
     </div>
-    <div class="skills-wrap fade-up" style="transition-delay:.1s">
-      <div class="sk-group">
-        <div class="sk-title">Analysis & Engineering</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Python</span><span class="sk-tag">Pandas</span><span class="sk-tag">NumPy</span>
-          <span class="sk-tag">SQL</span><span class="sk-tag">PostgreSQL</span><span class="sk-tag">PySpark</span>
-          <span class="sk-tag">ETL Pipelines</span><span class="sk-tag">A/B Testing</span>
+    <div class="skills-col">
+      <div class="skill-block">
+        <div class="skill-block-title">Analysis &amp; Engineering</div>
+        <div class="skill-chips">
+          <span class="sc">Python</span><span class="sc">Pandas</span><span class="sc">NumPy</span>
+          <span class="sc">SQL</span><span class="sc">PostgreSQL</span>
+          <span class="sc">PySpark</span><span class="sc">ETL Pipelines</span><span class="sc">A/B Testing</span>
         </div>
       </div>
-      <div class="sk-group">
-        <div class="sk-title">Machine Learning & AI</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Scikit-learn</span><span class="sk-tag">XGBoost</span>
-          <span class="sk-tag">Random Forest</span><span class="sk-tag">SHAP</span>
-          <span class="sk-tag">TensorFlow</span><span class="sk-tag">NLP / RAG</span>
-          <span class="sk-tag">SMOTE</span><span class="sk-tag">Time Series</span>
+      <div class="skill-block">
+        <div class="skill-block-title">Machine Learning</div>
+        <div class="skill-chips">
+          <span class="sc">Scikit-learn</span><span class="sc">XGBoost</span>
+          <span class="sc">Random Forest</span><span class="sc">TensorFlow</span>
+          <span class="sc">NLP / RAG</span><span class="sc">SHAP</span>
+          <span class="sc">Time Series</span><span class="sc">SMOTE</span>
         </div>
       </div>
-      <div class="sk-group">
-        <div class="sk-title">Visualisation & BI</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Tableau</span><span class="sk-tag">Power BI</span>
-          <span class="sk-tag">Plotly</span><span class="sk-tag">Seaborn</span><span class="sk-tag">Matplotlib</span>
+      <div class="skill-block">
+        <div class="skill-block-title">Visualisation &amp; BI</div>
+        <div class="skill-chips">
+          <span class="sc">Tableau</span><span class="sc">Power BI</span>
+          <span class="sc">Plotly</span><span class="sc">Seaborn</span><span class="sc">Matplotlib</span>
         </div>
       </div>
-      <div class="sk-group">
-        <div class="sk-title">Tools & Cloud</div>
-        <div class="sk-tags">
-          <span class="sk-tag">AWS S3/EC2/EMR</span><span class="sk-tag">Docker</span>
-          <span class="sk-tag">Git / GitHub</span><span class="sk-tag">Jupyter</span>
-          <span class="sk-tag">REST APIs</span><span class="sk-tag">Google Colab</span>
+      <div class="skill-block">
+        <div class="skill-block-title">Tools &amp; Cloud</div>
+        <div class="skill-chips">
+          <span class="sc">AWS S3 / EC2</span><span class="sc">Docker</span>
+          <span class="sc">Git / GitHub</span><span class="sc">Jupyter</span><span class="sc">REST APIs</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<div class="divider-line"></div>
+
 <!-- PROJECTS -->
-<section class="section" id="projects" style="padding-top:0">
-  <div class="eyebrow fade-up">Projects</div>
-  <h2 class="sh fade-up">Work that speaks for itself</h2>
-  <p class="ss fade-up">Real datasets. Real business questions. Every project answers something a stakeholder would actually care about.</p>
+<section class="section fade-up" id="projects" aria-label="Portfolio projects">
+  <div class="eyebrow">Projects</div>
+  <h2 class="section-h">Work that speaks<br>for itself</h2>
+  <p class="section-p">Real datasets. Real business questions. Every project is built around a problem a stakeholder would actually bring to a data team.</p>
 
   <div class="proj-grid">
 
-    <!-- FEATURED: Olist -->
-    <div class="proj-card big fade-up">
-      <div class="proj-img" style="height:240px">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=500&fit=crop" alt="Olist E-Commerce Dashboard"/>
-        <div class="proj-img-overlay"></div>
-        <div class="proj-tags-over"><span class="ptag pt-p">Featured</span><span class="ptag pt-g">Tableau</span><span class="ptag pt-b">99k Orders</span></div>
+    <article class="proj featured" aria-label="Olist E-Commerce Dashboard">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=600&fit=crop&q=80" alt="E-Commerce Analytics Dashboard" loading="lazy"/>
+        <div class="proj-overlay"></div>
+        <div class="proj-chips">
+          <span class="chip c-purple">★ Featured</span>
+          <span class="chip c-teal">Tableau Public</span>
+          <span class="chip c-green">99k real orders</span>
+        </div>
       </div>
       <div class="proj-body">
-        <div class="proj-q">"Which categories, states, and sellers drive revenue — and where is slow delivery killing satisfaction?"</div>
+        <div class="proj-q">"Which categories, states &amp; sellers drive revenue — and where is slow delivery destroying satisfaction?"</div>
         <div class="proj-title">Brazilian E-Commerce Performance Dashboard · Olist</div>
-        <div class="proj-desc">4-page interactive Tableau dashboard on 99,438 real orders from Brazil's largest marketplace. Pages: Executive KPIs, Logistics & Delivery, Product & Seller Analysis, Payments & Customer Behaviour. 9 calculated fields including delivery colour bands, AOV by payment method, and on-time rate.</div>
-        <div class="proj-impact">📊 Found deliveries over 20 days reduce review scores by 2.2 points — a direct carrier renegotiation case. SP state = 37.5% of all revenue (R$6M of R$16M).</div>
-        <div class="proj-stack"><span class="ps">Tableau</span><span class="ps">Python</span><span class="ps">Pandas</span><span class="ps">KPI Design</span><span class="ps">Data Storytelling</span><span class="ps">E-Commerce Analytics</span></div>
+        <div class="proj-desc">4-page interactive Tableau dashboard on 99,438 real marketplace orders. Covers executive KPIs, logistics performance, product &amp; seller analysis, and payment behaviour. Built with 9 calculated fields including delivery colour bands, on-time rate, and AOV by payment method.</div>
+        <div class="proj-impact">📊 Deliveries &gt;20 days cut review scores by 2.2 points · SP state = 37.5% of all revenue · Credit card AOV 38% higher than voucher users</div>
+        <div class="proj-tags">
+          <span class="ptag">Tableau</span><span class="ptag">Python</span><span class="ptag">Pandas</span>
+          <span class="ptag">KPI Design</span><span class="ptag">E-Commerce</span><span class="ptag">Data Storytelling</span>
+        </div>
         <div class="proj-links">
           <a href="https://public.tableau.com/app/profile/ruth.ondiere" class="pl main" target="_blank" rel="noopener">View on Tableau Public →</a>
           <a href="https://github.com/BONAONDIERE" class="pl" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
-    </div>
+    </article>
 
-    <!-- Loan Analytics -->
-    <div class="proj-card fade-up" style="transition-delay:.05s">
+    <article class="proj" aria-label="Loan Repayment Analytics">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" alt="Loan Repayment Analytics"/>
-        <div class="proj-img-overlay"></div>
-        <div class="proj-tags-over"><span class="ptag pt-a">Data Engineering</span></div>
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80" alt="Loan Analytics" loading="lazy"/>
+        <div class="proj-overlay"></div>
+        <div class="proj-chips"><span class="chip c-amber">Data Engineering</span></div>
       </div>
       <div class="proj-body">
-        <div class="proj-q">"How do we identify at-risk loans before they default — without waiting 6 hours for a report?"</div>
+        <div class="proj-q">"How do we identify at-risk loans before they default — without waiting 6 hours for the report?"</div>
         <div class="proj-title">Loan Repayment Analytics · PySpark + Tableau</div>
-        <div class="proj-desc">PySpark ETL pipeline joining 4 financial tables — loans, transactions, KYC, accounts — to compute daily expected vs actual collections, outstanding balances, and days in default. Tableau dashboard with Healthy / Due / Doubtful loan categorisation.</div>
-        <div class="proj-impact">⚡ Reporting time: 6 hours → 15 minutes. Real-time risk monitoring enabled for the collections team.</div>
-        <div class="proj-stack"><span class="ps">PySpark</span><span class="ps">Tableau</span><span class="ps">SQL</span><span class="ps">Data Warehousing</span></div>
-        <div class="proj-links"><a href="https://github.com/BONAONDIERE/loan-repayment-analytics" class="pl main" target="_blank" rel="noopener">GitHub →</a></div>
+        <div class="proj-desc">ETL pipeline joining 4 financial tables to compute daily expected vs actual collections, outstanding balances, and days in default. Tableau dashboard with Healthy / Due / Doubtful loan health segmentation.</div>
+        <div class="proj-impact">⚡ Reporting time: 6 hours → 15 minutes. Real-time risk monitoring enabled.</div>
+        <div class="proj-tags"><span class="ptag">PySpark</span><span class="ptag">Tableau</span><span class="ptag">SQL</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/BONAONDIERE/loan-repayment-analytics" class="pl main" target="_blank" rel="noopener">GitHub →</a>
+        </div>
       </div>
-    </div>
+    </article>
 
-    <!-- Churn -->
-    <div class="proj-card fade-up" style="transition-delay:.1s">
+    <article class="proj" aria-label="Telecom Churn Prediction">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&h=400&fit=crop" alt="Customer Churn Prediction"/>
-        <div class="proj-img-overlay"></div>
-        <div class="proj-tags-over"><span class="ptag pt-b">ML · Classification</span></div>
+        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&h=400&fit=crop&q=80" alt="Customer Churn ML Model" loading="lazy"/>
+        <div class="proj-overlay"></div>
+        <div class="proj-chips"><span class="chip c-blue">ML · Business Impact</span></div>
       </div>
       <div class="proj-body">
-        <div class="proj-q">"Which customers are about to churn — and what's the most cost-effective way to retain them?"</div>
-        <div class="proj-title">Telecom Customer Churn Prediction · XGBoost + SHAP</div>
-        <div class="proj-desc">End-to-end churn prediction pipeline on 7,000 telecom customers. Applied SMOTE for class imbalance, engineered 15 behavioural features, and used SHAP to explain model decisions — making it boardroom-ready, not just technically accurate.</div>
-        <div class="proj-impact">📉 84% recall on churners. SHAP revealed contract type and tenure as top 2 churn drivers — directly actionable for retention campaigns.</div>
-        <div class="proj-stack"><span class="ps">Python</span><span class="ps">XGBoost</span><span class="ps">SHAP</span><span class="ps">SMOTE</span><span class="ps">Feature Engineering</span></div>
-        <div class="proj-links"><a href="https://github.com/BONAONDIERE" class="pl main" target="_blank" rel="noopener">GitHub →</a></div>
+        <div class="proj-q">"Which customers are about to leave — and what's the most cost-effective way to retain them?"</div>
+        <div class="proj-title">Telecom Customer Churn Prediction</div>
+        <div class="proj-desc">End-to-end churn pipeline on 7,000+ customers. SMOTE for class imbalance, 15 engineered features, XGBoost with SHAP explainability identifying top churn drivers for targeted retention campaigns.</div>
+        <div class="proj-impact">🎯 84% recall · SHAP: contract type &amp; tenure are the top 2 churn drivers · Retention segment built</div>
+        <div class="proj-tags"><span class="ptag">XGBoost</span><span class="ptag">SHAP</span><span class="ptag">SMOTE</span><span class="ptag">Feature Engineering</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/BONAONDIERE" class="pl main" target="_blank" rel="noopener">GitHub →</a>
+        </div>
       </div>
-    </div>
+    </article>
 
-    <!-- Credit Risk -->
-    <div class="proj-card fade-up" style="transition-delay:.05s">
+    <article class="proj" aria-label="Credit Risk Scoring">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop" alt="Credit Risk Scoring"/>
-        <div class="proj-img-overlay"></div>
-        <div class="proj-tags-over"><span class="ptag pt-c">ML · Fintech</span></div>
+        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&q=80" alt="Credit Risk Model" loading="lazy"/>
+        <div class="proj-overlay"></div>
+        <div class="proj-chips"><span class="chip c-coral">ML · Finance</span></div>
       </div>
       <div class="proj-body">
-        <div class="proj-q">"Which borrowers will default — and how early can we flag them to protect the loan portfolio?"</div>
+        <div class="proj-q">"Which borrowers will default — and can we flag them early enough to protect the portfolio?"</div>
         <div class="proj-title">Credit Risk Scoring Model</div>
-        <div class="proj-desc">Binary classification pipeline predicting loan default using borrower history and transaction patterns. Compared Logistic Regression, Random Forest, and XGBoost with full cross-validation and ROC/PR curve analysis.</div>
-        <div class="proj-impact">🎯 88% AUC-ROC on holdout. 12 features engineered from raw borrower data — model ready for production scoring.</div>
-        <div class="proj-stack"><span class="ps">Python</span><span class="ps">Scikit-learn</span><span class="ps">XGBoost</span><span class="ps">Feature Engineering</span></div>
-        <div class="proj-links"><a href="https://github.com/BONAONDIERE/credit-risk-scoring" class="pl main" target="_blank" rel="noopener">GitHub →</a></div>
+        <div class="proj-desc">Binary classification predicting loan default using 12 engineered features. Compared Logistic Regression, Random Forest, and XGBoost with cross-validation and threshold optimisation.</div>
+        <div class="proj-impact">🎯 88% AUC-ROC · 12 features engineered · Threshold tuned for optimal precision/recall trade-off</div>
+        <div class="proj-tags"><span class="ptag">Scikit-learn</span><span class="ptag">XGBoost</span><span class="ptag">Feature Engineering</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/BONAONDIERE/credit-risk-scoring" class="pl main" target="_blank" rel="noopener">GitHub →</a>
+        </div>
       </div>
-    </div>
+    </article>
 
-    <!-- AI Chatbot -->
-    <div class="proj-card fade-up" style="transition-delay:.1s">
+    <article class="proj" aria-label="AI Course Advisor Chatbot">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=400&fit=crop" alt="AI Course Advisor Chatbot"/>
-        <div class="proj-img-overlay"></div>
-        <div class="proj-tags-over"><span class="ptag pt-g">🏆 Hackathon Winner</span></div>
+        <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=400&fit=crop&q=80" alt="AI Chatbot" loading="lazy"/>
+        <div class="proj-overlay"></div>
+        <div class="proj-chips"><span class="chip c-green">🏆 Hackathon Winner</span></div>
       </div>
       <div class="proj-body">
-        <div class="proj-q">"Can AI help 10,000+ students find the right course without needing a human advisor?"</div>
+        <div class="proj-q">"Can AI help 10,000+ students navigate course selection without a human advisor?"</div>
         <div class="proj-title">AI Course Advisor · RAG Chatbot</div>
-        <div class="proj-desc">Led development of a Retrieval-Augmented Generation system using NLP and OpenAI API. Built a vector database for semantic search over course catalogues. Won 1st place in the Botathon hackathon competing nationally.</div>
-        <div class="proj-impact">🤖 85% user satisfaction. 200+ students onboarded in pilot. Zero human advisor involvement.</div>
-        <div class="proj-stack"><span class="ps">Python</span><span class="ps">OpenAI API</span><span class="ps">NLP</span><span class="ps">Vector DB</span><span class="ps">RAG</span></div>
+        <div class="proj-desc">RAG system using NLP and OpenAI API with a vector database for semantic search over course content. Won 1st place in the Botathon national hackathon competing against teams across Kenya.</div>
+        <div class="proj-impact">🤖 85% user satisfaction · 200+ students in pilot · 1st place nationally</div>
+        <div class="proj-tags"><span class="ptag">OpenAI API</span><span class="ptag">NLP</span><span class="ptag">RAG</span><span class="ptag">Vector DB</span></div>
         <div class="proj-links">
           <a href="https://bonaondiere.github.io/kuccps-chatbot/demo.html" class="pl main" target="_blank" rel="noopener">Live Demo →</a>
           <a href="https://github.com/BONAONDIERE/kuccps-chatbot" class="pl" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
-    </div>
+    </article>
 
-    <!-- Airline Fare -->
-    <div class="proj-card fade-up" style="transition-delay:.05s">
+    <article class="proj" aria-label="EduRoutes">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop" alt="Airline Fare Prediction"/>
-        <div class="proj-img-overlay"></div>
-        <div class="proj-tags-over"><span class="ptag pt-p">ML · Regression</span></div>
+        <img src="https://images.unsplash.com/photo-1551836022-8b2858c9c69b?w=600&h=400&fit=crop&q=80" alt="EduRoutes School Routing" loading="lazy"/>
+        <div class="proj-overlay"></div>
+        <div class="proj-chips"><span class="chip c-teal">Geospatial · SDGs</span></div>
       </div>
       <div class="proj-body">
-        <div class="proj-q">"Can we predict airline prices accurately enough to help travellers book at the optimal time?"</div>
-        <div class="proj-title">Airline Fare Prediction Engine</div>
-        <div class="proj-desc">Time-series regression forecasting ticket prices using departure timing, route, and seasonality features. Random Forest vs XGBoost comparison with GridSearchCV hyperparameter tuning and feature importance analysis.</div>
-        <div class="proj-impact">✈️ 22% accuracy improvement vs baseline. MAE reduced $34 → $26 per prediction.</div>
-        <div class="proj-stack"><span class="ps">Python</span><span class="ps">Scikit-learn</span><span class="ps">XGBoost</span><span class="ps">Time Series</span></div>
+        <div class="proj-q">"Can geospatial ML cut school commute times in Nairobi and make education more accessible?"</div>
+        <div class="proj-title">EduRoutes · School Transport Optimisation</div>
+        <div class="proj-desc">Geospatial ML platform optimising school bus routes using clustering and route-efficiency algorithms on real Nairobi school location data. Aligned with UN SDGs 4 and 11.</div>
+        <div class="proj-impact">🗺️ 18% reduction in average commute time in simulation · UN SDG-aligned</div>
+        <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Geospatial</span><span class="ptag">Clustering</span></div>
         <div class="proj-links">
-          <a href="https://colab.research.google.com/github/BONAONDIERE/airline-fare-prediction/blob/main/airline-fare-prediction-model.ipynb" class="pl main" target="_blank" rel="noopener">Notebook →</a>
+          <a href="https://bonaondiere.github.io/eduroutes-overview.html" class="pl main" target="_blank" rel="noopener">Project Details →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj" aria-label="Airline Fare Prediction">
+      <div class="proj-img">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop&q=80" alt="Airline Fare Prediction" loading="lazy"/>
+        <div class="proj-overlay"></div>
+        <div class="proj-chips"><span class="chip c-purple">ML · Regression</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-q">"Can we predict airline fares well enough to tell travellers exactly when to book?"</div>
+        <div class="proj-title">Airline Fare Prediction Engine</div>
+        <div class="proj-desc">Regression pipeline forecasting ticket prices using departure timing, route, and seasonality features. GridSearchCV tuning across Random Forest and XGBoost.</div>
+        <div class="proj-impact">✈️ 22% accuracy improvement vs baseline · MAE: $34 → $26</div>
+        <div class="proj-tags"><span class="ptag">XGBoost</span><span class="ptag">Time Series</span><span class="ptag">Feature Engineering</span></div>
+        <div class="proj-links">
+          <a href="https://colab.research.google.com/github/BONAONDIERE/airline-fare-prediction/blob/main/airline-fare-prediction-model.ipynb" class="pl main" target="_blank" rel="noopener">View Notebook →</a>
           <a href="https://github.com/BONAONDIERE/airline-fare-prediction" class="pl" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
-    </div>
+    </article>
 
-    <!-- EduRoutes -->
-    <div class="proj-card fade-up" style="transition-delay:.1s">
+    <article class="proj" aria-label="Sales Performance Dashboard">
       <div class="proj-img">
-        <img src="https://images.unsplash.com/photo-1551836022-8b2858c9c69b?w=600&h=400&fit=crop" alt="EduRoutes Nairobi"/>
-        <div class="proj-img-overlay"></div>
-        <div class="proj-tags-over"><span class="ptag pt-g">Geospatial</span><span class="ptag pt-b">Social Impact</span></div>
-      </div>
-      <div class="proj-body">
-        <div class="proj-q">"Can ML cut school commute times in Nairobi and make education more physically accessible?"</div>
-        <div class="proj-title">EduRoutes · School Transport Optimisation</div>
-        <div class="proj-desc">Geospatial ML platform optimising school bus routes across Nairobi using clustering and route-efficiency algorithms on real school location data. Aligned with UN SDGs 4 and 11.</div>
-        <div class="proj-impact">🗺️ 18% reduction in avg student commute time in pilot simulation. SDG-aligned impact.</div>
-        <div class="proj-stack"><span class="ps">Python</span><span class="ps">Geospatial</span><span class="ps">Clustering</span><span class="ps">Optimisation</span></div>
-        <div class="proj-links"><a href="https://bonaondiere.github.io/eduroutes-overview.html" class="pl main" target="_blank" rel="noopener">Project Details →</a></div>
-      </div>
-    </div>
-
-    <!-- Sales Dashboard -->
-    <div class="proj-card fade-up" style="transition-delay:.05s">
-      <div class="proj-img">
-        <img src="https://public.tableau.com/static/images/SA/SalesPerformanceOverview/1_rss.png" alt="Sales Performance Dashboard"/>
-        <div class="proj-img-overlay"></div>
-        <div class="proj-tags-over"><span class="ptag pt-p">Tableau</span></div>
+        <img src="https://public.tableau.com/static/images/SA/SalesPerformanceOverview/1_rss.png" alt="Sales Dashboard" loading="lazy"/>
+        <div class="proj-overlay"></div>
+        <div class="proj-chips"><span class="chip c-teal">Tableau</span></div>
       </div>
       <div class="proj-body">
         <div class="proj-q">"Which regions and product lines are underperforming — and is the trend recoverable?"</div>
         <div class="proj-title">Sales Performance Dashboard</div>
-        <div class="proj-desc">Interactive Tableau dashboard with parameter controls, action filters, calculated fields, and trend lines. Designed for self-service — any stakeholder can drill into regional performance without analyst involvement.</div>
-        <div class="proj-impact">📈 Parameter-driven top/bottom analysis eliminates ad-hoc reporting requests.</div>
-        <div class="proj-stack"><span class="ps">Tableau</span><span class="ps">KPI Design</span><span class="ps">Data Storytelling</span></div>
-        <div class="proj-links"><a href="https://public.tableau.com/app/profile/ruth.ondiere/viz/SalesPerformanceOverview_17720984791300/SalesPerformanceOverview?publish=yes" class="pl main" target="_blank" rel="noopener">Live Dashboard →</a></div>
+        <div class="proj-desc">Interactive Tableau dashboard with regional sales, profitability, and product performance. Parameter controls, action filters, calculated fields, and business-ready KPI design.</div>
+        <div class="proj-impact">📈 Stakeholders self-serve their own answers — zero analyst involvement for routine queries</div>
+        <div class="proj-tags"><span class="ptag">Tableau</span><span class="ptag">KPI Design</span><span class="ptag">Data Storytelling</span></div>
+        <div class="proj-links">
+          <a href="https://public.tableau.com/app/profile/ruth.ondiere/viz/SalesPerformanceOverview_17720984791300/SalesPerformanceOverview" class="pl main" target="_blank" rel="noopener">View Dashboard →</a>
+        </div>
       </div>
-    </div>
+    </article>
 
   </div>
 </section>
+
+<div class="divider-line"></div>
 
 <!-- EXPERIENCE -->
-<section class="section" id="experience" style="padding-top:0">
-  <div class="eyebrow fade-up">Experience</div>
-  <h2 class="sh fade-up">Where the skills were forged</h2>
-  <p class="ss fade-up">Real production work at scale — not just coursework and tutorials.</p>
+<section class="section fade-up" id="experience" aria-label="Work experience">
+  <div class="eyebrow">Experience</div>
+  <h2 class="section-h">Where the skills<br>were built</h2>
+  <p class="section-p">Real production work on live data — not just coursework.</p>
 
-  <div class="exp-wrap fade-up">
-    <div class="exp-sidebar">
-      <div class="exp-nav">
-        <button class="exp-nav-item active" onclick="showExp('e1',this)">AgriTech Startup<br><span style="font-size:11px;opacity:.6">2023 – 2025</span></button>
-        <button class="exp-nav-item" onclick="showExp('e2',this)">Independent Projects<br><span style="font-size:11px;opacity:.6">2025 – Present</span></button>
+  <div class="exp-list">
+    <div class="exp-row">
+      <div class="exp-meta">
+        <div class="exp-period">Sep 2023 – Jan 2025</div>
+        <div class="exp-org-tag">AgriTech Platform</div>
+        <div class="exp-sector">IoT-enabled equipment-sharing · Nairobi, Kenya · Full-time</div>
       </div>
-    </div>
-    <div class="exp-content">
-
-      <div class="exp-panel active" id="e1">
-        <div class="exp-period">Sep 2023 – Jan 2025 · 1 yr 5 mo</div>
-        <div class="exp-role">Data Analyst — IoT & Operations Intelligence</div>
-        <div class="exp-org">AgriTech Startup · Nairobi, Kenya <span class="loc">· IoT equipment-sharing platform</span></div>
+      <div class="exp-content">
+        <div class="exp-title">Data Analyst — IoT &amp; Operations Intelligence</div>
+        <div class="exp-sub">Nairobi, Kenya · Full-time</div>
         <ul class="exp-bullets">
           <li>Built and maintained <strong>PySpark ETL pipelines</strong> processing millions of IoT sensor records daily — reducing data preparation time by <strong>40%</strong> and enabling near-real-time operational visibility across field operations.</li>
-          <li>Designed and shipped <strong>automated Tableau monitoring dashboards</strong> adopted as the primary ops intelligence tool — cutting issue identification time by <strong>30%</strong> across engineering and operations teams.</li>
-          <li>Analysed customer usage patterns and surfaced data-driven product recommendations that contributed to a <strong>15% improvement in client retention</strong> over 6 months.</li>
-          <li>Translated complex pipeline outputs into clear, non-technical reports and training materials for <strong>100+ clients</strong> — bridging engineering data and business decision-making.</li>
-          <li>Owned data work end-to-end: raw IoT ingestion → SQL analysis → ML feature exploration → executive dashboard presentation.</li>
+          <li>Designed and shipped <strong>automated Tableau monitoring dashboards</strong> cutting issue identification time by <strong>30%</strong> — became the primary intelligence tool used by engineering and operations teams.</li>
+          <li>Analysed usage patterns and surfaced data-driven product recommendations contributing to a <strong>15% improvement in client retention</strong> over 6 months.</li>
+          <li>Produced non-technical reports and delivered training to <strong>100+ clients</strong> — bridging the gap between complex pipeline outputs and business decisions.</li>
+          <li>Worked end-to-end across IoT ingestion, financial reporting, and client analytics — developing instincts from raw data to stakeholder presentation.</li>
         </ul>
-        <div class="exp-metrics">
-          <div class="exp-metric"><strong>40%</strong> faster data prep</div>
-          <div class="exp-metric"><strong>30%</strong> faster issue ID</div>
-          <div class="exp-metric"><strong>15%</strong> retention lift</div>
-          <div class="exp-metric"><strong>100+</strong> clients trained</div>
+        <div class="exp-kpis">
+          <div class="kpi"><div class="kpi-val">40%</div>data prep time saved</div>
+          <div class="kpi"><div class="kpi-val">30%</div>faster issue resolution</div>
+          <div class="kpi"><div class="kpi-val">15%</div>retention uplift</div>
+          <div class="kpi"><div class="kpi-val">100+</div>clients trained</div>
         </div>
       </div>
+    </div>
 
-      <div class="exp-panel" id="e2">
+    <div class="exp-row">
+      <div class="exp-meta">
         <div class="exp-period">2025 – Present</div>
-        <div class="exp-role">Independent Data Analyst</div>
-        <div class="exp-org">Self-directed · Remote</div>
+        <div class="exp-org-tag">Independent</div>
+        <div class="exp-sector">Self-directed portfolio work · Remote</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-title">Independent Data Projects &amp; Research</div>
+        <div class="exp-sub">Remote · Self-directed</div>
         <ul class="exp-bullets">
-          <li>Built a <strong>4-page Tableau e-commerce dashboard</strong> on 99,438 real Olist orders — calculated fields, delivery performance analysis, seller matrix, and payment behaviour breakdown.</li>
-          <li>Developed a <strong>telecom churn model</strong> with SHAP explainability and 84% recall — production-ready with full documentation.</li>
-          <li>Built a <strong>credit risk classifier</strong> achieving 88% AUC-ROC with 12 engineered features — outperforming baseline by a significant margin.</li>
-          <li>Deepening expertise in MLOps, model explainability (SHAP, LIME), and cloud deployment (AWS EC2/S3) while actively pursuing a remote data role.</li>
+          <li>Built a <strong>4-page Tableau e-commerce dashboard</strong> on 99,438 real Olist orders covering executive KPIs, logistics performance, seller matrices, and payment behaviour with 9 calculated fields.</li>
+          <li>Developed a <strong>telecom churn prediction model</strong> with SHAP explainability achieving 84% recall — identifying contract type and tenure as the top two churn drivers.</li>
+          <li>Built a <strong>credit risk classifier</strong> achieving 88% AUC-ROC with 12 engineered features, comparing three model architectures with threshold optimisation.</li>
+          <li>Deepening skills in XGBoost, SHAP, SMOTE, RAG pipelines, and AWS deployment patterns.</li>
         </ul>
-        <div class="exp-metrics">
-          <div class="exp-metric"><strong>88%</strong> AUC-ROC</div>
-          <div class="exp-metric"><strong>84%</strong> churn recall</div>
-          <div class="exp-metric"><strong>99k+</strong> orders analysed</div>
+        <div class="exp-kpis">
+          <div class="kpi"><div class="kpi-val">99K+</div>orders analysed</div>
+          <div class="kpi"><div class="kpi-val">88%</div>AUC-ROC</div>
+          <div class="kpi"><div class="kpi-val">84%</div>churn recall</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
+<div class="divider-line"></div>
+
 <!-- CONTACT -->
-<div class="contact-section" id="contact">
-  <div class="contact-inner">
-    <div class="contact-left fade-up">
-      <div class="eyebrow">Contact</div>
-      <h2 class="sh">Let's work<br>together</h2>
-      <div class="contact-avail"><div class="dot"></div>Available for remote roles · Now</div>
-      <p class="contact-note">
-        I'm actively looking for a <strong>fully remote Data Analyst or Data Scientist role</strong> on a global team.
-        I bring real production experience, a strong project portfolio, and the ability to work independently across time zones.<br><br>
-        <strong>Nairobi, Kenya · UTC+3 · Async-first · Immediately available</strong>
-      </p>
-      <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="cta-main" target="_blank" rel="noopener" style="display:inline-flex">Download CV →</a>
+<section class="section fade-up" id="contact" aria-label="Contact">
+  <div class="eyebrow">Contact</div>
+  <h2 class="section-h">Let's work together</h2>
+
+  <div class="contact-card">
+    <div class="contact-l">
+      <div class="open-badge">Open to new opportunities</div>
+      <p>I'm actively looking for a <strong style="color:var(--text)">fully remote Data Analyst or Data Scientist role</strong> on a global team. I bring production experience, a strong project portfolio, and the ability to work independently across time zones.</p>
+      <p style="font-size:13px;color:var(--text3)">East Africa Time · overlaps EU mornings &amp; US evenings · Async-first · Available on EU &amp; US hours</p>
+      <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="btn-primary" target="_blank" rel="noopener" style="margin-top:24px;display:inline-flex">Download CV →</a>
     </div>
-    <div class="contact-links fade-up" style="transition-delay:.1s">
-      <a href="mailto:bonareriondiere@gmail.com" class="clink">
-        <div class="clink-ico" style="background:rgba(249,115,22,.12);color:#F97316">✉</div>
-        <div><div class="clink-lbl">Email</div><div class="clink-sub">bonareriondiere@gmail.com</div></div>
-        <div class="clink-arr">→</div>
-      </a>
-      <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" class="clink" target="_blank" rel="noopener">
-        <div class="clink-ico" style="background:rgba(59,130,246,.12);color:#3B82F6;font-size:15px">in</div>
-        <div><div class="clink-lbl">LinkedIn</div><div class="clink-sub">ruth-ondiere-254009198</div></div>
-        <div class="clink-arr">→</div>
-      </a>
-      <a href="https://github.com/BONAONDIERE" class="clink" target="_blank" rel="noopener">
-        <div class="clink-ico" style="background:rgba(167,139,250,.12);color:var(--p);font-size:15px">⌥</div>
-        <div><div class="clink-lbl">GitHub</div><div class="clink-sub">BONAONDIERE</div></div>
-        <div class="clink-arr">→</div>
-      </a>
-      <a href="https://public.tableau.com/app/profile/ruth.ondiere" class="clink" target="_blank" rel="noopener">
-        <div class="clink-ico" style="background:rgba(16,185,129,.12);color:var(--g);font-size:15px">◈</div>
-        <div><div class="clink-lbl">Tableau Public</div><div class="clink-sub">ruth.ondiere — live dashboards</div></div>
-        <div class="clink-arr">→</div>
-      </a>
+    <div class="contact-r">
+      <div class="clinks">
+        <a href="mailto:bonareriondiere@gmail.com" class="clink">
+          <div class="clink-icon" style="background:var(--coral-lt);color:var(--coral)">✉</div>
+          <div><div class="clink-name">Email</div><div class="clink-val">bonareriondiere@gmail.com</div></div>
+          <div class="clink-arr">→</div>
+        </a>
+        <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" class="clink" target="_blank" rel="noopener">
+          <div class="clink-icon" style="background:var(--blue-lt);color:var(--blue);font-size:13px;font-weight:800">in</div>
+          <div><div class="clink-name">LinkedIn</div><div class="clink-val">ruth-ondiere-254009198</div></div>
+          <div class="clink-arr">→</div>
+        </a>
+        <a href="https://github.com/BONAONDIERE" class="clink" target="_blank" rel="noopener">
+          <div class="clink-icon" style="background:var(--purple-lt);color:var(--purple);font-size:12px;font-weight:700">&lt;/&gt;</div>
+          <div><div class="clink-name">GitHub</div><div class="clink-val">BONAONDIERE</div></div>
+          <div class="clink-arr">→</div>
+        </a>
+        <a href="https://public.tableau.com/app/profile/ruth.ondiere" class="clink" target="_blank" rel="noopener">
+          <div class="clink-icon" style="background:var(--teal-lt);color:var(--teal);font-size:11.5px;font-weight:700">viz</div>
+          <div><div class="clink-name">Tableau Public</div><div class="clink-val">ruth.ondiere — live dashboards</div></div>
+          <div class="clink-arr">→</div>
+        </a>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="foot-l">© 2026 Ruth Ondiere · Data Analyst · Nairobi, Kenya</div>
-  <div class="foot-r">
+  <div class="footer-copy">© 2026 Ruth Ondiere · Data Analyst · Nairobi, Kenya</div>
+  <div class="footer-links">
     <a href="mailto:bonareriondiere@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/BONAONDIERE" target="_blank" rel="noopener">GitHub</a>
     <a href="https://public.tableau.com/app/profile/ruth.ondiere" target="_blank" rel="noopener">Tableau</a>
+    <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" target="_blank" rel="noopener">CV</a>
   </div>
 </footer>
 
 <script>
-// Experience tab switcher
-function showExp(id,btn){
-  document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.exp-nav-item').forEach(b=>b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
+// ── Theme toggle ──────────────────────────────
+const btn=document.getElementById('themeBtn');
+const root=document.documentElement;
+const saved=localStorage.getItem('theme')||'light';
+root.setAttribute('data-theme',saved);
+btn.textContent=saved==='dark'?'☀':'🌙';
+btn.addEventListener('click',()=>{
+  const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+  root.setAttribute('data-theme',next);
+  localStorage.setItem('theme',next);
+  btn.textContent=next==='dark'?'☀':'🌙';
+});
 
-// Scroll fade-up animations
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}
-  });
-},{threshold:.12});
+// ── Scroll fade-in ────────────────────────────
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
-// Active nav link on scroll
-const sections=document.querySelectorAll('section[id],div[id]');
-const navLinks=document.querySelectorAll('.nav-links a');
+// ── Active nav link ───────────────────────────
+const sections=document.querySelectorAll('section[id]');
+const links=document.querySelectorAll('.nav-center a');
 window.addEventListener('scroll',()=>{
   let cur='';
   sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
-  navLinks.forEach(a=>{
-    a.style.color=a.getAttribute('href')==='#'+cur?'var(--t1)':'';
-    a.style.background=a.getAttribute('href')==='#'+cur?'var(--b1)':'';
+  links.forEach(a=>{
+    const active=a.getAttribute('href')==='#'+cur;
+    a.style.color=active?'var(--purple)':'';
+    a.style.background=active?'var(--purple-lt)':'';
   });
 },{passive:true});
 </script>
