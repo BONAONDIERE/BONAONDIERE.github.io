@@ -3,512 +3,656 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Ruth Ondiere — Data Analyst with an engineering foundation. Python · PySpark · SQL · Tableau · AWS Certified. MSc AI & Technology Management. Open to remote roles globally."/>
+<meta name="description" content="Ruth Ondiere — Data Analyst. Electronics engineer turned data analyst. Python · PySpark · SQL · Tableau · Power BI. AWS Certified. World Bank programme alumni. Open to remote roles."/>
 <title>Ruth Ondiere · Data Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-/* ═══════════════════════════════════════
-   TOKENS — warm, editorial, premium
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   TOKENS — the whole palette in one place
+══════════════════════════════════════════ */
 :root{
-  --bg:        #F9F7F4;
-  --bg2:       #F2EFE9;
-  --card:      #FFFFFF;
-  --card2:     #F6F3EF;
-  --border:    #E5E0D8;
-  --border-hi: #CEC8BE;
+  /* backgrounds — warm paper, not cold white */
+  --bg:       #F9F7F4;
+  --bg2:      #F2EFE9;
+  --card:     #FFFFFF;
+  --card2:    #F6F4F0;
 
-  --ink:       #1C1917;
-  --ink2:      #44403C;
-  --ink3:      #78716C;
+  /* borders */
+  --line:     #E5E0D8;
+  --line-hi:  #CCC7BC;
 
-  /* Deep forest green — confident, not startup-y */
-  --accent:    #1B5E3B;
-  --accent-lt: #EBF5EF;
-  --accent-md: #2D7A52;
-  --accent-glow: rgba(27,94,59,.15);
+  /* type */
+  --ink:      #18160F;
+  --ink2:     #4C4840;
+  --ink3:     #9C9488;
 
-  /* Supporting */
-  --indigo:    #3730A3;
-  --indigo-lt: #EEF2FF;
-  --amber:     #92400E;
-  --amber-lt:  #FFFBEB;
-  --rose:      #9F1239;
-  --rose-lt:   #FFF1F2;
-  --slate:     #1E3A5F;
-  --slate-lt:  #EFF6FF;
+  /* brand — warm navy, not cold purple */
+  --navy:     #1B3A6B;
+  --navy-lt:  #EEF3FA;
+  --navy-d:   #122850;
+  --navy-glow:rgba(27,58,107,.15);
+
+  /* supporting */
+  --gold:     #A0670A;
+  --gold-lt:  #FEF6E4;
+  --teal:     #0B7A6E;
+  --teal-lt:  #E8F7F5;
+  --rose:     #9B1B3A;
+  --rose-lt:  #FDF0F3;
+  --slate:    #2E4A6B;
+  --slate-lt: #EEF2F8;
+  --sage:     #2A5C45;
+  --sage-lt:  #EBF5EF;
 
   --r:14px;--r2:10px;--r3:7px;
-  --sans:'Inter',system-ui,sans-serif;
   --serif:'Lora',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
   --mono:'JetBrains Mono',monospace;
-  --sh-sm:0 1px 3px rgba(28,25,23,.06),0 1px 2px rgba(28,25,23,.04);
-  --sh:0 4px 16px rgba(28,25,23,.08),0 1px 4px rgba(28,25,23,.05);
-  --sh-lg:0 20px 60px rgba(28,25,23,.11),0 4px 16px rgba(28,25,23,.06);
+  --sh-xs:0 1px 3px rgba(24,22,15,.05);
+  --sh-sm:0 2px 10px rgba(24,22,15,.07);
+  --sh-md:0 6px 28px rgba(24,22,15,.09);
+  --sh-lg:0 16px 56px rgba(24,22,15,.12);
 }
 [data-theme="dark"]{
-  --bg:#0C0A08;--bg2:#141210;--card:#1A1714;--card2:#201D1A;
-  --border:rgba(255,255,255,.08);--border-hi:rgba(255,255,255,.14);
-  --ink:#F0EDE8;--ink2:#A09890;--ink3:#5C5650;
-  --accent:#4ADE80;--accent-lt:rgba(74,222,128,.1);--accent-md:#22C55E;--accent-glow:rgba(74,222,128,.12);
-  --indigo:#818CF8;--indigo-lt:rgba(129,140,248,.1);
-  --amber:#FCD34D;--amber-lt:rgba(252,211,77,.08);
-  --rose:#FB7185;--rose-lt:rgba(251,113,133,.08);
-  --slate:#93C5FD;--slate-lt:rgba(147,197,253,.08);
-  --sh-sm:0 1px 3px rgba(0,0,0,.3);--sh:0 4px 16px rgba(0,0,0,.35);--sh-lg:0 20px 60px rgba(0,0,0,.5);
+  --bg:#0E0D0A;--bg2:#151310;
+  --card:#1A1815;--card2:#221F1B;
+  --line:rgba(255,255,255,.07);--line-hi:rgba(255,255,255,.13);
+  --ink:#EDE9E2;--ink2:#8C877E;--ink3:#56524C;
+  --navy:#6B9ED4;--navy-lt:rgba(107,158,212,.1);--navy-d:#8BB5E0;--navy-glow:rgba(107,158,212,.15);
+  --gold:#E4A84A;--gold-lt:rgba(228,168,74,.08);
+  --teal:#2DD4BF;--teal-lt:rgba(45,212,191,.08);
+  --rose:#F87191;--rose-lt:rgba(248,113,145,.08);
+  --slate:#7BA4D4;--slate-lt:rgba(123,164,212,.08);
+  --sage:#4ADE80;--sage-lt:rgba(74,222,128,.08);
+  --sh-xs:0 1px 3px rgba(0,0,0,.3);
+  --sh-sm:0 2px 10px rgba(0,0,0,.35);
+  --sh-md:0 6px 28px rgba(0,0,0,.4);
+  --sh-lg:0 16px 56px rgba(0,0,0,.55);
 }
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    BASE
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:16px;
+  line-height:1.65;-webkit-font-smoothing:antialiased;
+  transition:background .3s,color .3s;
+}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    NAV
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 nav{
-  position:sticky;top:0;z-index:100;height:64px;
+  position:sticky;top:0;z-index:200;
+  height:64px;padding:0 max(24px,5.5%);
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 max(24px,6%);
   background:rgba(249,247,244,.93);
   backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid var(--line);
   transition:background .3s;
 }
-[data-theme="dark"] nav{background:rgba(12,10,8,.93)}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+[data-theme="dark"] nav{background:rgba(14,13,10,.93)}
+
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--serif);font-size:17px;font-weight:700;
+  letter-spacing:-.02em;color:var(--ink);
+}
 .logo-sq{
-  width:30px;height:30px;border-radius:6px;
-  background:var(--accent);color:#fff;
+  width:32px;height:32px;border-radius:7px;
+  background:var(--navy);color:#fff;
   display:flex;align-items:center;justify-content:center;
   font-family:var(--serif);font-size:15px;font-weight:700;
-  box-shadow:0 2px 8px var(--accent-glow);
+  box-shadow:0 2px 10px var(--navy-glow);
 }
-.nav-links{display:flex;gap:2px;list-style:none}
-.nav-links a{font-size:13.5px;font-weight:500;color:var(--ink3);padding:6px 13px;border-radius:var(--r3);transition:all .18s}
-.nav-links a:hover,.nav-links a.on{color:var(--accent);background:var(--accent-lt)}
-.nav-r{display:flex;align-items:center;gap:10px}
-.live-dot{
+.nav-ul{display:flex;gap:2px;list-style:none}
+.nav-ul a{
+  font-size:13.5px;font-weight:500;color:var(--ink2);
+  padding:6px 13px;border-radius:var(--r3);transition:all .18s;
+}
+.nav-ul a:hover,.nav-ul a.on{color:var(--navy);background:var(--navy-lt)}
+.nav-r{display:flex;align-items:center;gap:9px}
+.dot-pill{
   display:flex;align-items:center;gap:7px;
-  font-size:12px;font-weight:600;color:var(--accent-md);
-  background:var(--accent-lt);border:1px solid rgba(27,94,59,.2);
+  font-size:12px;font-weight:600;color:var(--sage);
+  background:var(--sage-lt);border:1px solid rgba(42,92,69,.18);
   padding:5px 13px;border-radius:99px;
 }
-[data-theme="dark"] .live-dot{color:var(--accent);border-color:rgba(74,222,128,.25)}
-.live-dot::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent-md);animation:blink 2s ease-in-out infinite}
-[data-theme="dark"] .live-dot::before{background:var(--accent)}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-.tbtn{width:36px;height:36px;border-radius:var(--r3);border:1px solid var(--border);background:var(--card);color:var(--ink3);font-size:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .18s}
-.tbtn:hover{border-color:var(--accent);color:var(--accent)}
-.btn-dl{font-size:13px;font-weight:600;padding:8px 20px;border-radius:var(--r3);background:var(--ink);color:var(--bg);transition:all .2s}
-.btn-dl:hover{background:var(--accent);box-shadow:0 3px 14px var(--accent-glow);transform:translateY(-1px)}
+.dot-pill::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--sage);animation:blink 2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+.tbtn{
+  width:36px;height:36px;border-radius:var(--r3);
+  border:1px solid var(--line);background:var(--card);
+  color:var(--ink2);font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .18s;
+}
+.tbtn:hover{border-color:var(--navy);color:var(--navy)}
+.cv-btn{
+  font-size:13px;font-weight:600;letter-spacing:.01em;
+  padding:8px 20px;border-radius:var(--r3);
+  background:var(--ink);color:var(--bg);
+  transition:all .2s;
+}
+.cv-btn:hover{background:var(--navy);box-shadow:0 4px 16px var(--navy-glow);transform:translateY(-1px)}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    HERO
-═══════════════════════════════════════ */
-.hero-shell{max-width:1160px;margin:0 auto;padding:80px max(24px,6%) 60px}
-.hero-grid{display:grid;grid-template-columns:1fr 330px;gap:80px;align-items:start}
+══════════════════════════════════════════ */
+.hero-outer{max-width:1160px;margin:0 auto;padding:84px max(24px,5.5%) 72px}
+.hero{display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:start}
 
 .h-tag{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--mono);font-size:11px;font-weight:500;
   letter-spacing:.12em;text-transform:uppercase;
-  color:var(--indigo);background:var(--indigo-lt);
-  border:1px solid rgba(55,48,163,.15);
-  padding:5px 13px;border-radius:5px;margin-bottom:26px;
+  color:var(--navy);background:var(--navy-lt);
+  border:1px solid rgba(27,58,107,.15);
+  padding:5px 13px;border-radius:var(--r3);
+  margin-bottom:22px;
 }
 .hero h1{
   font-family:var(--serif);
-  font-size:clamp(42px,6vw,70px);
-  font-weight:700;line-height:1.04;letter-spacing:-.03em;
-  color:var(--ink);margin-bottom:10px;
+  font-size:clamp(42px,5.8vw,68px);
+  font-weight:700;line-height:1.04;
+  letter-spacing:-.04em;color:var(--ink);
+  margin-bottom:10px;
 }
-.hero h1 .it{font-style:italic;color:var(--accent)}
-.hero-mono{font-family:var(--mono);font-size:12.5px;color:var(--ink3);letter-spacing:.04em;margin-bottom:30px}
-.hero-p{font-size:16.5px;color:var(--ink2);line-height:1.82;max-width:540px;margin-bottom:10px}
-.hero-p strong{color:var(--ink);font-weight:600}
-
-/* engineering story line */
-.eng-line{
-  display:flex;align-items:flex-start;gap:12px;
-  font-size:14px;color:var(--ink2);line-height:1.7;
-  background:var(--card2);border:1px solid var(--border);
-  border-left:3px solid var(--accent);
-  padding:12px 16px;border-radius:0 var(--r3) var(--r3) 0;
-  margin-bottom:28px;
+.hero h1 em{
+  font-style:italic;color:var(--navy);
 }
-.eng-line em{color:var(--accent);font-style:normal;font-weight:600}
+/* subtle underline on italic */
+.hero h1 em span{
+  background:linear-gradient(135deg,var(--navy),var(--teal));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.h-sub{
+  font-family:var(--mono);font-size:12.5px;
+  color:var(--ink3);letter-spacing:.04em;margin-bottom:28px;
+}
+.h-desc{
+  font-size:17px;color:var(--ink2);
+  line-height:1.82;max-width:530px;margin-bottom:12px;
+}
+.h-desc strong{color:var(--ink);font-weight:600}
 
-.win-strip{
+/* the one personal line */
+.h-personal{
+  font-family:var(--serif);font-size:15px;
+  font-style:italic;color:var(--ink3);
+  border-left:2px solid var(--line-hi);
+  padding-left:14px;margin-bottom:28px;
+  line-height:1.7;
+}
+
+.h-win{
   display:flex;align-items:center;gap:11px;
-  font-size:13px;font-weight:600;color:var(--amber);
-  background:var(--amber-lt);border:1px solid rgba(146,64,14,.18);
+  font-size:13.5px;font-weight:600;color:var(--gold);
+  background:var(--gold-lt);border:1px solid rgba(160,103,10,.18);
   padding:10px 16px;border-radius:var(--r2);margin-bottom:30px;
 }
-.stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:34px}
-.stag{
-  font-family:var(--mono);font-size:11px;font-weight:500;
-  padding:4px 11px;border-radius:5px;
-  background:var(--card2);border:1px solid var(--border);
+.h-stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:34px}
+.stk{
+  font-family:var(--mono);font-size:11.5px;font-weight:500;
+  padding:5px 11px;border-radius:var(--r3);
+  background:var(--card2);border:1px solid var(--line);
   color:var(--ink2);transition:all .18s;cursor:default;
 }
-.stag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-lt)}
-.stag.cert{border-color:rgba(55,48,163,.2);color:var(--indigo);background:var(--indigo-lt)}
-
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:52px}
-.btn-a{
-  font-size:14px;font-weight:700;padding:13px 28px;border-radius:var(--r2);
-  background:var(--accent);color:#fff;display:inline-flex;align-items:center;gap:8px;
-  transition:all .22s;box-shadow:0 3px 16px var(--accent-glow);
+.stk:hover{border-color:var(--navy);color:var(--navy);background:var(--navy-lt)}
+.h-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:52px}
+.btn-p{
+  font-size:14px;font-weight:700;
+  padding:13px 28px;border-radius:var(--r2);
+  background:var(--navy);color:#fff;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .22s;box-shadow:0 4px 18px var(--navy-glow);
 }
-.btn-a:hover{background:var(--accent-md);transform:translateY(-2px);box-shadow:0 8px 28px var(--accent-glow)}
-.btn-b{
-  font-size:14px;font-weight:600;padding:13px 28px;border-radius:var(--r2);
-  background:transparent;border:1.5px solid var(--border-hi);color:var(--ink);
+.btn-p:hover{background:var(--navy-d);transform:translateY(-2px);box-shadow:0 8px 28px var(--navy-glow)}
+.btn-g{
+  font-size:14px;font-weight:600;
+  padding:13px 28px;border-radius:var(--r2);
+  background:transparent;border:1.5px solid var(--line-hi);color:var(--ink);
   display:inline-flex;align-items:center;gap:8px;transition:all .22s;
 }
-.btn-b:hover{border-color:var(--accent);color:var(--accent)}
+.btn-g:hover{border-color:var(--navy);color:var(--navy)}
 
-/* stat strip */
-.s-strip{
+/* stats */
+.stats{
   display:grid;grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--border);border-radius:var(--r);
-  overflow:hidden;background:var(--border);gap:1px;
-  box-shadow:var(--sh-sm);
+  border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;background:var(--line);gap:1px;
+  box-shadow:var(--sh-xs);
 }
-.s-box{background:var(--card);padding:18px 10px;text-align:center;transition:background .18s}
-.s-box:hover{background:var(--card2)}
-.s-n{font-family:var(--serif);font-size:28px;font-weight:700;letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:5px}
-.s-n em{font-style:normal;color:var(--accent);font-size:19px}
-.s-l{font-size:10.5px;color:var(--ink3);font-weight:500;line-height:1.4}
+.st{background:var(--card);padding:18px 12px;text-align:center;transition:background .18s}
+.st:hover{background:var(--card2)}
+.st-n{
+  font-family:var(--serif);font-size:28px;font-weight:700;
+  letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:5px;
+}
+.st-n em{font-style:normal;color:var(--navy);font-size:20px}
+.st-l{font-size:11px;color:var(--ink3);font-weight:500}
 
 /* profile card */
-.p-card{
-  background:var(--card);border:1px solid var(--border);
+.pcard{
+  background:var(--card);border:1px solid var(--line);
   border-radius:20px;overflow:hidden;
-  box-shadow:var(--sh-lg);position:sticky;top:84px;
+  box-shadow:var(--sh-lg);position:sticky;top:80px;
 }
-.p-card-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--indigo))}
-.p-photo-area{padding:28px 24px 0;display:flex;flex-direction:column;align-items:center}
-.p-ring{position:relative;width:130px;height:130px;margin-bottom:16px}
-.p-ring::before{
-  content:'';position:absolute;inset:-2px;border-radius:50%;
-  background:conic-gradient(var(--accent),var(--indigo),var(--accent));
-  animation:spin 12s linear infinite;
+.pcard-bar{height:3px;background:linear-gradient(90deg,var(--navy),var(--teal))}
+.pcard-top{padding:28px 24px 0;display:flex;flex-direction:column;align-items:center}
+.photo-wrap{position:relative;width:130px;height:130px;margin-bottom:16px}
+.photo-wrap::before{
+  content:'';position:absolute;inset:-2.5px;border-radius:50%;
+  background:conic-gradient(var(--navy),var(--teal),var(--navy));
+  animation:spin 10s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
-.p-ring::after{content:'';position:absolute;inset:2px;border-radius:50%;background:var(--card)}
-.p-photo{position:absolute;inset:5px;z-index:1;border-radius:50%;object-fit:cover;width:calc(100% - 10px);height:calc(100% - 10px)}
-.p-name{font-family:var(--serif);font-size:18px;font-weight:700;letter-spacing:-.02em;color:var(--ink);text-align:center;margin-bottom:3px}
-.p-sub{font-family:var(--mono);font-size:10px;color:var(--ink3);text-align:center;letter-spacing:.06em;margin-bottom:18px}
-.p-div{height:1px;background:var(--border)}
-.p-rows{padding:14px 20px 20px;display:flex;flex-direction:column}
-.p-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:12.5px}
-.p-row:last-child{border-bottom:none}
-.p-ico{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px}
-.p-lbl{font-size:10.5px;color:var(--ink3);font-weight:500;margin-bottom:2px}
-.p-val{color:var(--ink);font-weight:600;font-size:12.5px}
-.p-chip{
+.photo-wrap::after{content:'';position:absolute;inset:2px;border-radius:50%;background:var(--card)}
+.pphoto{
+  position:absolute;inset:5px;z-index:1;border-radius:50%;
+  object-fit:cover;width:calc(100% - 10px);height:calc(100% - 10px);
+}
+.pname{
+  font-family:var(--serif);font-size:18px;font-weight:700;
+  letter-spacing:-.03em;color:var(--ink);text-align:center;margin-bottom:3px;
+}
+.prole{
+  font-family:var(--mono);font-size:10.5px;color:var(--ink3);
+  text-align:center;letter-spacing:.06em;margin-bottom:20px;
+}
+.pdiv{height:1px;background:var(--line)}
+.prows{padding:16px 20px 20px;display:flex;flex-direction:column}
+.pr{
+  display:flex;align-items:center;gap:11px;
+  padding:9px 0;border-bottom:1px solid var(--line);font-size:12.5px;
+}
+.pr:last-child{border-bottom:none}
+.pi{
+  width:28px;height:28px;border-radius:7px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;flex-shrink:0;
+}
+.pl2{font-size:10.5px;color:var(--ink3);font-weight:500;margin-bottom:1px}
+.pv{color:var(--ink);font-weight:600;font-size:12.5px}
+.avail-chip{
   display:inline-flex;align-items:center;gap:5px;
   font-size:10.5px;font-weight:700;
-  background:var(--accent-lt);border:1px solid rgba(27,94,59,.2);
-  color:var(--accent-md);padding:3px 9px;border-radius:99px;
+  background:var(--sage-lt);border:1px solid rgba(42,92,69,.18);
+  color:var(--sage);padding:3px 9px;border-radius:99px;
 }
-[data-theme="dark"] .p-chip{color:var(--accent)}
-.p-chip::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-md);animation:blink 1.8s ease-in-out infinite}
-[data-theme="dark"] .p-chip::before{background:var(--accent)}
+.avail-chip::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--sage);animation:blink 1.8s ease-in-out infinite;
+}
 
-/* credentials */
-.creds{margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
-.creds-title{font-family:var(--mono);font-size:9.5px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);margin-bottom:8px}
-.cred-pills{display:flex;flex-direction:column;gap:5px}
+/* credentials strip */
+.creds{
+  display:flex;flex-wrap:wrap;gap:7px;
+  padding:14px 20px;
+  border-top:1px solid var(--line);
+}
 .cred{
-  font-size:11px;font-weight:500;color:var(--indigo);
-  background:var(--indigo-lt);border:1px solid rgba(55,48,163,.12);
-  padding:4px 10px;border-radius:5px;display:flex;align-items:center;gap:6px;
+  display:flex;align-items:center;gap:5px;
+  font-size:10.5px;font-weight:600;
+  padding:4px 10px;border-radius:5px;
+  background:var(--card2);border:1px solid var(--line);color:var(--ink2);
 }
-[data-theme="dark"] .cred{color:#A5B4FC;background:rgba(129,140,248,.1);border-color:rgba(129,140,248,.2)}
-.cred::before{content:'✓';font-weight:700;font-size:10px}
 
-/* ═══════════════════════════════════════
-   SECTIONS
-═══════════════════════════════════════ */
-.sec{max-width:1160px;margin:0 auto;padding:96px max(24px,6%)}
-.div-line{height:1px;background:var(--border);margin:0 max(24px,6%)}
+/* ══════════════════════════════════════════
+   SECTION COMMONS
+══════════════════════════════════════════ */
+.section{max-width:1160px;margin:0 auto;padding:96px max(24px,5.5%)}
+.hr{height:1px;background:var(--line);margin:0 max(24px,5.5%)}
 .ey{
   font-family:var(--mono);font-size:10.5px;font-weight:500;
-  letter-spacing:.15em;text-transform:uppercase;color:var(--accent);
+  letter-spacing:.15em;text-transform:uppercase;color:var(--navy);
   display:flex;align-items:center;gap:10px;margin-bottom:12px;
 }
-.ey::before{content:'';width:20px;height:1.5px;background:var(--accent)}
-.sh{font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.04em;color:var(--ink);margin-bottom:12px;line-height:1.1}
+.ey::before{content:'';width:20px;height:1.5px;background:var(--navy)}
+.sh{
+  font-family:var(--serif);
+  font-size:clamp(28px,3.8vw,42px);
+  font-weight:700;letter-spacing:-.04em;
+  color:var(--ink);margin-bottom:12px;line-height:1.1;
+}
 .sp{font-size:15.5px;color:var(--ink2);max-width:460px;line-height:1.75;margin-bottom:56px}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    WIN BANNER
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 .win{
-  display:flex;align-items:center;gap:20px;
-  background:linear-gradient(135deg,var(--amber-lt),#FFFEF7);
-  border:1px solid rgba(146,64,14,.15);border-radius:var(--r);
-  padding:26px 30px;margin-bottom:72px;
-  box-shadow:0 2px 14px rgba(146,64,14,.06);
+  display:flex;align-items:flex-start;gap:20px;
+  background:linear-gradient(135deg,var(--gold-lt) 0%,#FFFDF8 100%);
+  border:1px solid rgba(160,103,10,.18);
+  border-radius:var(--r);padding:28px 32px;
+  margin-bottom:72px;box-shadow:0 2px 16px rgba(160,103,10,.06);
   position:relative;overflow:hidden;
 }
-.win::after{content:'🏆';position:absolute;right:24px;bottom:-10px;font-size:72px;opacity:.06;line-height:1;pointer-events:none}
-.wi{font-size:32px;flex-shrink:0;filter:drop-shadow(0 2px 6px rgba(146,64,14,.25))}
-.wt{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.ws{font-size:13.5px;color:var(--ink2);line-height:1.6;max-width:560px}
-.wl{
-  margin-left:auto;flex-shrink:0;
-  font-family:var(--mono);font-size:9.5px;font-weight:500;
+.win::after{
+  content:'🏆';position:absolute;right:24px;bottom:-10px;
+  font-size:80px;opacity:.055;line-height:1;pointer-events:none;
+}
+.win-ico{font-size:32px;flex-shrink:0;margin-top:2px;filter:drop-shadow(0 2px 6px rgba(160,103,10,.3))}
+.win-t{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.win-s{font-size:13.5px;color:var(--ink2);line-height:1.65;max-width:580px}
+.win-chip{
+  margin-left:auto;flex-shrink:0;align-self:flex-start;
+  font-family:var(--mono);font-size:10px;font-weight:500;
   text-transform:uppercase;letter-spacing:.07em;
-  padding:5px 11px;border-radius:5px;
-  background:var(--amber-lt);border:1px solid rgba(146,64,14,.18);
-  color:var(--amber);white-space:nowrap;
+  padding:5px 12px;border-radius:var(--r3);
+  background:var(--gold-lt);border:1px solid rgba(160,103,10,.2);
+  color:var(--gold);white-space:nowrap;
 }
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    ABOUT
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 .about-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .about-copy p{font-size:15px;color:var(--ink2);line-height:1.85;margin-bottom:18px}
 .about-copy p strong{color:var(--ink);font-weight:600}
-
-/* the personal story callout */
-.story-box{
-  background:linear-gradient(135deg,var(--accent-lt),#F0FAF4);
-  border:1px solid rgba(27,94,59,.15);border-radius:var(--r2);
-  padding:20px 22px;margin-bottom:18px;
+/* the one line that sounds human */
+.personal-note{
+  font-family:var(--serif);font-size:15px;font-style:italic;
+  color:var(--ink3);line-height:1.75;
+  border-left:2px solid var(--line-hi);
+  padding-left:16px;margin:24px 0;
 }
-[data-theme="dark"] .story-box{background:rgba(74,222,128,.05);border-color:rgba(74,222,128,.12)}
-.story-box p{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:0}
-.story-box p::before{content:'"';font-size:36px;color:var(--accent);line-height:0;vertical-align:-.4em;margin-right:4px;font-style:normal}
-.story-box p::after{content:'"';font-size:36px;color:var(--accent);line-height:0;vertical-align:-.4em;margin-left:4px;font-style:normal}
-
-.r-flag{
+.remote-tag{
   display:inline-flex;align-items:center;gap:9px;
-  font-size:13.5px;font-weight:600;color:var(--accent-md);
-  background:var(--accent-lt);border:1px solid rgba(27,94,59,.18);
+  font-size:13.5px;font-weight:600;color:var(--teal);
+  background:var(--teal-lt);border:1px solid rgba(11,122,110,.18);
   padding:10px 18px;border-radius:var(--r2);margin-top:8px;
 }
-[data-theme="dark"] .r-flag{color:var(--accent)}
-
-/* credentials strip */
-.cred-strip{
-  display:flex;flex-wrap:wrap;gap:8px;
-  margin-bottom:10px;
-}
-.cred-tag{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:11.5px;font-weight:600;
-  padding:5px 12px;border-radius:6px;
-  border:1px solid rgba(55,48,163,.15);
-  color:var(--indigo);background:var(--indigo-lt);
-}
-[data-theme="dark"] .cred-tag{color:#A5B4FC;background:rgba(129,140,248,.1);border-color:rgba(129,140,248,.2)}
-.cred-tag::before{content:'✓';font-size:10px;font-weight:700}
-
 .sk-col{display:flex;flex-direction:column;gap:10px}
-.sk-bl{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:16px 18px;box-shadow:var(--sh-sm);transition:border-color .18s,box-shadow .18s}
-.sk-bl:hover{border-color:var(--border-hi);box-shadow:var(--sh)}
-.sk-lbl{font-family:var(--mono);font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.11em;color:var(--accent);margin-bottom:10px}
+.sk-b{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r2);padding:16px 18px;
+  box-shadow:var(--sh-xs);transition:border-color .18s,box-shadow .18s;
+}
+.sk-b:hover{border-color:var(--line-hi);box-shadow:var(--sh-sm)}
+.sk-l{
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.11em;
+  color:var(--navy);margin-bottom:10px;
+}
 .sk-tags{display:flex;flex-wrap:wrap;gap:6px}
-.sk{font-size:12px;font-weight:500;padding:4px 10px;border-radius:5px;background:var(--bg2);border:1px solid var(--border);color:var(--ink2);transition:all .15s;cursor:default}
-.sk:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-lt)}
+.sk{
+  font-size:12px;font-weight:500;padding:4px 10px;border-radius:6px;
+  background:var(--bg2);border:1px solid var(--line);
+  color:var(--ink2);transition:all .15s;cursor:default;
+}
+.sk:hover{border-color:var(--navy);color:var(--navy);background:var(--navy-lt)}
 
-/* ═══════════════════════════════════════
+/* credentials row */
+.creds-row{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;
+}
+.cr{
+  display:flex;align-items:center;gap:7px;
+  font-size:12px;font-weight:600;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);
+  padding:7px 14px;border-radius:var(--r3);
+  box-shadow:var(--sh-xs);
+}
+.cr-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* ══════════════════════════════════════════
    PROJECTS
-═══════════════════════════════════════ */
-.p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
-.pj{
-  background:var(--card);border:1px solid var(--border);border-radius:var(--r);
-  overflow:hidden;display:flex;flex-direction:column;
-  box-shadow:var(--sh-sm);
+══════════════════════════════════════════ */
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+.proj{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r);overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:var(--sh-xs);
   transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s,border-color .28s;
 }
-.pj:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:var(--border-hi)}
-.pj.ft{grid-column:span 2;flex-direction:row}
-.pj.ft .pj-img{width:360px;flex-shrink:0;height:auto}
-.pj-img{height:196px;overflow:hidden;position:relative;background:var(--bg2)}
-.pj-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.22,1,.36,1)}
-.pj:hover .pj-img img{transform:scale(1.05)}
-.pj-sh{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,25,23,.45) 0%,transparent 55%)}
-[data-theme="dark"] .pj-sh{background:linear-gradient(to top,rgba(12,10,8,.72) 0%,transparent 55%)}
-.pj-chips{position:absolute;top:12px;left:12px;display:flex;gap:5px;flex-wrap:wrap}
-.ch{font-size:10px;font-weight:700;letter-spacing:.03em;padding:3px 9px;border-radius:5px;backdrop-filter:blur(8px)}
-.ca{background:rgba(27,94,59,.85);color:#D1FAE5}
-.cb{background:rgba(55,48,163,.85);color:#E0E7FF}
-.cc{background:rgba(146,64,14,.82);color:#FDE68A}
-.cd{background:rgba(159,18,57,.82);color:#FFE4E6}
-.ce{background:rgba(30,58,95,.82);color:#DBEAFE}
-.cf{background:rgba(45,122,82,.82);color:#D1FAE5}
-.pj-body{padding:22px;flex:1;display:flex;flex-direction:column;gap:10px}
-.pj-q{font-family:var(--mono);font-size:11px;color:var(--accent);line-height:1.6;font-style:italic}
-.pj-name{font-family:var(--serif);font-size:18px;font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1.25}
-.pj-desc{font-size:13.5px;color:var(--ink2);line-height:1.7}
-.pj-imp{
-  font-size:12.5px;font-weight:600;color:var(--accent-md);
-  background:var(--accent-lt);border-left:2.5px solid var(--accent);
+.proj:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:var(--line-hi)}
+.proj.feat{grid-column:span 2;flex-direction:row}
+.proj.feat .pimg{width:360px;flex-shrink:0;height:auto}
+.pimg{height:196px;overflow:hidden;position:relative;background:var(--bg2)}
+.pimg img{width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.proj:hover .pimg img{transform:scale(1.05)}
+.pshade{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(24,22,15,.45) 0%,transparent 55%);
+}
+[data-theme="dark"] .pshade{background:linear-gradient(to top,rgba(14,13,10,.7) 0%,transparent 55%)}
+.pchips{position:absolute;top:12px;left:12px;display:flex;gap:5px;flex-wrap:wrap}
+.chip{
+  font-size:10px;font-weight:700;letter-spacing:.03em;
+  padding:3px 9px;border-radius:5px;backdrop-filter:blur(8px);
+}
+.c-navy{background:rgba(27,58,107,.82);color:#fff}
+.c-teal{background:rgba(11,122,110,.82);color:#fff}
+.c-gold{background:rgba(160,103,10,.82);color:#FDE68A}
+.c-rose{background:rgba(155,27,58,.82);color:#FFE4E6}
+.c-slate{background:rgba(46,74,107,.82);color:#DBEAFE}
+.c-sage{background:rgba(42,92,69,.82);color:#D1FAE5}
+
+.pbody{padding:22px;flex:1;display:flex;flex-direction:column;gap:10px}
+.pq{font-family:var(--mono);font-size:11px;color:var(--navy);line-height:1.6;font-style:italic}
+.ptitle{
+  font-family:var(--serif);font-size:17.5px;font-weight:700;
+  letter-spacing:-.03em;color:var(--ink);line-height:1.25;
+}
+.pdesc{font-size:13.5px;color:var(--ink2);line-height:1.7}
+.pimp{
+  font-size:12.5px;font-weight:600;color:var(--teal);
+  background:var(--teal-lt);border-left:2.5px solid var(--teal);
   padding:9px 12px;border-radius:0 var(--r3) var(--r3) 0;
 }
-[data-theme="dark"] .pj-imp{color:var(--accent)}
-.pj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
-.pt{font-family:var(--mono);font-size:10.5px;padding:3px 8px;border-radius:5px;background:var(--bg2);border:1px solid var(--border);color:var(--ink3)}
-.pj-links{display:flex;gap:8px;margin-top:auto;padding-top:14px;border-top:1px solid var(--border)}
-.pl{font-size:12px;font-weight:600;padding:7px 15px;border-radius:var(--r3);border:1.5px solid var(--border-hi);color:var(--ink2);display:inline-flex;align-items:center;gap:5px;transition:all .18s}
-.pl:hover{border-color:var(--accent);color:var(--accent)}
-.pl.m{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 2px 10px var(--accent-glow)}
-.pl.m:hover{background:var(--accent-md);box-shadow:0 4px 18px var(--accent-glow)}
-
-/* ═══════════════════════════════════════
-   EXPERIENCE
-═══════════════════════════════════════ */
-.ex-list{display:flex;flex-direction:column}
-.ex-item{display:grid;grid-template-columns:200px 1fr;gap:44px;padding:48px 0;border-bottom:1px solid var(--border)}
-.ex-item:last-child{border-bottom:none}
-.ex-period{font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
-.ex-org{font-size:12px;font-weight:700;color:var(--ink);background:var(--card2);border:1px solid var(--border);display:inline-block;padding:4px 11px;border-radius:5px;margin-bottom:8px}
-.ex-type{font-size:11.5px;color:var(--ink3);line-height:1.6}
-.ex-role{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:-.03em;color:var(--ink);margin-bottom:3px;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
-.now-chip{
-  display:inline-flex;align-items:center;gap:5px;
-  font-size:10.5px;font-weight:700;font-family:var(--sans);letter-spacing:0;
-  background:var(--accent-lt);border:1px solid rgba(27,94,59,.2);
-  color:var(--accent-md);padding:3px 9px;border-radius:99px;
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
+.ptag{
+  font-family:var(--mono);font-size:10.5px;
+  padding:3px 8px;border-radius:5px;
+  background:var(--bg2);border:1px solid var(--line);color:var(--ink3);
 }
-[data-theme="dark"] .now-chip{color:var(--accent)}
-.now-chip::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-md);animation:blink 1.8s ease-in-out infinite}
-[data-theme="dark"] .now-chip::before{background:var(--accent)}
-.ex-where{font-size:13px;color:var(--ink3);margin-bottom:20px}
-.ex-ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.ex-ul li{font-size:14px;color:var(--ink2);line-height:1.7;padding-left:20px;position:relative}
-.ex-ul li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent);opacity:.35}
-.ex-ul li strong{color:var(--ink);font-weight:600}
-.ex-kpis{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-.ek{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--ink);background:var(--card2);border:1px solid var(--border);padding:6px 14px;border-radius:var(--r3);box-shadow:var(--sh-sm)}
-.ek-v{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--accent)}
+.plinks{
+  display:flex;gap:8px;margin-top:auto;
+  padding-top:14px;border-top:1px solid var(--line);
+}
+.lk{
+  font-size:12px;font-weight:600;
+  padding:7px 15px;border-radius:var(--r3);
+  border:1.5px solid var(--line-hi);color:var(--ink2);
+  display:inline-flex;align-items:center;gap:5px;transition:all .18s;
+}
+.lk:hover{border-color:var(--navy);color:var(--navy)}
+.lk.m{
+  background:var(--navy);border-color:var(--navy);color:#fff;
+  box-shadow:0 2px 10px var(--navy-glow);
+}
+.lk.m:hover{background:var(--navy-d);box-shadow:0 4px 18px var(--navy-glow)}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
+   EXPERIENCE
+══════════════════════════════════════════ */
+.exp-list{display:flex;flex-direction:column}
+.exp-item{
+  display:grid;grid-template-columns:200px 1fr;
+  gap:44px;padding:48px 0;border-bottom:1px solid var(--line);
+}
+.exp-item:last-child{border-bottom:none}
+.em-period{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  color:var(--navy);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;
+}
+.em-org{
+  font-size:12px;font-weight:700;color:var(--ink);
+  background:var(--card2);border:1px solid var(--line);
+  display:inline-block;padding:4px 11px;border-radius:6px;margin-bottom:10px;
+}
+.em-type{font-size:12px;color:var(--ink3);line-height:1.6}
+.er-title{
+  font-family:var(--serif);font-size:22px;font-weight:700;
+  letter-spacing:-.03em;color:var(--ink);margin-bottom:4px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.cur-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;color:var(--sage);
+  background:var(--sage-lt);border:1px solid rgba(42,92,69,.2);
+  padding:3px 10px;border-radius:99px;
+  font-family:var(--sans);
+}
+.cur-badge::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--sage);animation:blink 1.8s ease-in-out infinite;
+}
+.er-where{font-size:13px;color:var(--ink3);margin-bottom:22px}
+.er-ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.er-ul li{
+  font-size:14px;color:var(--ink2);line-height:1.7;
+  padding-left:20px;position:relative;
+}
+.er-ul li::before{
+  content:'';position:absolute;left:0;top:9px;
+  width:7px;height:7px;border-radius:50%;
+  background:var(--navy);opacity:.35;
+}
+.er-ul li strong{color:var(--ink);font-weight:600}
+.er-kpis{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.ekpi{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:600;color:var(--ink);
+  background:var(--card2);border:1px solid var(--line);
+  padding:6px 14px;border-radius:var(--r3);box-shadow:var(--sh-xs);
+}
+.ekpi-v{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--navy)}
+
+/* ══════════════════════════════════════════
    EDUCATION & CERTS
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .edu-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:var(--r2);padding:20px 22px;
-  box-shadow:var(--sh-sm);transition:border-color .18s,box-shadow .18s;
-  display:flex;gap:14px;align-items:flex-start;
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r2);padding:22px 24px;
+  box-shadow:var(--sh-xs);transition:border-color .18s,box-shadow .18s;
+  position:relative;overflow:hidden;
 }
-.edu-card:hover{border-color:var(--border-hi);box-shadow:var(--sh)}
-.edu-icon{
-  width:36px;height:36px;border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;flex-shrink:0;
+.edu-card:hover{border-color:var(--line-hi);box-shadow:var(--sh-sm)}
+.edu-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
 }
-.edu-deg{font-family:var(--serif);font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.3}
-.edu-school{font-size:12.5px;color:var(--ink2);font-weight:500;margin-bottom:3px}
-.edu-period{font-family:var(--mono);font-size:10.5px;color:var(--ink3);letter-spacing:.04em}
+.edu-card.degree::before{background:var(--navy)}
+.edu-card.msc::before{background:var(--teal)}
+.edu-card.cert::before{background:var(--gold)}
+.edu-card.prog::before{background:var(--sage)}
+.edu-type{
+  font-family:var(--mono);font-size:10px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--ink3);margin-bottom:8px;
+}
+.edu-name{font-family:var(--serif);font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.3}
+.edu-org{font-size:12.5px;color:var(--ink2);margin-bottom:4px}
+.edu-year{font-size:11.5px;color:var(--ink3)}
 .edu-badge{
-  display:inline-flex;align-items:center;gap:4px;
-  font-size:10px;font-weight:700;
-  padding:2px 8px;border-radius:99px;margin-top:5px;
+  display:inline-block;margin-top:8px;
+  font-size:10px;font-weight:700;letter-spacing:.04em;
+  padding:3px 9px;border-radius:4px;
 }
+.eb-wb{background:var(--gold-lt);color:var(--gold);border:1px solid rgba(160,103,10,.18)}
+.eb-aws{background:var(--gold-lt);color:var(--gold);border:1px solid rgba(160,103,10,.18)}
+.eb-nv{background:var(--slate-lt);color:var(--slate);border:1px solid rgba(46,74,107,.18)}
+.eb-dc{background:var(--teal-lt);color:var(--teal);border:1px solid rgba(11,122,110,.18)}
 
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:32px}
-.cert-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:var(--r2);padding:16px 18px;
-  box-shadow:var(--sh-sm);display:flex;gap:12px;align-items:center;
-  transition:all .18s;
-}
-.cert-card:hover{border-color:rgba(55,48,163,.25);box-shadow:var(--sh)}
-.cert-icon{
-  width:32px;height:32px;border-radius:7px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;flex-shrink:0;
-}
-.cert-name{font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:2px}
-.cert-org{font-size:11px;color:var(--ink3)}
-
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    CONTACT
-═══════════════════════════════════════ */
-.ct-block{
-  background:var(--card);border:1px solid var(--border);
+══════════════════════════════════════════ */
+.contact-wrap{
+  background:var(--card);border:1px solid var(--line);
   border-radius:20px;overflow:hidden;
   display:grid;grid-template-columns:1fr 1fr;
-  box-shadow:var(--sh);
+  box-shadow:var(--sh-md);
 }
-.ct-l{
+.cl{
   padding:52px 48px;
-  background:linear-gradient(145deg,var(--accent-lt) 0%,transparent 70%);
-  border-right:1px solid var(--border);
+  background:linear-gradient(145deg,var(--navy-lt) 0%,transparent 70%);
+  border-right:1px solid var(--line);
 }
-.ct-l p{font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:16px}
-.op-badge{
+.cl .sh{font-size:34px;margin-bottom:14px}
+.cl p{font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:16px}
+.open-to{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:13px;font-weight:600;color:var(--accent-md);
-  background:var(--accent-lt);border:1px solid rgba(27,94,59,.2);
-  padding:8px 16px;border-radius:99px;margin-bottom:26px;
+  font-size:13px;font-weight:600;color:var(--sage);
+  background:var(--sage-lt);border:1px solid rgba(42,92,69,.18);
+  padding:8px 16px;border-radius:99px;margin-bottom:28px;
 }
-[data-theme="dark"] .op-badge{color:var(--accent)}
-.op-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent-md);animation:blink 1.8s ease-in-out infinite}
-[data-theme="dark"] .op-badge::before{background:var(--accent)}
-.ct-r{padding:52px 48px}
-.ct-links{display:flex;flex-direction:column;gap:10px}
-.ctlk{
+.open-to::before{
+  content:'';width:7px;height:7px;border-radius:50%;
+  background:var(--sage);animation:blink 1.8s ease-in-out infinite;
+}
+.cr2{padding:52px 48px}
+.clinks{display:flex;flex-direction:column;gap:10px}
+.clink{
   display:flex;align-items:center;gap:14px;
-  padding:14px 18px;background:var(--bg2);
-  border:1px solid var(--border);border-radius:var(--r2);transition:all .2s;
+  padding:14px 18px;
+  background:var(--bg2);border:1px solid var(--line);
+  border-radius:var(--r2);transition:all .2s;
 }
-.ctlk:hover{border-color:rgba(27,94,59,.25);background:var(--accent-lt);transform:translateX(4px)}
-.ctlk-ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
-.ctlk-n{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px}
-.ctlk-v{font-size:11.5px;color:var(--ink3)}
-.ctlk-arr{margin-left:auto;color:var(--ink3);transition:all .2s}
-.ctlk:hover .ctlk-arr{color:var(--accent);transform:translateX(3px)}
+.clink:hover{border-color:rgba(27,58,107,.25);background:var(--navy-lt);transform:translateX(4px)}
+.ci{
+  width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:700;flex-shrink:0;
+}
+.cn{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.cv2{font-size:11.5px;color:var(--ink3)}
+.ca{margin-left:auto;color:var(--ink3);font-size:14px;transition:all .2s}
+.clink:hover .ca{color:var(--navy);transform:translateX(3px)}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    FOOTER
-═══════════════════════════════════════ */
-footer{border-top:1px solid var(--border);padding:28px max(24px,6%);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.f-copy{font-size:12px;color:var(--ink3)}
-.f-links{display:flex;gap:20px}
-.f-links a{font-size:12px;color:var(--ink3);transition:color .18s}
-.f-links a:hover{color:var(--accent)}
+══════════════════════════════════════════ */
+footer{
+  border-top:1px solid var(--line);
+  padding:28px max(24px,5.5%);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.fc{font-size:12px;color:var(--ink3)}
+.fl{display:flex;gap:20px}
+.fl a{font-size:12px;color:var(--ink3);transition:color .18s}
+.fl a:hover{color:var(--navy)}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    ANIMATIONS
-═══════════════════════════════════════ */
-.fade{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+══════════════════════════════════════════ */
+.fade{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
 .fade.in{opacity:1;transform:none}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    RESPONSIVE
-═══════════════════════════════════════ */
-@media(max-width:980px){
-  .hero-grid{grid-template-columns:1fr;gap:48px}
-  .p-card{max-width:360px;position:static}
+══════════════════════════════════════════ */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;gap:48px}
+  .pcard{max-width:380px;position:static}
   .about-g{grid-template-columns:1fr}
-  .pj.ft{grid-column:span 1;flex-direction:column}
-  .pj.ft .pj-img{width:100%;height:200px}
-  .ct-block{grid-template-columns:1fr}
-  .ct-l{border-right:none;border-bottom:1px solid var(--border)}
-  .ex-item{grid-template-columns:1fr;gap:18px}
-  .s-strip{grid-template-columns:repeat(2,1fr)}
+  .proj.feat{grid-column:span 1;flex-direction:column}
+  .proj.feat .pimg{width:100%;height:200px}
+  .contact-wrap{grid-template-columns:1fr}
+  .cl{border-right:none;border-bottom:1px solid var(--line)}
+  .exp-item{grid-template-columns:1fr;gap:20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
   .edu-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
-  .nav-links,.live-dot{display:none}
-  .p-grid{grid-template-columns:1fr}
-  .ct-l,.ct-r{padding:36px 24px}
-  .cert-grid{grid-template-columns:1fr 1fr}
+  .nav-ul,.dot-pill{display:none}
+  .pg{grid-template-columns:1fr}
+  .cl,.cr2{padding:36px 28px}
+  footer{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
@@ -517,7 +661,7 @@ footer{border-top:1px solid var(--border);padding:28px max(24px,6%);display:flex
 <!-- NAV -->
 <nav>
   <div class="logo"><div class="logo-sq">R</div>Ruth Ondiere</div>
-  <ul class="nav-links">
+  <ul class="nav-ul">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -525,475 +669,475 @@ footer{border-top:1px solid var(--border);padding:28px max(24px,6%);display:flex
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-r">
-    <div class="live-dot">Open to opportunities</div>
+    <div class="dot-pill">Open to opportunities</div>
     <button class="tbtn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
-    <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="btn-dl" target="_blank" rel="noopener">Download CV</a>
+    <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="cv-btn" target="_blank" rel="noopener">Download CV</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero-shell">
-  <div class="hero-grid">
-    <div class="hero-l fade">
-      <div class="h-tag">Data Analyst · Python · SQL · Tableau · AWS Certified</div>
-      <h1>
-        An engineer<br>
-        who learned to<br>
-        <span class="it">listen to data.</span>
-      </h1>
-      <p class="hero-mono">// electronics → IoT → data pipelines → ML models</p>
-      <p class="hero-p">
-        I started in electronics engineering — wiring circuits, reading sensors, debugging hardware. Then I realised the most valuable signal wasn't in the machine. It was in what the machine was <strong>telling us</strong>. That's when I moved into data.
+<div class="hero-outer">
+  <div class="hero">
+    <div class="fade">
+      <div class="h-tag">Data Analyst · Python · SQL · Tableau · Power BI</div>
+      <h1>Engineer by training.<br><em><span>Analyst</span> by choice.</em></h1>
+      <p class="h-sub">// electronics → IoT → data → decisions</p>
+      <p class="h-desc">
+        I came into data through engineering — building IoT pipelines for <strong>500+ connected tractors</strong> before pivoting fully into analytics. That background means I understand systems, not just spreadsheets. Today I build dashboards, ML models, and ETL pipelines that help teams act faster and decide better.
       </p>
-      <div class="eng-line">
-        Now 2+ years in: cutting reporting time by <em>70%</em>, boosting product adoption by <em>25%</em>, and building the pipelines and dashboards that operations teams rely on daily — from IoT sensor data to financial risk models.
-      </div>
-      <div class="win-strip">
+      <p class="h-personal">
+        "My engineering degree taught me how systems break. Data analytics taught me how to fix them before they do."
+      </p>
+      <div class="h-win">
         🏆 &nbsp;Botathon Hackathon — 1st Place · Outperformed 50+ teams nationally · Kenya
       </div>
-      <div class="stack">
-        <span class="stag">Python</span><span class="stag">PySpark</span><span class="stag">SQL</span>
-        <span class="stag">Tableau</span><span class="stag">Power BI</span><span class="stag">XGBoost</span>
-        <span class="stag">Scikit-learn</span><span class="stag">SHAP</span><span class="stag">NLP / RAG</span>
-        <span class="stag cert">AWS Certified ✓</span>
-        <span class="stag cert">MSc AI · Nexford ✓</span>
-        <span class="stag cert">NVIDIA DLI ✓</span>
+      <div class="h-stack">
+        <span class="stk">Python</span><span class="stk">PySpark</span><span class="stk">SQL</span>
+        <span class="stk">Tableau</span><span class="stk">Power BI</span><span class="stk">XGBoost</span>
+        <span class="stk">Scikit-learn</span><span class="stk">SHAP</span>
+        <span class="stk">AWS ✓ Certified</span><span class="stk">Docker</span>
       </div>
-      <div class="hero-btns">
-        <a href="#projects" class="btn-a">View my work →</a>
-        <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="btn-b" target="_blank" rel="noopener">Download CV</a>
+      <div class="h-btns">
+        <a href="#projects" class="btn-p">View my work →</a>
+        <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="btn-g" target="_blank" rel="noopener">Download CV</a>
       </div>
-      <div class="s-strip">
-        <div class="s-box"><div class="s-n">70<em>%</em></div><div class="s-l">Reporting time cut</div></div>
-        <div class="s-box"><div class="s-n">25<em>%</em></div><div class="s-l">Product adoption lift</div></div>
-        <div class="s-box"><div class="s-n">50<em>+</em></div><div class="s-l">Teams beaten in hackathon</div></div>
-        <div class="s-box"><div class="s-n">500<em>+</em></div><div class="s-l">IoT devices processed</div></div>
+      <div class="stats">
+        <div class="st"><div class="st-n">500<em>+</em></div><div class="st-l">IoT devices piped</div></div>
+        <div class="st"><div class="st-n">40<em>%</em></div><div class="st-l">Data prep time cut</div></div>
+        <div class="st"><div class="st-n">50<em>+</em></div><div class="st-l">Teams beaten in hackathon</div></div>
+        <div class="st"><div class="st-n">88<em>%</em></div><div class="st-l">AUC-ROC achieved</div></div>
       </div>
     </div>
 
-    <div class="hero-r fade" style="transition-delay:.18s">
-      <div class="p-card">
-        <div class="p-card-stripe"></div>
-        <div class="p-photo-area">
-          <div class="p-ring">
-            <img src="https://bonaondiere.github.io/ruth_photo.jpg" alt="Ruth Ondiere, Data Analyst" class="p-photo"/>
+    <div class="fade" style="transition-delay:.18s">
+      <div class="pcard">
+        <div class="pcard-bar"></div>
+        <div class="pcard-top">
+          <div class="photo-wrap">
+            <img src="https://bonaondiere.github.io/ruth_photo.jpg" alt="Ruth Ondiere" class="pphoto"/>
           </div>
-          <div class="p-name">Ruth Ondiere</div>
-          <div class="p-sub">data analyst · ml practitioner · engineer</div>
+          <div class="pname">Ruth Ondiere</div>
+          <div class="prole">BSc Electronics · MSc AI & Technology</div>
         </div>
-        <div class="p-div"></div>
-        <div class="p-rows">
-          <div class="p-row">
-            <div class="p-ico" style="background:var(--accent-lt);color:var(--accent-md)">📍</div>
-            <div><div class="p-lbl">Location</div><div class="p-val">Nairobi, Kenya</div></div>
+        <div class="pdiv"></div>
+        <div class="prows">
+          <div class="pr">
+            <div class="pi" style="background:var(--navy-lt);color:var(--navy)">📍</div>
+            <div><div class="pl2">Location</div><div class="pv">Nairobi, Kenya</div></div>
           </div>
-          <div class="p-row">
-            <div class="p-ico" style="background:var(--indigo-lt);color:var(--indigo)">🕐</div>
-            <div><div class="p-lbl">Time zone</div><div class="p-val">East Africa · overlaps EU mornings</div></div>
+          <div class="pr">
+            <div class="pi" style="background:var(--teal-lt);color:var(--teal)">🕐</div>
+            <div><div class="pl2">Time zone</div><div class="pv">East Africa · overlaps EU mornings</div></div>
           </div>
-          <div class="p-row">
-            <div class="p-ico" style="background:var(--accent-lt);color:var(--accent-md)">🌐</div>
-            <div><div class="p-lbl">Work preference</div><div class="p-val"><span class="p-chip">Open to remote</span></div></div>
+          <div class="pr">
+            <div class="pi" style="background:var(--sage-lt);color:var(--sage)">🌐</div>
+            <div><div class="pl2">Work mode</div><div class="pv"><span class="avail-chip">Open to remote</span></div></div>
           </div>
-          <div class="p-row">
-            <div class="p-ico" style="background:var(--amber-lt);color:var(--amber)">📅</div>
-            <div><div class="p-lbl">Availability</div><div class="p-val">Open to new opportunities</div></div>
+          <div class="pr">
+            <div class="pi" style="background:var(--gold-lt);color:var(--gold)">🎓</div>
+            <div><div class="pl2">Currently studying</div><div class="pv">MSc AI · Nexford University</div></div>
+          </div>
+          <div class="pr">
+            <div class="pi" style="background:var(--rose-lt);color:var(--rose)">📅</div>
+            <div><div class="pl2">Availability</div><div class="pv">Open to new opportunities</div></div>
           </div>
         </div>
         <div class="creds">
-          <div class="creds-title">Verified credentials</div>
-          <div class="cred-pills">
-            <div class="cred">AWS Certified Cloud Practitioner</div>
-            <div class="cred">MSc AI &amp; Technology Management · Nexford</div>
-            <div class="cred">World Bank-Sponsored Data Science Program</div>
-            <div class="cred">NVIDIA Deep Learning Institute</div>
-          </div>
+          <div class="cred">🏆 Botathon Winner</div>
+          <div class="cred">☁ AWS Certified</div>
+          <div class="cred">🌍 World Bank Alumni</div>
+          <div class="cred">🎓 NVIDIA DLI</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="div-line"></div>
+<div class="hr"></div>
 
 <!-- ABOUT -->
-<section class="sec fade" id="about">
+<section class="section fade" id="about">
   <div class="win">
-    <div class="wi">🏆</div>
+    <div class="win-ico">🏆</div>
     <div>
-      <div class="wt">Botathon Hackathon — 1st Place, National</div>
-      <div class="ws">Built a RAG-powered AI course advisor (NLP + OpenAI API + vector database) that improved information retrieval accuracy by 40%. Outperformed 50+ teams across Kenya in a competitive national hackathon.</div>
+      <div class="win-t">Botathon Hackathon — 1st Place · 50+ teams · Kenya</div>
+      <div class="win-s">Led development of a RAG-powered AI course advisor using NLP and OpenAI API with a semantic vector database — improving information retrieval accuracy by 40%. Won against 50+ competing teams nationally. Selected as a participant in the World Bank–sponsored KIEP-SKIES intensive Data Science &amp; AI programme.</div>
     </div>
-    <div class="wl">50+ teams · 1st Place</div>
+    <div class="win-chip">1st Place · National</div>
   </div>
 
   <div class="ey">About</div>
-  <h2 class="sh">The engineer who<br>became a data analyst</h2>
-  <p class="sp">An unusual path — from circuits and sensors to pipelines and models. That engineering foundation is exactly what makes the difference.</p>
+  <h2 class="sh">I build things that<br>help people decide</h2>
+  <p class="sp">Electronics engineer turned data analyst. I understand how systems work from the ground up — and how to make the data from those systems tell a story.</p>
 
   <div class="about-g">
     <div class="about-copy">
-      <div class="story-box">
-        <p>I started in electronics because I wanted to understand how things work at the lowest level. Working on IoT systems — with 500+ connected devices sending constant data — I realised that the hardware was never the interesting part. The data it produced was. That's when everything shifted.</p>
+      <p>My path into data is different from most. I started with a <strong>BSc in Electronics and Computer Engineering</strong>, spent time designing electrical systems and installing IoT infrastructure, then found myself building data pipelines for a fleet of 500+ connected tractors across East Africa. That's when it clicked — the most valuable thing I could do wasn't build the hardware, it was make sense of what it was telling us.</p>
+      <p>Since then I've built <strong>PySpark ETL pipelines processing millions of records</strong>, designed Tableau and Power BI dashboards that stakeholders check daily, and shipped ML models from prototype to production. Currently working as a <strong>Data Analyst at Infotrace Analytics</strong>, building sales and operational dashboards, writing ETL scripts, and presenting weekly insights to management.</p>
+      <p>I'm also pursuing a <strong>Master's in AI and Technology Management at Nexford University (Washington DC, remote)</strong> — because I want to understand not just how to build models, but how to make organisations actually use them.</p>
+      <div class="personal-note">
+        I'm looking for a remote data role where the work genuinely matters — where a dashboard I build on a Tuesday changes a decision on a Wednesday.
       </div>
-      <p>Today I work end-to-end: engineering ETL pipelines, performing statistical analysis, building and deploying ML models, and designing dashboards that <strong>non-technical stakeholders actually use</strong>. I've processed millions of IoT records with PySpark, built Power BI and Tableau dashboards cutting reporting time by <strong>40%</strong>, and built predictive models in production — not just notebooks sitting in a GitHub repo.</p>
-      <p>My background in engineering means I think in <strong>systems</strong> — I understand how data is generated at the source, what can go wrong in a pipeline, and why data quality problems happen before they become dashboard problems. That's a perspective most data analysts don't have.</p>
-      <p>I'm pursuing a <strong>Master's in AI and Technology Management at Nexford University</strong> (fully remote, Washington DC), and I hold an <strong>AWS Cloud Practitioner certification</strong> and a <strong>World Bank-sponsored Data Science qualification</strong>. I'm looking for a fully remote data role where I can do meaningful work on a global team.</p>
-      <div class="cred-strip">
-        <span class="cred-tag">AWS Certified</span>
-        <span class="cred-tag">World Bank Program</span>
-        <span class="cred-tag">NVIDIA DLI</span>
-        <span class="cred-tag">MSc AI · Nexford</span>
+      <div class="remote-tag">🌍 &nbsp;Remote-first · East Africa Time · overlaps EU mornings &amp; US evenings</div>
+      <div class="creds-row">
+        <div class="cr"><span class="cr-dot" style="background:var(--gold)"></span>AWS Cloud Practitioner — Certified 2022</div>
+        <div class="cr"><span class="cr-dot" style="background:var(--slate)"></span>NVIDIA Deep Learning Institute 2025</div>
+        <div class="cr"><span class="cr-dot" style="background:var(--teal)"></span>World Bank · KIEP-SKIES Data Science &amp; AI 2025</div>
+        <div class="cr"><span class="cr-dot" style="background:var(--navy)"></span>DataCamp · Data Scientist with Python 2025</div>
       </div>
-      <div class="r-flag">🌍 &nbsp;Remote-first · East Africa Time · overlaps EU mornings &amp; US evenings</div>
     </div>
     <div class="sk-col">
-      <div class="sk-bl">
-        <div class="sk-lbl">Analysis &amp; Engineering</div>
+      <div class="sk-b">
+        <div class="sk-l">Analysis &amp; Engineering</div>
         <div class="sk-tags">
           <span class="sk">Python</span><span class="sk">Pandas</span><span class="sk">NumPy</span>
           <span class="sk">SQL</span><span class="sk">PostgreSQL</span><span class="sk">PySpark</span>
           <span class="sk">ETL Pipelines</span><span class="sk">A/B Testing</span>
         </div>
       </div>
-      <div class="sk-bl">
-        <div class="sk-lbl">Machine Learning</div>
+      <div class="sk-b">
+        <div class="sk-l">Machine Learning</div>
         <div class="sk-tags">
-          <span class="sk">Scikit-learn</span><span class="sk">XGBoost</span><span class="sk">Random Forest</span>
-          <span class="sk">TensorFlow</span><span class="sk">NLP / RAG</span><span class="sk">SHAP</span>
+          <span class="sk">Scikit-learn</span><span class="sk">XGBoost</span>
+          <span class="sk">Random Forest</span><span class="sk">TensorFlow</span>
+          <span class="sk">NLP / RAG</span><span class="sk">SHAP</span>
           <span class="sk">Time Series</span><span class="sk">SMOTE</span>
         </div>
       </div>
-      <div class="sk-bl">
-        <div class="sk-lbl">Visualisation &amp; BI</div>
+      <div class="sk-b">
+        <div class="sk-l">Visualisation &amp; BI</div>
         <div class="sk-tags">
           <span class="sk">Tableau</span><span class="sk">Power BI</span>
           <span class="sk">Plotly</span><span class="sk">Seaborn</span><span class="sk">Matplotlib</span>
         </div>
       </div>
-      <div class="sk-bl">
-        <div class="sk-lbl">Cloud &amp; Engineering</div>
+      <div class="sk-b">
+        <div class="sk-l">Cloud &amp; Engineering</div>
         <div class="sk-tags">
           <span class="sk">AWS S3 / EC2</span><span class="sk">Docker</span>
-          <span class="sk">Git / GitHub</span><span class="sk">IoT Systems</span><span class="sk">REST APIs</span>
+          <span class="sk">Git / GitHub</span><span class="sk">REST APIs</span>
+          <span class="sk">IoT Systems</span><span class="sk">AutoCAD</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="div-line"></div>
+<div class="hr"></div>
 
 <!-- PROJECTS -->
-<section class="sec fade" id="projects">
+<section class="section fade" id="projects">
   <div class="ey">Projects</div>
-  <h2 class="sh">Work that speaks<br>for itself</h2>
-  <p class="sp">Real datasets. Real business questions. Every project is built around a problem a stakeholder would actually bring to a data team.</p>
+  <h2 class="sh">Real data.<br>Real questions.</h2>
+  <p class="sp">Every project starts with a business question someone would actually ask — not a dataset someone handed me to practice on.</p>
 
-  <div class="p-grid">
+  <div class="pg">
 
-    <article class="pj ft">
-      <div class="pj-img">
+    <article class="proj feat">
+      <div class="pimg">
         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=600&fit=crop&q=80" alt="Olist E-Commerce Dashboard" loading="lazy"/>
-        <div class="pj-sh"></div>
-        <div class="pj-chips">
-          <span class="ch ca">★ Featured</span>
-          <span class="ch cf">Tableau Public</span>
-          <span class="ch ce">99k real orders</span>
+        <div class="pshade"></div>
+        <div class="pchips">
+          <span class="chip c-navy">★ Featured</span>
+          <span class="chip c-teal">Tableau Public</span>
+          <span class="chip c-sage">99,438 real orders</span>
         </div>
       </div>
-      <div class="pj-body">
-        <div class="pj-q">"Which categories, states &amp; sellers drive revenue — and where is slow delivery destroying customer satisfaction?"</div>
-        <div class="pj-name">Brazilian E-Commerce Dashboard · Olist</div>
-        <div class="pj-desc">4-page interactive Tableau dashboard built on 99,438 real marketplace orders (2016–2018). Covers executive KPIs, logistics performance, product &amp; seller matrices, and payment behaviour. Built with 9 calculated fields including delivery colour bands, on-time rate, and AOV by payment method.</div>
-        <div class="pj-imp">📊 Deliveries &gt;20 days reduce review scores by 2.2 points · SP = 37.5% of all revenue · Credit card AOV 38% higher than voucher users</div>
-        <div class="pj-tags"><span class="pt">Tableau</span><span class="pt">Python</span><span class="pt">Pandas</span><span class="pt">KPI Design</span><span class="pt">Data Storytelling</span></div>
-        <div class="pj-links">
-          <a href="https://public.tableau.com/app/profile/ruth.ondiere" class="pl m" target="_blank" rel="noopener">View on Tableau Public →</a>
-          <a href="https://github.com/BONAONDIERE" class="pl" target="_blank" rel="noopener">GitHub</a>
+      <div class="pbody">
+        <div class="pq">"Which categories and states drive revenue — and where is slow delivery costing us reviews?"</div>
+        <div class="ptitle">Brazilian E-Commerce Performance Dashboard · Olist</div>
+        <div class="pdesc">4-page interactive Tableau dashboard built on 99,438 real marketplace orders (2016–2018). Executive KPIs, logistics performance heatmaps, product &amp; seller matrices, and payment behaviour — 9 calculated fields including delivery colour bands, on-time rate, and AOV by payment method.</div>
+        <div class="pimp">📊 Deliveries &gt;20 days reduce review scores by 2.2 stars · São Paulo = 37.5% of all revenue · Credit card AOV 38% higher than voucher — all from real data</div>
+        <div class="ptags">
+          <span class="ptag">Tableau</span><span class="ptag">Python</span><span class="ptag">Pandas</span>
+          <span class="ptag">KPI Design</span><span class="ptag">Data Storytelling</span>
+        </div>
+        <div class="plinks">
+          <a href="https://public.tableau.com/app/profile/ruth.ondiere" class="lk m" target="_blank" rel="noopener">View on Tableau Public →</a>
+          <a href="https://github.com/BONAONDIERE" class="lk" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </article>
 
-    <article class="pj">
-      <div class="pj-img">
+    <article class="proj">
+      <div class="pimg">
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80" alt="Loan Analytics" loading="lazy"/>
-        <div class="pj-sh"></div>
-        <div class="pj-chips"><span class="ch cc">Data Engineering</span></div>
+        <div class="pshade"></div>
+        <div class="pchips"><span class="chip c-gold">Data Engineering</span></div>
       </div>
-      <div class="pj-body">
-        <div class="pj-q">"How do we flag at-risk loans before they default — without waiting 6 hours for a report?"</div>
-        <div class="pj-name">Loan Repayment Analytics · PySpark + Tableau</div>
-        <div class="pj-desc">ETL pipeline joining 4 financial tables to compute daily expected vs actual collections, outstanding balances, and days in default. Tableau dashboard with Healthy / Due / Doubtful loan health segmentation for management reporting.</div>
-        <div class="pj-imp">⚡ Reporting time: 6 hours → 15 minutes · Real-time risk monitoring enabled</div>
-        <div class="pj-tags"><span class="pt">PySpark</span><span class="pt">Tableau</span><span class="pt">SQL</span><span class="pt">ETL</span></div>
-        <div class="pj-links"><a href="https://github.com/BONAONDIERE/loan-repayment-analytics" class="pl m" target="_blank" rel="noopener">GitHub →</a></div>
+      <div class="pbody">
+        <div class="pq">"How do we flag at-risk loans before default — without waiting 6 hours for the morning report?"</div>
+        <div class="ptitle">Loan Repayment Analytics · PySpark + Tableau</div>
+        <div class="pdesc">ETL pipeline joining 4 financial tables (loan, transactions, KYC, accounts) computing daily collections, outstanding balances, and days-in-default. Tableau dashboard with Healthy / Due / Doubtful loan health classification.</div>
+        <div class="pimp">⚡ Reporting time cut from 6 hours to 15 minutes. Risk team can now act same-day.</div>
+        <div class="ptags"><span class="ptag">PySpark</span><span class="ptag">Tableau</span><span class="ptag">SQL</span><span class="ptag">ETL</span></div>
+        <div class="plinks"><a href="https://github.com/BONAONDIERE/loan-repayment-analytics" class="lk m" target="_blank" rel="noopener">GitHub →</a></div>
       </div>
     </article>
 
-    <article class="pj">
-      <div class="pj-img">
+    <article class="proj">
+      <div class="pimg">
         <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&h=400&fit=crop&q=80" alt="Churn Model" loading="lazy"/>
-        <div class="pj-sh"></div>
-        <div class="pj-chips"><span class="ch ce">ML · Business Impact</span></div>
+        <div class="pshade"></div>
+        <div class="pchips"><span class="chip c-slate">ML · Retention</span></div>
       </div>
-      <div class="pj-body">
-        <div class="pj-q">"Which customers are about to leave — and what's the most cost-effective way to keep them?"</div>
-        <div class="pj-name">Telecom Customer Churn Prediction</div>
-        <div class="pj-desc">End-to-end churn pipeline on 7,000+ customers. SMOTE for class imbalance, 15 engineered behavioural features, XGBoost with SHAP explainability to identify the top churn drivers and design targeted retention campaigns.</div>
-        <div class="pj-imp">🎯 84% recall on churners · SHAP: contract type &amp; tenure are the #1 and #2 churn drivers</div>
-        <div class="pj-tags"><span class="pt">XGBoost</span><span class="pt">SHAP</span><span class="pt">SMOTE</span><span class="pt">Feature Engineering</span></div>
-        <div class="pj-links"><a href="https://github.com/BONAONDIERE" class="pl m" target="_blank" rel="noopener">GitHub →</a></div>
+      <div class="pbody">
+        <div class="pq">"Which customers are 30 days away from leaving — and what's the cheapest way to keep them?"</div>
+        <div class="ptitle">Telecom Customer Churn Prediction</div>
+        <div class="pdesc">End-to-end churn pipeline on 7,000+ customers. SMOTE for class imbalance, 15 engineered behavioural features, XGBoost with SHAP explainability surfacing the top churn drivers for the retention team.</div>
+        <div class="pimp">🎯 84% recall · SHAP: contract type &amp; tenure are the #1 &amp; #2 churn signals · Retention segment ready for campaign targeting</div>
+        <div class="ptags"><span class="ptag">XGBoost</span><span class="ptag">SHAP</span><span class="ptag">SMOTE</span><span class="ptag">Feature Eng.</span></div>
+        <div class="plinks"><a href="https://github.com/BONAONDIERE" class="lk m" target="_blank" rel="noopener">GitHub →</a></div>
       </div>
     </article>
 
-    <article class="pj">
-      <div class="pj-img">
+    <article class="proj">
+      <div class="pimg">
         <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&q=80" alt="Credit Risk" loading="lazy"/>
-        <div class="pj-sh"></div>
-        <div class="pj-chips"><span class="ch cd">ML · Finance</span></div>
+        <div class="pshade"></div>
+        <div class="pchips"><span class="chip c-rose">ML · Finance</span></div>
       </div>
-      <div class="pj-body">
-        <div class="pj-q">"Which borrowers will default — and can we identify them early enough to protect the portfolio?"</div>
-        <div class="pj-name">Credit Risk Scoring Model</div>
-        <div class="pj-desc">Binary classification predicting loan default from 12 engineered features across borrower history and transaction patterns. Benchmarked Logistic Regression, Random Forest, and XGBoost with threshold optimisation.</div>
-        <div class="pj-imp">🎯 88% AUC-ROC · 12 features engineered · Threshold tuned for optimal precision/recall balance</div>
-        <div class="pj-tags"><span class="pt">Scikit-learn</span><span class="pt">XGBoost</span><span class="pt">Feature Engineering</span></div>
-        <div class="pj-links"><a href="https://github.com/BONAONDIERE/credit-risk-scoring" class="pl m" target="_blank" rel="noopener">GitHub →</a></div>
+      <div class="pbody">
+        <div class="pq">"Which borrowers are likely to default — and how early can we know?"</div>
+        <div class="ptitle">Credit Risk Scoring Model</div>
+        <div class="pdesc">Binary classification predicting loan default from 12 engineered features across borrower history and transaction patterns. Compared Logistic Regression, Random Forest, and XGBoost with threshold optimisation for optimal precision/recall balance.</div>
+        <div class="pimp">🎯 88% AUC-ROC on holdout set · 12 features engineered · Threshold tuned for business risk tolerance</div>
+        <div class="ptags"><span class="ptag">Scikit-learn</span><span class="ptag">XGBoost</span><span class="ptag">Feature Engineering</span></div>
+        <div class="plinks"><a href="https://github.com/BONAONDIERE/credit-risk-scoring" class="lk m" target="_blank" rel="noopener">GitHub →</a></div>
       </div>
     </article>
 
-    <article class="pj">
-      <div class="pj-img">
+    <article class="proj">
+      <div class="pimg">
         <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=400&fit=crop&q=80" alt="AI Chatbot" loading="lazy"/>
-        <div class="pj-sh"></div>
-        <div class="pj-chips"><span class="ch cf">🏆 1st Place · 50+ teams</span></div>
+        <div class="pshade"></div>
+        <div class="pchips"><span class="chip c-sage">🏆 1st Place · 50+ teams</span></div>
       </div>
-      <div class="pj-body">
-        <div class="pj-q">"Can AI help 10,000+ students navigate course selection without a human advisor?"</div>
-        <div class="pj-name">AI Course Advisor · RAG Chatbot</div>
-        <div class="pj-desc">RAG system using NLP and OpenAI API with a vector database for semantic search over university course content. Improved information retrieval accuracy by 40%. Won 1st place in the Botathon national hackathon against 50+ competing teams.</div>
-        <div class="pj-imp">🤖 40% retrieval accuracy improvement · 1st place nationally · 50+ teams beaten</div>
-        <div class="pj-tags"><span class="pt">OpenAI API</span><span class="pt">NLP</span><span class="pt">RAG</span><span class="pt">Vector DB</span></div>
-        <div class="pj-links">
-          <a href="https://bonaondiere.github.io/kuccps-chatbot/demo.html" class="pl m" target="_blank" rel="noopener">Live Demo →</a>
-          <a href="https://github.com/BONAONDIERE/kuccps-chatbot" class="pl" target="_blank" rel="noopener">GitHub</a>
+      <div class="pbody">
+        <div class="pq">"Can a RAG system replace a human advisor for 10,000+ students navigating course selection?"</div>
+        <div class="ptitle">AI Course Advisor · RAG Chatbot · Hackathon Winner</div>
+        <div class="pdesc">RAG system using NLP and OpenAI API with a semantic vector database for course content retrieval. Improved information retrieval accuracy by 40%. Won 1st place in the Botathon national hackathon — outperforming 50+ teams across Kenya.</div>
+        <div class="pimp">🤖 40% retrieval accuracy improvement · 85% user satisfaction in 200-student pilot · 1st of 50+ teams</div>
+        <div class="ptags"><span class="ptag">OpenAI API</span><span class="ptag">NLP</span><span class="ptag">RAG</span><span class="ptag">Vector DB</span></div>
+        <div class="plinks">
+          <a href="https://bonaondiere.github.io/kuccps-chatbot/demo.html" class="lk m" target="_blank" rel="noopener">Live Demo →</a>
+          <a href="https://github.com/BONAONDIERE/kuccps-chatbot" class="lk" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </article>
 
-    <article class="pj">
-      <div class="pj-img">
-        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop&q=80" alt="Airline Fare" loading="lazy"/>
-        <div class="pj-sh"></div>
-        <div class="pj-chips"><span class="ch cb">ML · Regression</span></div>
+    <article class="proj">
+      <div class="pimg">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop&q=80" alt="Airline Fares" loading="lazy"/>
+        <div class="pshade"></div>
+        <div class="pchips"><span class="chip c-navy">ML · Regression</span></div>
       </div>
-      <div class="pj-body">
-        <div class="pj-q">"Can we predict airline ticket prices accurately enough to tell travellers exactly when to book?"</div>
-        <div class="pj-name">Airline Fare Prediction Engine</div>
-        <div class="pj-desc">Analysed 50,000+ flight records to build a regression pipeline forecasting ticket prices from departure timing, route, and seasonality. GridSearchCV hyperparameter tuning across Random Forest and XGBoost.</div>
-        <div class="pj-imp">✈️ 85% prediction accuracy · 22% improvement through feature engineering · MAE: $34 → $26</div>
-        <div class="pj-tags"><span class="pt">XGBoost</span><span class="pt">Random Forest</span><span class="pt">Feature Engineering</span><span class="pt">50k+ records</span></div>
-        <div class="pj-links">
-          <a href="https://colab.research.google.com/github/BONAONDIERE/airline-fare-prediction/blob/main/airline-fare-prediction-model.ipynb" class="pl m" target="_blank" rel="noopener">View Notebook →</a>
-          <a href="https://github.com/BONAONDIERE/airline-fare-prediction" class="pl" target="_blank" rel="noopener">GitHub</a>
+      <div class="pbody">
+        <div class="pq">"Can a model trained on 50,000 flights tell you exactly when to buy your ticket?"</div>
+        <div class="ptitle">Airline Fare Prediction Engine</div>
+        <div class="pdesc">Predictive pricing model on 50,000+ flight records using departure timing, route, and seasonality features. GridSearchCV hyperparameter tuning across Random Forest and XGBoost. 85% prediction accuracy.</div>
+        <div class="pimp">✈️ 85% prediction accuracy · 22% improvement through feature engineering &amp; tuning vs baseline</div>
+        <div class="ptags"><span class="ptag">XGBoost</span><span class="ptag">Random Forest</span><span class="ptag">Feature Engineering</span><span class="ptag">GridSearchCV</span></div>
+        <div class="plinks">
+          <a href="https://colab.research.google.com/github/BONAONDIERE/airline-fare-prediction/blob/main/airline-fare-prediction-model.ipynb" class="lk m" target="_blank" rel="noopener">View Notebook →</a>
+          <a href="https://github.com/BONAONDIERE/airline-fare-prediction" class="lk" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </article>
 
-    <article class="pj">
-      <div class="pj-img">
+    <article class="proj">
+      <div class="pimg">
         <img src="https://images.unsplash.com/photo-1551836022-8b2858c9c69b?w=600&h=400&fit=crop&q=80" alt="EduRoutes" loading="lazy"/>
-        <div class="pj-sh"></div>
-        <div class="pj-chips"><span class="ch cf">Geospatial · SDG Impact</span></div>
+        <div class="pshade"></div>
+        <div class="pchips"><span class="chip c-teal">Geospatial · SDGs</span></div>
       </div>
-      <div class="pj-body">
-        <div class="pj-q">"Can we use geospatial ML to cut school transport costs in Nairobi and make education more accessible?"</div>
-        <div class="pj-name">EduRoutes · School Transport Optimisation</div>
-        <div class="pj-desc">Platform using geospatial data and clustering algorithms to optimise school bus routes across Nairobi. Built on real school location data. Aligned with UN SDG 4 (Quality Education) and SDG 11 (Sustainable Cities). Currently in active development.</div>
-        <div class="pj-imp">🗺️ Targeting 35% transport cost reduction · Active development · UN SDG-aligned</div>
-        <div class="pj-tags"><span class="pt">Python</span><span class="pt">Geospatial</span><span class="pt">Clustering</span><span class="pt">Optimisation</span></div>
-        <div class="pj-links"><a href="https://bonaondiere.github.io/eduroutes-overview.html" class="pl m" target="_blank" rel="noopener">Project Details →</a></div>
+      <div class="pbody">
+        <div class="pq">"Can clustering algorithms cut school transport costs in Nairobi while improving access?"</div>
+        <div class="ptitle">EduRoutes · School Transport Optimisation</div>
+        <div class="pdesc">Platform using geospatial data and clustering algorithms to optimise school bus routes across Nairobi, targeting a 35% reduction in transport costs. Built on real school location data. UN SDG 4 and SDG 11 aligned — currently in development.</div>
+        <div class="pimp">🗺️ Targeting 35% transport cost reduction · Geospatial clustering on real Nairobi data · UN SDG-aligned</div>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Geospatial</span><span class="ptag">Clustering</span><span class="ptag">Optimisation</span></div>
+        <div class="plinks"><a href="https://bonaondiere.github.io/eduroutes-overview.html" class="lk m" target="_blank" rel="noopener">Project Details →</a></div>
       </div>
     </article>
 
-    <article class="pj">
-      <div class="pj-img">
+    <article class="proj">
+      <div class="pimg">
         <img src="https://public.tableau.com/static/images/SA/SalesPerformanceOverview/1_rss.png" alt="Sales Dashboard" loading="lazy"/>
-        <div class="pj-sh"></div>
-        <div class="pj-chips"><span class="ch cf">Tableau · Live</span></div>
+        <div class="pshade"></div>
+        <div class="pchips"><span class="chip c-teal">Tableau · Live</span></div>
       </div>
-      <div class="pj-body">
-        <div class="pj-q">"Which regions and product lines are underperforming — and is the trend actually recoverable?"</div>
-        <div class="pj-name">Sales Performance Dashboard</div>
-        <div class="pj-desc">Interactive Tableau dashboard covering regional sales, profitability, and product performance. Parameter controls, action filters, calculated KPIs, and trend analysis — designed for stakeholder self-service.</div>
-        <div class="pj-imp">📈 Stakeholders answer their own questions — analyst time freed for higher-value work</div>
-        <div class="pj-tags"><span class="pt">Tableau</span><span class="pt">KPI Design</span><span class="pt">Data Storytelling</span></div>
-        <div class="pj-links"><a href="https://public.tableau.com/app/profile/ruth.ondiere/viz/SalesPerformanceOverview_17720984791300/SalesPerformanceOverview" class="pl m" target="_blank" rel="noopener">View Dashboard →</a></div>
+      <div class="pbody">
+        <div class="pq">"Which regions are underperforming — and can the sales team see it without asking the analyst?"</div>
+        <div class="ptitle">Sales Performance Dashboard</div>
+        <div class="pdesc">Interactive Tableau dashboard with regional sales, profitability and product performance. Parameter controls, action filters, calculated fields and trend lines — designed so stakeholders self-serve without analyst involvement.</div>
+        <div class="pimp">📈 Zero analyst hand-holding for routine queries — stakeholders answer their own questions</div>
+        <div class="ptags"><span class="ptag">Tableau</span><span class="ptag">Calculated Fields</span><span class="ptag">KPI Design</span></div>
+        <div class="plinks"><a href="https://public.tableau.com/app/profile/ruth.ondiere/viz/SalesPerformanceOverview_17720984791300/SalesPerformanceOverview" class="lk m" target="_blank" rel="noopener">Live Dashboard →</a></div>
       </div>
     </article>
 
   </div>
 </section>
 
-<div class="div-line"></div>
+<div class="hr"></div>
 
 <!-- EXPERIENCE -->
-<section class="sec fade" id="experience">
+<section class="section fade" id="experience">
   <div class="ey">Experience</div>
-  <h2 class="sh">The work that<br>built this</h2>
-  <p class="sp">Production work on live data — not just tutorials and Kaggle competitions.</p>
+  <h2 class="sh">Where the work<br>got done</h2>
+  <p class="sp">Every role taught me something the next one needed. The engineering background is a feature, not a detour.</p>
 
-  <div class="ex-list">
+  <div class="exp-list">
 
-    <!-- Infotrace — CURRENT -->
-    <div class="ex-item">
+    <div class="exp-item">
       <div>
-        <div class="ex-period">Feb 2026 – Present</div>
-        <div class="ex-org">Infotrace Analytics</div>
-        <div class="ex-type">Data &amp; analytics consultancy<br>Nairobi, Kenya</div>
+        <div class="em-period">Feb 2026 – Present</div>
+        <div class="em-org">Infotrace Analytics</div>
+        <div class="em-type">Data &amp; analytics consultancy<br>Nairobi, Kenya</div>
       </div>
       <div>
-        <div class="ex-role">Data Analyst <span class="now-chip">Current</span></div>
-        <div class="ex-where">Nairobi, Kenya · On-site</div>
-        <ul class="ex-ul">
-          <li>Build <strong>interactive Power BI and Tableau dashboards</strong> to visualise sales, churn, and operational KPIs — used by management for weekly strategic decisions.</li>
-          <li>Write <strong>Python and PySpark scripts</strong> to clean, transform, and integrate large datasets from multiple sources, reducing data preparation time by <strong>40%</strong>.</li>
-          <li>Generate weekly and monthly reports with <strong>clear, actionable insights</strong> presented directly to management to guide product and operational strategy.</li>
-          <li>Collaborate with the data engineering team to <strong>optimise ETL workflows</strong> and maintain data accuracy across all reporting systems.</li>
+        <div class="er-title">Data Analyst <span class="cur-badge">Current role</span></div>
+        <div class="er-where">Nairobi, Kenya · On-site</div>
+        <ul class="er-ul">
+          <li>Building <strong>interactive Power BI and Tableau dashboards</strong> to visualise sales, churn, and operational KPIs — presented directly to management to guide strategic decisions.</li>
+          <li>Writing <strong>Python and PySpark ETL scripts</strong> to clean and transform large datasets from multiple sources, reducing data preparation time by <strong>40%</strong>.</li>
+          <li>Generating weekly and monthly reports with actionable insights, consistently translating complex findings into clear recommendations for non-technical stakeholders.</li>
+          <li>Collaborating with the data engineering team to <strong>optimise ETL workflows</strong> and ensure data accuracy across all reporting systems.</li>
         </ul>
-      </div>
-    </div>
-
-    <!-- Hello Tractor -->
-    <div class="ex-item">
-      <div>
-        <div class="ex-period">Sep 2023 – Jan 2025</div>
-        <div class="ex-org">Hello Tractor</div>
-        <div class="ex-type">AgriTech · IoT equipment-sharing<br>Nairobi, Kenya</div>
-      </div>
-      <div>
-        <div class="ex-role">IoT Data Analyst &amp; Technical Associate</div>
-        <div class="ex-where">Nairobi, Kenya · Full-time</div>
-        <ul class="ex-ul">
-          <li>Engineered a <strong>scalable IoT data pipeline</strong> processing real-time data from 500+ connected tractors — enabling fleet performance analytics for enterprise clients.</li>
-          <li>Drove a <strong>25% increase in product adoption</strong> and <strong>15% improvement in customer satisfaction</strong> by training 100+ enterprise clients on data-driven best practices.</li>
-          <li>Proactively resolved system issues, reducing client-reported errors and improving data reliability across the platform.</li>
-          <li>Monitored key performance metrics and collaborated with engineering teams to align product features with real client data needs.</li>
-        </ul>
-        <div class="ex-kpis">
-          <div class="ek"><div class="ek-v">500+</div>IoT devices</div>
-          <div class="ek"><div class="ek-v">25%</div>adoption increase</div>
-          <div class="ek"><div class="ek-v">15%</div>satisfaction uplift</div>
-          <div class="ek"><div class="ek-v">100+</div>clients trained</div>
+        <div class="er-kpis">
+          <div class="ekpi"><div class="ekpi-v">40%</div>prep time saved</div>
+          <div class="ekpi"><div class="ekpi-v">Power BI</div>+ Tableau</div>
+          <div class="ekpi"><div class="ekpi-v">Weekly</div>exec reporting</div>
         </div>
       </div>
     </div>
 
-    <!-- Earlier -->
-    <div class="ex-item">
+    <div class="exp-item">
       <div>
-        <div class="ex-period">2021 – 2022</div>
-        <div class="ex-org">Earlier Roles</div>
-        <div class="ex-type">Engineering foundation</div>
+        <div class="em-period">Sep 2023 – Jan 2025</div>
+        <div class="em-org">Hello Tractor</div>
+        <div class="em-type">IoT tractor-sharing platform<br>500+ connected devices<br>Nairobi, Kenya</div>
       </div>
       <div>
-        <div class="ex-role">Engineering Internships</div>
-        <div class="ex-where">Nairobi, Kenya</div>
-        <ul class="ex-ul">
-          <li><strong>State Department of Public Works</strong> — designed electrical systems (lighting, power, CCTV, access control, fire alarm) using AutoCAD; supervised site installations.</li>
-          <li><strong>Proscene Systems Limited</strong> — installed and maintained AV equipment for 20+ corporate events; diagnosed and resolved technical faults under live event pressure.</li>
+        <div class="er-title">IoT Data Analyst &amp; Technical Associate</div>
+        <div class="er-where">Nairobi, Kenya · Full-time</div>
+        <ul class="er-ul">
+          <li>Engineered a <strong>scalable IoT data processing pipeline</strong> handling real-time data from 500+ connected tractors — enabling fleet performance analytics for enterprise clients across East Africa.</li>
+          <li>Drove a <strong>25% increase in product adoption</strong> and 15% improvement in customer satisfaction by delivering data-driven training to 100+ enterprise clients.</li>
+          <li>Monitored key performance metrics and <strong>proactively resolved system issues</strong>, improving data reliability and reducing client-reported errors across the platform.</li>
+          <li>Collaborated with engineering teams to align product features with real customer data patterns, feeding analytics directly into product roadmap decisions.</li>
         </ul>
-        <p style="font-size:13px;color:var(--ink3);margin-top:14px;font-style:italic">This engineering foundation — understanding systems at the hardware level — is what makes the transition to data analytics genuinely different. I understand why data goes wrong before it reaches the dashboard.</p>
+        <div class="er-kpis">
+          <div class="ekpi"><div class="ekpi-v">500+</div>devices piped</div>
+          <div class="ekpi"><div class="ekpi-v">25%</div>adoption increase</div>
+          <div class="ekpi"><div class="ekpi-v">100+</div>clients trained</div>
+          <div class="ekpi"><div class="ekpi-v">15%</div>satisfaction uplift</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="em-period">Jan 2022 – Apr 2022</div>
+        <div class="em-org">State Dept. of Public Works</div>
+        <div class="em-type">Government infrastructure<br>Nairobi, Kenya</div>
+      </div>
+      <div>
+        <div class="er-title">Electrical &amp; Electronics Intern</div>
+        <div class="er-where">Nairobi, Kenya</div>
+        <ul class="er-ul">
+          <li>Created detailed design drawings and cost estimates using <strong>AutoCAD</strong> for electrical systems including lighting, power, CCTV, access control, and fire alarm systems.</li>
+          <li>Assisted in site surveys and supervised installations to ensure full compliance with design and safety standards.</li>
+        </ul>
       </div>
     </div>
 
   </div>
 </section>
 
-<div class="div-line"></div>
+<div class="hr"></div>
 
 <!-- EDUCATION & CERTS -->
-<section class="sec fade" id="education">
+<section class="section fade" id="education">
   <div class="ey">Education &amp; Credentials</div>
-  <h2 class="sh">The foundation<br>behind the work</h2>
-  <p class="sp">Engineering degree, AI master's, and real certifications from AWS, NVIDIA, and the World Bank.</p>
+  <h2 class="sh">Built on strong<br>foundations</h2>
+  <p class="sp">Engineering degree. AI master's. World Bank programme. AWS certified. The credentials back up the work.</p>
 
   <div class="edu-grid">
-    <div class="edu-card">
-      <div class="edu-icon" style="background:var(--indigo-lt);color:var(--indigo)">🎓</div>
-      <div>
-        <div class="edu-deg">MSc Artificial Intelligence &amp; Technology Management</div>
-        <div class="edu-school">Nexford University · Washington DC (Remote)</div>
-        <div class="edu-period">Feb 2026 – Present</div>
-        <div class="edu-badge" style="background:var(--accent-lt);color:var(--accent-md);border:1px solid rgba(27,94,59,.15)">● In progress</div>
-      </div>
+    <div class="edu-card msc">
+      <div class="edu-type">Master's degree · In progress</div>
+      <div class="edu-name">MSc Artificial Intelligence &amp; Technology Management</div>
+      <div class="edu-org">Nexford University · Washington DC (Remote)</div>
+      <div class="edu-year">Feb 2026 – Present</div>
     </div>
-    <div class="edu-card">
-      <div class="edu-icon" style="background:var(--amber-lt);color:var(--amber)">⚡</div>
-      <div>
-        <div class="edu-deg">BSc Electronics &amp; Computer Engineering</div>
-        <div class="edu-school">Jomo Kenyatta University of Agriculture and Technology</div>
-        <div class="edu-period">2016 – 2022</div>
-        <div class="edu-badge" style="background:var(--accent-lt);color:var(--accent-md);border:1px solid rgba(27,94,59,.15)">✓ Completed</div>
-      </div>
+    <div class="edu-card degree">
+      <div class="edu-type">Bachelor's degree</div>
+      <div class="edu-name">BSc Electronics &amp; Computer Engineering</div>
+      <div class="edu-org">Jomo Kenyatta University of Agriculture and Technology · Kenya</div>
+      <div class="edu-year">2016 – 2022</div>
     </div>
-  </div>
-
-  <div class="cert-grid">
-    <div class="cert-card">
-      <div class="cert-icon" style="background:#FFF8EE;color:#F90">☁</div>
-      <div><div class="cert-name">AWS Certified Cloud Practitioner</div><div class="cert-org">Amazon Web Services · 2022</div></div>
+    <div class="edu-card cert">
+      <div class="edu-type">Professional certification · 2022</div>
+      <div class="edu-name">AWS Certified Cloud Practitioner</div>
+      <div class="edu-org">Amazon Web Services</div>
+      <div class="edu-badge eb-aws">AWS Certified ✓</div>
     </div>
-    <div class="cert-card">
-      <div class="cert-icon" style="background:#F0FFF4;color:#15803D">🌍</div>
-      <div><div class="cert-name">Data Science &amp; AI Intensive Program</div><div class="cert-org">KIEP-SKIES · World Bank-Sponsored · 2025</div></div>
+    <div class="edu-card prog">
+      <div class="edu-type">Intensive programme · 2025</div>
+      <div class="edu-name">Data Science &amp; AI Intensive Programme</div>
+      <div class="edu-org">KIEP-SKIES · World Bank–Sponsored</div>
+      <div class="edu-badge eb-wb">World Bank Programme ✓</div>
     </div>
-    <div class="cert-card">
-      <div class="cert-icon" style="background:#F0FFF4;color:#15803D">🧠</div>
-      <div><div class="cert-name">Getting Started with Deep Learning</div><div class="cert-org">NVIDIA Deep Learning Institute · 2025</div></div>
+    <div class="edu-card cert">
+      <div class="edu-type">Certification · 2025</div>
+      <div class="edu-name">Getting Started with Deep Learning</div>
+      <div class="edu-org">NVIDIA Deep Learning Institute</div>
+      <div class="edu-badge eb-nv">NVIDIA DLI ✓</div>
     </div>
-    <div class="cert-card">
-      <div class="cert-icon" style="background:var(--indigo-lt);color:var(--indigo)">📊</div>
-      <div><div class="cert-name">Data Scientist with Python Track</div><div class="cert-org">DataCamp · 2025</div></div>
+    <div class="edu-card prog">
+      <div class="edu-type">Track completion · 2025</div>
+      <div class="edu-name">Data Scientist with Python Track</div>
+      <div class="edu-org">DataCamp</div>
+      <div class="edu-badge eb-dc">DataCamp ✓</div>
     </div>
   </div>
 </section>
 
-<div class="div-line"></div>
+<div class="hr"></div>
 
 <!-- CONTACT -->
-<section class="sec fade" id="contact">
+<section class="section fade" id="contact">
   <div class="ey">Contact</div>
-  <h2 class="sh">Let's work together</h2>
-  <div class="ct-block">
-    <div class="ct-l">
-      <div class="op-badge">Open to new opportunities</div>
-      <p>I'm actively looking for a <strong>fully remote Data Analyst or Data Scientist role</strong> on a global team where data is genuinely used to make decisions. I bring a rare combination: an engineering foundation, production data experience, and a growing ML skill set.</p>
-      <p style="font-size:13px;color:var(--ink3)">East Africa Time · overlaps EU mornings &amp; US evenings · Async-first and self-directed</p>
-      <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="btn-a" target="_blank" rel="noopener" style="margin-top:24px;display:inline-flex">Download CV →</a>
+  <h2 class="sh">Let's talk</h2>
+  <div class="contact-wrap">
+    <div class="cl">
+      <div class="open-to">Open to new opportunities</div>
+      <p>I'm looking for a <strong>fully remote Data Analyst or Data Scientist role</strong> on a global team where the work genuinely shapes decisions. I bring engineering rigour, production data experience, and the ability to own my work end-to-end without hand-holding.</p>
+      <p style="font-size:13px;color:var(--ink3)">East Africa Time · Comfortable on EU and US schedules · Async-first · Available on request</p>
+      <a href="https://bonaondiere.github.io/Ruth_resume_latest.pdf" class="btn-p" target="_blank" rel="noopener" style="display:inline-flex;margin-top:24px">Download CV →</a>
     </div>
-    <div class="ct-r">
-      <div class="ct-links">
-        <a href="mailto:bonareriondiere@gmail.com" class="ctlk">
-          <div class="ctlk-ic" style="background:var(--rose-lt);color:var(--rose)">✉</div>
-          <div><div class="ctlk-n">Email</div><div class="ctlk-v">bonareriondiere@gmail.com</div></div>
-          <div class="ctlk-arr">→</div>
+    <div class="cr2">
+      <div class="clinks">
+        <a href="mailto:bonareriondiere@gmail.com" class="clink">
+          <div class="ci" style="background:var(--rose-lt);color:var(--rose)">✉</div>
+          <div><div class="cn">Email</div><div class="cv2">bonareriondiere@gmail.com</div></div>
+          <div class="ca">→</div>
         </a>
-        <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" class="ctlk" target="_blank" rel="noopener">
-          <div class="ctlk-ic" style="background:var(--slate-lt);color:var(--slate);font-size:13px;font-weight:800">in</div>
-          <div><div class="ctlk-n">LinkedIn</div><div class="ctlk-v">ruth-ondiere-254009198</div></div>
-          <div class="ctlk-arr">→</div>
+        <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" class="clink" target="_blank" rel="noopener">
+          <div class="ci" style="background:var(--slate-lt);color:var(--slate);font-size:13px;font-weight:800">in</div>
+          <div><div class="cn">LinkedIn</div><div class="cv2">ruth-ondiere-254009198</div></div>
+          <div class="ca">→</div>
         </a>
-        <a href="https://github.com/BONAONDIERE" class="ctlk" target="_blank" rel="noopener">
-          <div class="ctlk-ic" style="background:var(--indigo-lt);color:var(--indigo);font-size:12px;font-weight:700">&lt;/&gt;</div>
-          <div><div class="ctlk-n">GitHub</div><div class="ctlk-v">BONAONDIERE</div></div>
-          <div class="ctlk-arr">→</div>
+        <a href="https://github.com/BONAONDIERE" class="clink" target="_blank" rel="noopener">
+          <div class="ci" style="background:var(--navy-lt);color:var(--navy);font-size:12px;font-weight:700">&lt;/&gt;</div>
+          <div><div class="cn">GitHub</div><div class="cv2">BONAONDIERE</div></div>
+          <div class="ca">→</div>
         </a>
-        <a href="https://public.tableau.com/app/profile/ruth.ondiere" class="ctlk" target="_blank" rel="noopener">
-          <div class="ctlk-ic" style="background:var(--accent-lt);color:var(--accent-md);font-size:11px;font-weight:700">viz</div>
-          <div><div class="ctlk-n">Tableau Public</div><div class="ctlk-v">ruth.ondiere — live dashboards</div></div>
-          <div class="ctlk-arr">→</div>
+        <a href="https://public.tableau.com/app/profile/ruth.ondiere" class="clink" target="_blank" rel="noopener">
+          <div class="ci" style="background:var(--teal-lt);color:var(--teal);font-size:11px;font-weight:700">viz</div>
+          <div><div class="cn">Tableau Public</div><div class="cv2">ruth.ondiere — live dashboards</div></div>
+          <div class="ca">→</div>
         </a>
       </div>
     </div>
@@ -1001,8 +1145,8 @@ footer{border-top:1px solid var(--border);padding:28px max(24px,6%);display:flex
 </section>
 
 <footer>
-  <div class="f-copy">© 2026 Ruth Ondiere · Data Analyst · Nairobi, Kenya</div>
-  <div class="f-links">
+  <div class="fc">© 2026 Ruth Ondiere · Data Analyst · Nairobi, Kenya</div>
+  <div class="fl">
     <a href="mailto:bonareriondiere@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/ruth-ondiere-254009198" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/BONAONDIERE" target="_blank" rel="noopener">GitHub</a>
@@ -1012,6 +1156,7 @@ footer{border-top:1px solid var(--border);padding:28px max(24px,6%);display:flex
 </footer>
 
 <script>
+// Theme
 const btn=document.getElementById('themeBtn');
 const root=document.documentElement;
 const saved=localStorage.getItem('theme')||'light';
@@ -1023,14 +1168,16 @@ btn.addEventListener('click',()=>{
   localStorage.setItem('theme',next);
   btn.textContent=next==='dark'?'☀':'🌙';
 });
+// Fade in
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.08});
 document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+// Nav active
 const secs=document.querySelectorAll('section[id]');
-const nls=document.querySelectorAll('.nav-links a');
+const nls=document.querySelectorAll('.nav-ul a');
 window.addEventListener('scroll',()=>{
   let cur='';
   secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
-  nls.forEach(a=>{const on=a.getAttribute('href')==='#'+cur;a.classList.toggle('on',on)});
+  nls.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
 },{passive:true});
 </script>
 </body>
